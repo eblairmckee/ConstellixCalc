@@ -42,7 +42,7 @@ function gtdNumber(num) {
 };
 
 //Geo Proximity
-//this is a new LINE
+
 // Total Sum
 function totalCost (){
     var costTotal = (domainTotal + recordTotal + gtdTotal).toFixed(2);
