@@ -1,6 +1,7 @@
 var domainTotal = 0;
 var recordTotal = 0;
 var gtdTotal = 0;
+var geoProxTotal = 0;
 
 // Domain Calculation
 function domainNumber(num) {
@@ -39,6 +40,8 @@ function gtdNumber(num) {
         var total = newNum * 1
     }
 };
+
+//Geo Proximity
 
 // Total Sum
 function totalCost (){
