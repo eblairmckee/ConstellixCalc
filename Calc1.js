@@ -24,12 +24,10 @@ function domainNumber(num) {
 function recordNumber(num) {
     if (num > 100) {
         var newNum = num - 100;
-    };
-    if (newNum <= 100) {
-        var newVal = Math.ceil(newNum/100) * 100;
-        
-    };
-        
+        gtdTotal = Math.round(newNum/100 + 1);
+   
+    } else
+        gtdTotal = 0;  
 };
 
 //GTD Calculation
