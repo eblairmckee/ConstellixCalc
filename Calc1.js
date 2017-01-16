@@ -1,7 +1,13 @@
 var domainTotal = 0;
 var recordTotal = 0;
 var gtdTotal = 0;
-var geoProxTotal = 0;
+var geoProxConfTotal = 0;
+var geoProxAppTotal = 0;
+var geoFilterConfTotal = 0;
+var geoFilterAppTotal = 0;
+var anameTotal = 0;
+var poolConfTotal = 0;
+var poolAppTotal = 0;
 
 // Domain Calculation
 function domainNumber(num) {
@@ -41,11 +47,19 @@ function gtdNumber(num) {
     }
 };
 
-//Geo Proximity
-function geoproxNumber(num) {
-    if (num > .9) {
+//Geo Proximity Configured
+function geoProxConfNumber(num) {
+    if (num > .99) {
         var total = num * .01;
-        geoProxTotal = total;
+        geoProxConfTotal = total;
+    }
+};
+
+//Geo Prosimity Applied
+function geoProxAppNumber(num) {
+    if (num > .99) {
+        var total = num * .05;
+        geoProxAppTotal = total;
     }
 }
 
