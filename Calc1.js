@@ -106,7 +106,7 @@ function poolAppNumber(num) {
 
 // Total Sum
 function totalCost (){
-    var costTotal = (domainTotal + recordTotal + gtdTotal).toFixed(2);
+    var costTotal = (domainTotal + recordTotal + gtdTotal + geoProxConfTotal + geoProxAppTotal + geoFilterConfTotal + geoFilterAppTotal + anameTotal + poolConfTotal + poolAppTotal).toFixed(2);
     console.log("Total: $" + costTotal);
 };
 
