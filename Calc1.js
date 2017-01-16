@@ -61,7 +61,48 @@ function geoProxAppNumber(num) {
         var total = num * .05;
         geoProxAppTotal = total;
     }
-}
+};
+
+//Geo Filter Configured
+function geoFilterConfNumber(num) {
+    if (num > .99) {
+        var total = num * .01;
+        geoFilterConfTotal = total;
+    }
+};
+
+//Geo Filter Applied 
+function geoFilterAppNumber(num) {
+    if (num > .99) {
+        var total = num * .05;
+        geoFilterAppTotal = total;
+    }
+};
+
+//ANAME 
+function anameNumber(num) {
+    if (num > .99) {
+        var total = num * .1;
+        anameTotal = total;
+    }
+};
+
+//Pool Configured 
+function poolConfNumber(num) {
+    if (num > .99) {
+        var total = num * .01;
+        poolConfTotal = total;
+    }
+};
+
+//Pool Applied 
+function poolAppNumber(num) {
+    if (num > .99) {
+        var total = num * .1;
+        poolAppTotal = total;
+    }
+};
+
 
 // Total Sum
 function totalCost (){
