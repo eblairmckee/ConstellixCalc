@@ -42,6 +42,12 @@ function gtdNumber(num) {
 };
 
 //Geo Proximity
+function geoproxNumber(num) {
+    if (num > .9) {
+        var total = num * .01;
+        geoProxTotal = total;
+    }
+}
 
 // Total Sum
 function totalCost (){
