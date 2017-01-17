@@ -23,4 +23,4 @@ form.onsubmit = function() {
     alert(domainTotal);
 };
 
-//Good Test
+//Good Testing
