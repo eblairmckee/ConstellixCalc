@@ -3,7 +3,7 @@ var recordTotal = document.getElementById('records');
 var gtdTotal = document.getElementById('gtd');
 var geoProxConfTotal = document.getElementById('geoProxConf');
 var geoProxAppTotal = document.getElementById('geoProxApp');
-var geoFilterConfTotal = documnet.getElementById('geoFilterConf');
+var geoFilterConfTotal = document.getElementById('geoFilterConf');
 var geoFilterAppTotal = document.getElementById('geoFilterApp');
 var anameTotal = document.getElementById('aname');
 var poolConfTotal = document.getElementById('poolConf');
@@ -32,20 +32,23 @@ function domainNumber(num) {
 function recordNumber(num) {
     if (num > 100) {
         var newNum = num - 100;
-        gtdTotal = Math.round(newNum/100 + 1);
+        total = Math.round(newNum/100) * .5;
+        recordTotal = total;
    
     } else
-        gtdTotal = 0;  
+        recordTotal = 0;  
 };
 
 //GTD Calculation
 function gtdNumber(num) {
     if (num > 0 && num < 1) {
-        var gtdTotal = 5; 
+        gtdTotal = 5; 
     } else if (num > 1 && num < 100) {
         var newNum = num - 1;
         var total = newNum * 1
-    }
+        gtdTotal = total;
+    } else
+        gtdTotal = 0;
 };
 
 //Geo Proximity Configured
@@ -53,15 +56,17 @@ function geoProxConfNumber(num) {
     if (num > .99) {
         var total = num * .01;
         geoProxConfTotal = total;
-    }
+    } else
+        geoProxConfTotal = 0;
 };
 
-//Geo Prosimity Applied
+//Geo Proximity Applied
 function geoProxAppNumber(num) {
     if (num > .99) {
         var total = num * .05;
         geoProxAppTotal = total;
-    }
+    } else
+        geoProxAppTotal = 0;
 };
 
 //Geo Filter Configured
@@ -69,7 +74,8 @@ function geoFilterConfNumber(num) {
     if (num > .99) {
         var total = num * .01;
         geoFilterConfTotal = total;
-    }
+    } else
+        geoFilterConfTotal = 0;
 };
 
 //Geo Filter Applied 
@@ -77,7 +83,8 @@ function geoFilterAppNumber(num) {
     if (num > .99) {
         var total = num * .05;
         geoFilterAppTotal = total;
-    }
+    } else
+    geoFilterAppTotal = 0;
 };
 
 //ANAME 
@@ -85,7 +92,8 @@ function anameNumber(num) {
     if (num > .99) {
         var total = num * .1;
         anameTotal = total;
-    }
+    } else
+        anameTotal = 0;
 };
 
 //Pool Configured 
@@ -93,7 +101,8 @@ function poolConfNumber(num) {
     if (num > .99) {
         var total = num * .01;
         poolConfTotal = total;
-    }
+    } else
+        poolConfTotal = 0;
 };
 
 //Pool Applied 
@@ -101,12 +110,24 @@ function poolAppNumber(num) {
     if (num > .99) {
         var total = num * .1;
         poolAppTotal = total;
-    }
+    } else
+        poolAppTotal = 0;
 };
 
 // Total Sum
-function totalCost (){
+form.onsubmit = function(){
+    domainNumber(domainTotal.value);
+    recordNumber(recordTotal.value);
+    gtdNumber(gtdTotal.value);
+    geoProxConfNumber(geoProxConfTotal.value);
+    geoProxAppNumber(geoProxAppTotal.value);
+    geoFilterConfNumber(geoFilterConfTotal.value);
+    geoFilterAppNumber(geoFilterAppTotal.value);
+    anameNumber(anameTotal.value);
+    poolConfNumber(poolConfTotal.value);
+    poolAppNumber(poolAppTotal.value);
+
     var costTotal = (domainTotal + recordTotal + gtdTotal + geoProxConfTotal + geoProxAppTotal + geoFilterConfTotal + geoFilterAppTotal + anameTotal + poolConfTotal + poolAppTotal).toFixed(2);
-    console.log("Total: $" + costTotal);
+    alert("Total: $" + costTotal);
 };
 
