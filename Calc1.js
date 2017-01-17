@@ -1,13 +1,13 @@
-var domainTotal = 0;
-var recordTotal = 0;
-var gtdTotal = 0;
-var geoProxConfTotal = 0;
-var geoProxAppTotal = 0;
-var geoFilterConfTotal = 0;
-var geoFilterAppTotal = 0;
-var anameTotal = 0;
-var poolConfTotal = 0;
-var poolAppTotal = 0;
+var domainTotal = document.getElementById('domains');
+var recordTotal = document.getElementById('records');
+var gtdTotal = document.getElementById('gtd');
+var geoProxConfTotal = document.getElementById('geoProxConf');
+var geoProxAppTotal = document.getElementById('geoProxApp');
+var geoFilterConfTotal = documnet.getElementById('geoFilterConf');
+var geoFilterAppTotal = document.getElementById('geoFilterApp');
+var anameTotal = document.getElementById('aname');
+var poolConfTotal = document.getElementById('poolConf');
+var poolAppTotal = document.getElementById('poolApp');
 
 // Domain Calculation
 function domainNumber(num) {
