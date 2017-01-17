@@ -1,5 +1,5 @@
-var domainTotal = 0;
-var recordTotal = 0;
+var domainTotal = document.getElementById('domains');
+var form = document.getElementById('form');
 
 function domainNumber(num) {
     if (num > 0 && num < 2){
@@ -18,16 +18,7 @@ function domainNumber(num) {
        alert("Please enter number of domains")
 };
 
-function recordNumber(num) {
-    if (num > 100) {
-        var newNum = num - 100;
-        gtdTotal = Math.round(newNum/100 + 1);
-   
-    } else
-        gtdTotal = 0;  
-};
-
-function totalCost (){
-    var costTotal = (domainTotal + recordTotal + gtdTotal + geoProxConfTotal + geoProxAppTotal + geoFilterConfTotal + geoFilterAppTotal + anameTotal + poolConfTotal + poolAppTotal).toFixed(2);
-    console.log("Total: $" + costTotal);
+form.onsubmit = function() {
+    domainNumber(domainTotal.value);
+    alert(domainTotal);
 };
