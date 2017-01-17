@@ -8,6 +8,7 @@ var geoFilterAppTotal = document.getElementById('geoFilterApp');
 var anameTotal = document.getElementById('aname');
 var poolConfTotal = document.getElementById('poolConf');
 var poolAppTotal = document.getElementById('poolApp');
+var form = document.getElementById('form');
 
 // Domain Calculation
 function domainNumber(num) {
