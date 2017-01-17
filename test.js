@@ -22,3 +22,5 @@ form.onsubmit = function() {
     domainNumber(domainTotal.value);
     alert(domainTotal);
 };
+
+//Good Test
