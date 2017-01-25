@@ -8,6 +8,7 @@ var geoFilterAppTotal = document.getElementById('geoFilterApp');
 var anameTotal = document.getElementById('aname');
 var poolConfTotal = document.getElementById('poolConf');
 var poolAppTotal = document.getElementById('poolApp');
+var userTotal = document.getElementById('users');
 var form = document.getElementById('form');
 
 // Domain Calculation
@@ -114,6 +115,23 @@ function poolAppNumber(num) {
         poolAppTotal = 0;
 };
 
+//Additiona User Accounts
+function userNumber(num) {
+    if (num > 0 && num <= 10) {
+        var total = num * 2;
+        userTotal = total;
+    } else if (num > 10 && num <= 100) {
+        var newNum = num - 10;
+        var total = newNum * 1 + 20;
+        userTotal = total;
+    } else if (num > 100) {
+        var newNum = num - 100;
+        var total = newNum * .5 + 110;
+        userTotal = total;
+    } else
+        userTotal = 0;
+};
+
 // Total Sum
 form.onsubmit = function(){
     domainNumber(domainTotal.value);
@@ -126,8 +144,9 @@ form.onsubmit = function(){
     anameNumber(anameTotal.value);
     poolConfNumber(poolConfTotal.value);
     poolAppNumber(poolAppTotal.value);
+    userNumber(userTotal.value);
 
-    var costTotal = (domainTotal + recordTotal + gtdTotal + geoProxConfTotal + geoProxAppTotal + geoFilterConfTotal + geoFilterAppTotal + anameTotal + poolConfTotal + poolAppTotal).toFixed(2);
+    var costTotal = (domainTotal + recordTotal + gtdTotal + geoProxConfTotal + geoProxAppTotal + geoFilterConfTotal + geoFilterAppTotal + anameTotal + poolConfTotal + poolAppTotal + userTotal).toFixed(2);
     alert("Total: $" + costTotal);
 };
 
