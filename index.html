@@ -13,80 +13,84 @@
 </head>
 <body>
 
-<h1> Constellix DNS Pricing Calc</h1>
+<h1 class="text-center"> Constellix DNS Pricing Calc</h1>
 
 <form class="form-horizontal" id="form" onsubmit="test.js">
+<div class="container">
+<div class="jumbotron bg-success">
   <div class="form-group">
-    <label for="domains" class="col-sm-2 control-label">Number Of Domains</label>
-    <div class="col-xs-2">
+    <label for="domains" class="col-xs-3 control-label">Number Of Domains</label>
+    <div class="col-xs-3">
       <input  type="number" class="form-control" id="domains" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="form-group">
-    <label for="records" class="col-sm-2 control-label">Number Of Records</label>
-    <div class="col-xs-2">
+    <label for="records" class="col-xs-3 control-label">Number Of Records</label>
+    <div class="col-xs-3">
       <input class="form-control" id="records" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="form-group">
-   <label for="gtd" class="col-sm-2 control-label">Numver Of GTD Enabled Domains</label>
-   <div class="col-xs-2">
+   <label for="gtd" class="col-xs-3 control-label">Number Of GTD Enabled Domains</label>
+   <div class="col-xs-3">
      <input class="form-control" id="gtd" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
    </div>
   </div>
   <div class="form-group">
-    <label for="geoProxConf" class="col-sm-2 control-label">Configure Geo Proximity</label>
-    <div class="col-xs-2">
+    <label for="geoProxConf" class="col-xs-3 control-label">Configure Geo Proximity</label>
+    <div class="col-xs-3">
       <input class="form-control" id="geoProxConf" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="form-group">
-    <label for="geoProxApp" class="col-sm-2 control-label">Applied Geo Proximity</label>
-    <div class="col-xs-2">
+    <label for="geoProxApp" class="col-xs-3 control-label">Applied Geo Proximity</label>
+    <div class="col-xs-3">
       <input class="form-control" id="geoProxApp" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="form-group">
-    <label for="geoFilterConf" class="col-sm-2 control-label">Configured Geo Filters</label>
-    <div class="col-xs-2">
+    <label for="geoFilterConf" class="col-xs-3 control-label">Configured Geo Filters</label>
+    <div class="col-xs-3">
       <input class="form-control" id="geoFilterConf" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="form-group">
-    <label for="geoFilterApp" class="col-sm-2 control-label">Applied Geo Filters</label>
-    <div class="col-xs-2">
+    <label for="geoFilterApp" class="col-xs-3 control-label">Applied Geo Filters</label>
+    <div class="col-xs-3">
       <input class="form-control" id="geoFilterApp" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="form-group">
-    <label for="aname" class="col-sm-2 control-label">Number Of ANAME Records</label>
-    <div class="col-xs-2">
+    <label for="aname" class="col-xs-3 control-label">Number Of ANAME Records</label>
+    <div class="col-xs-3">
       <input class="form-control" id="aname" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="form-group">
-    <label for="poolConf" class="col-sm-2 control-label">Configured Pools</label>
-    <div class="col-xs-2">
+    <label for="poolConf" class="col-xs-3 control-label">Configured Pools</label>
+    <div class="col-xs-3">
       <input class="form-control" id="poolConf" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="form-group">
-    <label for="poolApp" class="col-sm-2 control-label">Applied Pools</label>
-    <div class="col-xs-2">
+    <label for="poolApp" class="col-xs-3 control-label">Applied Pools</label>
+    <div class="col-xs-3">
       <input class="form-control" id="poolApp" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="form-group">
-    <label for="users" class="col-sm-2 control-label">Additional Users</label>
-    <div class="col-xs-2">
+    <label for="users" class="col-xs-3 control-label">Additional Users</label>
+    <div class="col-xs-3">
       <input class="form-control" id="users" type="number" min="1" name="number" placeholder="Additional Users" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
+      <div class="col-sm-offset-5">
         <button id="button" class="btn btn-primary">Submit</button>
       </div>
   </div>
+</div>
+</div>
 </form>
 <script type="text/javascript" src="Calc1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

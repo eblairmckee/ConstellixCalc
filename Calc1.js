@@ -19,14 +19,13 @@ function domainNumber(num) {
        var oneDomain = num - 1;
        var total = oneDomain * .5 + 5;
        domainTotal = total;
-
     } else if (num > 25){
         var oneDomain = num - 1;
         var twentyfiveDomain = oneDomain - 24;
         var total = twentyfiveDomain * .1 + 17;
         domainTotal = total;
     } else 
-       alert("Please enter number of domains")
+       alert("Please enter number of domains");
 };
 
 // Record Calculation
