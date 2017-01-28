@@ -44,7 +44,7 @@ function gtdNumber(num) {
     if (num == 1) {
         monthlyTotal += 5; 
     } else if (num > 1 && num < 100) {
-        var total = num - 1 + 5 * 1;
+        var total = num - 1 + 5;
         monthlyTotal += total;
     } else
         monthlyTotal += 0;
@@ -63,71 +63,70 @@ function geoProxConfNumber(num) {
 function geoProxAppNumber(num) {
     if (num > .99) {
         var total = num * .05;
-        geoProxAppTotal = total;
+        monthlyTotal += total;
     } else
-        geoProxAppTotal = 0;
+        monthlyTotal += 0;
 };
 
 //Geo Filter Configured
 function geoFilterConfNumber(num) {
     if (num > .99) {
         var total = num * .01;
-        geoFilterConfTotal = total;
+        monthlyTotal += total;
     } else
-        geoFilterConfTotal = 0;
+        monthlyTotal += 0;
 };
 
 //Geo Filter Applied 
 function geoFilterAppNumber(num) {
     if (num > .99) {
         var total = num * .05;
-        geoFilterAppTotal = total;
+        monthlyTotal += total;
     } else
-    geoFilterAppTotal = 0;
+    monthlyTotal += 0;
 };
 
 //ANAME 
 function anameNumber(num) {
     if (num > .99) {
         var total = num * .1;
-        anameTotal = total;
+        monthlyTotal += total;
     } else
-        anameTotal = 0;
+        monthlyTotal += 0;
 };
 
 //Pool Configured 
 function poolConfNumber(num) {
     if (num > .99) {
         var total = num * .01;
-        poolConfTotal = total;
+        monthlyTotal += total;
     } else
-        poolConfTotal = 0;
+        monthlyTotal += 0;
 };
 
 //Pool Applied 
 function poolAppNumber(num) {
     if (num > .99) {
         var total = num * .1;
-        poolAppTotal = total;
+        monthlyTotal += total;
     } else
-        poolAppTotal = 0;
+        monthlyTotal += 0;
 };
 
 //Additiona User Accounts
 function userNumber(num) {
     if (num > 0 && num <= 10) {
         var total = num * 2;
-        userTotal = total;
+        monthlyTotal += total;
     } else if (num > 10 && num <= 100) {
         var newNum = num - 10;
         var total = newNum * 1 + 20;
-        userTotal = total;
+        monthlyTotal += total;
     } else if (num > 100) {
-        var newNum = num - 100;
-        var total = newNum * .5 + 110;
-        userTotal = total;
+        var total = (num - 100) * .5 + 110;
+        monthlyTotal += total;
     } else
-        userTotal = 0;
+        monthlyTotal += 0;
 };
 
 // Total Sum
@@ -144,7 +143,14 @@ form.onsubmit = function(){
     poolAppNumber(poolAppTotal.value);
     userNumber(userTotal.value);
 
-    //var costTotal = (domainTotal + recordTotal + gtdTotal + geoProxConfTotal + geoProxAppTotal + geoFilterConfTotal + geoFilterAppTotal + anameTotal + poolConfTotal + poolAppTotal + userTotal).toFixed(2);
-    alert("Total: $" + monthlyTotal);
+    var element = document.getElementById("total");
+
+    var monthlyValue = document.createTextNode(" " + "$" + monthlyTotal);
+
+    element.appendChild(monthlyValue);
+
+    return false;
+    
+   // alert("Total: $" + monthlyTotal);
 };
 
