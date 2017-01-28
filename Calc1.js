@@ -10,20 +10,20 @@ var poolConfTotal = document.getElementById('poolConf');
 var poolAppTotal = document.getElementById('poolApp');
 var userTotal = document.getElementById('users');
 var form = document.getElementById('form');
-
+var monthlyTotal = 0;
 // Domain Calculation
 function domainNumber(num) {
     if (num > 0 && num < 2){
-       domainTotal = 5; 
+       monthlyTotal += 5; 
     } else if (num >= 2 && num < 26) {
        var oneDomain = num - 1;
        var total = oneDomain * .5 + 5;
-       domainTotal = total;
+       monthlyTotal += total;
     } else if (num > 25){
         var oneDomain = num - 1;
         var twentyfiveDomain = oneDomain - 24;
         var total = twentyfiveDomain * .1 + 17;
-        domainTotal = total;
+        monthlyTotal += total;
     } else 
        alert("Please enter number of domains");
 };
@@ -33,31 +33,30 @@ function recordNumber(num) {
     if (num > 100) {
         var newNum = num - 100;
         total = Math.round(newNum/100) * .5;
-        recordTotal = total;
+         monthlyTotal += total;
    
     } else
-        recordTotal = 0;  
+        monthlyTotal += 0;  
 };
 
 //GTD Calculation
 function gtdNumber(num) {
-    if (num > 0 && num < 1) {
-        gtdTotal = 5; 
+    if (num == 1) {
+        monthlyTotal += 5; 
     } else if (num > 1 && num < 100) {
-        var newNum = num - 1;
-        var total = newNum * 1
-        gtdTotal = total;
+        var total = num - 1 + 5 * 1;
+        monthlyTotal += total;
     } else
-        gtdTotal = 0;
+        monthlyTotal += 0;
 };
 
 //Geo Proximity Configured
 function geoProxConfNumber(num) {
     if (num > .99) {
         var total = num * .01;
-        geoProxConfTotal = total;
+        monthlyTotal += total;
     } else
-        geoProxConfTotal = 0;
+        monthlyTotal += 0;
 };
 
 //Geo Proximity Applied
@@ -145,7 +144,7 @@ form.onsubmit = function(){
     poolAppNumber(poolAppTotal.value);
     userNumber(userTotal.value);
 
-    var costTotal = (domainTotal + recordTotal + gtdTotal + geoProxConfTotal + geoProxAppTotal + geoFilterConfTotal + geoFilterAppTotal + anameTotal + poolConfTotal + poolAppTotal + userTotal).toFixed(2);
-    alert("Total: $" + costTotal);
+    //var costTotal = (domainTotal + recordTotal + gtdTotal + geoProxConfTotal + geoProxAppTotal + geoFilterConfTotal + geoFilterAppTotal + anameTotal + poolConfTotal + poolAppTotal + userTotal).toFixed(2);
+    alert("Total: $" + monthlyTotal);
 };
 
