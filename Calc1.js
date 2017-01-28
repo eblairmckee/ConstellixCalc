@@ -1,3 +1,4 @@
+// Define Global Variables
 var domainTotal = document.getElementById('domains');
 var recordTotal = document.getElementById('records');
 var gtdTotal = document.getElementById('gtd');
@@ -9,7 +10,7 @@ var anameTotal = document.getElementById('aname');
 var poolConfTotal = document.getElementById('poolConf');
 var poolAppTotal = document.getElementById('poolApp');
 var userTotal = document.getElementById('users');
-var form = document.getElementById('form');
+var form = document.getElementById('calcform');
 var monthlyTotal = 0;
 // Domain Calculation
 function domainNumber(num) {
@@ -130,7 +131,7 @@ function userNumber(num) {
 };
 
 // Total Sum
-form.onsubmit = function(){
+button.onclick = function(){
     domainNumber(domainTotal.value);
     recordNumber(recordTotal.value);
     gtdNumber(gtdTotal.value);
@@ -148,6 +149,7 @@ form.onsubmit = function(){
     var monthlyValue = document.createTextNode(" " + "$" + monthlyTotal);
 
     element.appendChild(monthlyValue);
+   document.calcform.reset();
 
     return false;
     
