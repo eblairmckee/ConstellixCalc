@@ -12,6 +12,7 @@ var poolAppTotal = document.getElementById('poolApp');
 var userTotal = document.getElementById('users');
 var form = document.getElementById('calcform');
 var monthlyTotal = 0;
+
 // Domain Calculation
 function domainNumber(num) {
     if (num > 0 && num < 2){
@@ -143,16 +144,15 @@ button.onclick = function(){
     poolConfNumber(poolConfTotal.value);
     poolAppNumber(poolAppTotal.value);
     userNumber(userTotal.value);
-
-    var element = document.getElementById("total");
-
-    var monthlyValue = document.createTextNode(" " + "$" + monthlyTotal);
-
-    element.appendChild(monthlyValue);
-   document.calcform.reset();
-
+    console.log(monthlyTotal);
+    document.getElementById("total").innerHTML = "Total:" + " " + "$" + monthlyTotal.toFixed(2);
+    monthlyTotal = 0;
     return false;
-    
-   // alert("Total: $" + monthlyTotal);
 };
 
+var clearButton = document.getElementById("clear");
+clearButton.onclick= reloadPage;
+
+function reloadPage(){
+   window.location.reload();
+}
