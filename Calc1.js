@@ -151,11 +151,9 @@ button.onclick = function(){
 };
 
 var clearButton = document.getElementById("clear");
-clearButton.onclick= reloadPage;
-
-function reloadPage(){
-   window.location.reload();
-}
+clearButton.onclick = function resetPage(){
+  document.getElementById("calcFields").reset();
+};
 
 function toggleIcon(e) {
     $(e.target)
