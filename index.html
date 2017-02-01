@@ -30,7 +30,7 @@
                             <div class="form-group">
                                 <label for="domains" class="col-xs-5 control-label">Number Of Domains</label>
                                 <div class="col-xs-3">
-                                    <input type="number" class="form-control" id="domains" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
+                                    <input type="number" class="form-control" id="domains" min="1000000" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -95,8 +95,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-10">
-                                    <button id="button" class="btn btn-success">Submit</button>
-                                    <button id="clear" class="btn btn-success">Clear</button>
+                                    <button id="buttonTotal" class="btn btn-success">Submit</button>
+                                    <button id="clearButton" class="btn btn-success">Clear</button>
                                 </div>
                             </div>
                         </div>
@@ -104,86 +104,86 @@
                 </div>
                 <!-----------------------------------------Constellix Sonar-------------------------------------->
                 <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
+                    <div class="panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                 <i class="more-less glyphicon glyphicon-plus"></i>
                                 Constellix DNS
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                         <div id="calcFields" class="panel-body">
                             <div class="form-group">
-                                <label for="domains" class="col-xs-5 control-label">Number Of Domains</label>
+                                <label for="domainss" class="col-xs-5 control-label">Sonar Node</label>
                                 <div class="col-xs-3">
-                                    <input type="number" class="form-control" id="domains" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
+                                    <input type="number" class="form-control" id="sonarNode" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="records" class="col-xs-5 control-label">Number Of Records</label>
+                                <label for="recordss" class="col-xs-5 control-label">Number Of Records</label>
                                 <div class="col-xs-3">
                                     <input class="form-control" id="records" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="gtd" class="col-xs-5 control-label">Number Of GTD Enabled Domains</label>
+                                <label for="gtds" class="col-xs-5 control-label">Number Of GTD Enabled Domains</label>
                                 <div class="col-xs-3">
                                     <input class="form-control" id="gtd" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="geoProxConf" class="col-xs-5 control-label">Configure Geo Proximity</label>
+                                <label for="geoProxConfs" class="col-xs-5 control-label">Configure Geo Proximity</label>
                                 <div class="col-xs-3">
                                     <input class="form-control" id="geoProxConf" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="geoProxApp" class="col-xs-5 control-label">Applied Geo Proximity</label>
+                                <label for="geoProxApps" class="col-xs-5 control-label">Applied Geo Proximity</label>
                                 <div class="col-xs-3">
                                     <input class="form-control" id="geoProxApp" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="geoFilterConf" class="col-xs-5 control-label">Configured Geo Filters</label>
+                                <label for="geoFilterConfs" class="col-xs-5 control-label">Configured Geo Filters</label>
                                 <div class="col-xs-3">
                                     <input class="form-control" id="geoFilterConf" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="geoFilterApp" class="col-xs-5 control-label">Applied Geo Filters</label>
+                                <label for="geoFilterApps" class="col-xs-5 control-label">Applied Geo Filters</label>
                                 <div class="col-xs-3">
                                     <input class="form-control" id="geoFilterApp" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="aname" class="col-xs-5 control-label">Number Of ANAME Records</label>
+                                <label for="anames" class="col-xs-5 control-label">Number Of ANAME Records</label>
                                 <div class="col-xs-3">
                                     <input class="form-control" id="aname" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="poolConf" class="col-xs-5 control-label">Configured Pools</label>
+                                <label for="poolConfs" class="col-xs-5 control-label">Configured Pools</label>
                                 <div class="col-xs-3">
                                     <input class="form-control" id="poolConf" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="poolApp" class="col-xs-5 control-label">Applied Pools</label>
+                                <label for="poolApps" class="col-xs-5 control-label">Applied Pools</label>
                                 <div class="col-xs-3">
                                     <input class="form-control" id="poolApp" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="users" class="col-xs-5 control-label">Additional Users</label>
+                                <label for="userss" class="col-xs-5 control-label">Additional Users</label>
                                 <div class="col-xs-3">
                                     <input class="form-control" id="users" type="number" min="1" name="number" placeholder="Additional Users" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-10">
-                                    <button id="button" class="btn btn-success">Submit</button>
-                                    <button id="clear" class="btn btn-success">Clear</button>
+                                    <button id="buttons" class="btn btn-success">Submit</button>
+                                    <button id="buttonClear" class="btn btn-success">Clear</button>
                                 </div>
                             </div>
                         </div>

@@ -132,7 +132,7 @@ function userNumber(num) {
 };
 
 // Total Sum
-button.onclick = function(){
+buttonTotal.onclick = function(){
     domainNumber(domainTotal.value);
     recordNumber(recordTotal.value);
     gtdNumber(gtdTotal.value);
@@ -150,9 +150,14 @@ button.onclick = function(){
     return false;
 };
 
-var clearButton = document.getElementById("clear");
-clearButton.onclick = function resetPage(){
-  document.getElementById("calcFields").reset();
+clearButton.onclick = function(){
+  document.getElementById("domains").value="";
+  return false;
+};
+
+buttonClear.onclick = function(){
+  document.getElementById("sonarNode").value="";
+  return false;
 };
 
 function toggleIcon(e) {
