@@ -168,3 +168,20 @@ function toggleIcon(e) {
 }
 $('.panel-group').on('hidden.bs.collapse', toggleIcon);
 $('.panel-group').on('shown.bs.collapse', toggleIcon);
+
+
+/*------------------------------------------Constellix Sonar------------------------------------------------------*/
+
+addCheck.onclick = function() {
+    var y = document.createElement('div');
+    var r = document.createElement('input')
+    y.setAttribute("class", "form-group");
+    r.setAttribute("class" , "form-control");
+    r.setAttribute("id" , "user");
+    r.setAttribute("type", "number");
+    r.setAttribute("min", "1");
+    r.setAttribute("placeholser","Number of checks");
+    y.appendChild(r);
+    document.getElementById("calcFields").appendChild(y);
+    return false;
+}
