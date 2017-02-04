@@ -182,6 +182,6 @@ addCheck.onclick = function() {
     r.setAttribute("min", "1");
     r.setAttribute("placeholser","Number of checks");
     y.appendChild(r);
-    document.getElementById("calcFields").appendChild(y);
+    document.getElementById("sonarCalc").appendChild(y);
     return false;
 }
