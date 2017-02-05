@@ -131,7 +131,7 @@ function userNumber(num) {
         monthlyTotal += 0;
 };
 
-// Total Sum
+// First Submit Button (DNS Calc)
 buttonTotal.onclick = function(){
     domainNumber(domainTotal.value);
     recordNumber(recordTotal.value);
@@ -150,15 +150,17 @@ buttonTotal.onclick = function(){
     return false;
 };
 
+// First Clear Button
 clearButton.onclick = function(){
   document.getElementById("domains").value="";
   return false;
 };
 
-buttonClear.onclick = function(){
+// Second Clear Button 
+/*buttonClear.onclick = function(){
   document.getElementById("sonarNode").value="";
   return false;
-};
+};*/
 
 function toggleIcon(e) {
     $(e.target)
