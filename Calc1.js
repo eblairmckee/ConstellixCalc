@@ -173,17 +173,30 @@ $('.panel-group').on('shown.bs.collapse', toggleIcon);
 
 
 /*------------------------------------------Constellix Sonar------------------------------------------------------*/
-
+var counter = 0;
 addCheck.onclick = function() {
     var y = document.createElement('div');
     var r = document.createElement('input')
+    var a = document.createElement('button')
     y.setAttribute("class", "form-group");
     r.setAttribute("class" , "form-control");
-    r.setAttribute("id" , "user");
+    r.setAttribute("id" , "user" + ++counter);
     r.setAttribute("type", "number");
     r.setAttribute("min", "1");
     r.setAttribute("placeholser","Number of checks");
+    a.setAttribute("id", "sonarDelete");
+    a.setAttribute("class", "btn btn-success");
+    a.createTextNode("Delete")
     y.appendChild(r);
+    y.appendChild(a);
     document.getElementById("sonarCalc").appendChild(y);
+    //document.getElementById("sonarCalc").appendChild(r);
     return false;
 }
+
+/*$('#addCheck').click(function() {
+    $('#sonarCalc').after('<div class="form-group"><input class="form-control" id="user" type="number" min="1" placeholder="Number Of Checks"></input><button class="btn btn-success" id="sonarDelete">Delete</button></div>')
+});*/
+$('#sonarCalc').on('click','#sonarDelete',function() {
+    $(this).parent().remove();
+});
