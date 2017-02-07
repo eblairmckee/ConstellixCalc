@@ -173,7 +173,7 @@ $('.panel-group').on('shown.bs.collapse', toggleIcon);
 
 
 /*------------------------------------------Constellix Sonar------------------------------------------------------*/
-var counter = 0;
+/*var counter = 0;
 addCheck.onclick = function() {
     var y = document.createElement('div');
     var r = document.createElement('input')
@@ -185,18 +185,23 @@ addCheck.onclick = function() {
     r.setAttribute("min", "1");
     r.setAttribute("placeholser","Number of checks");
     a.setAttribute("id", "sonarDelete");
-    a.setAttribute("class", "btn btn-success");
-    a.createTextNode("Delete")
+    a.setAttribute("class", "btn btn-danger glyphicon glyphicon-remove-sign");
     y.appendChild(r);
     y.appendChild(a);
     document.getElementById("sonarCalc").appendChild(y);
     //document.getElementById("sonarCalc").appendChild(r);
     return false;
-}
+}*/
 
-/*$('#addCheck').click(function() {
-    $('#sonarCalc').after('<div class="form-group"><input class="form-control" id="user" type="number" min="1" placeholder="Number Of Checks"></input><button class="btn btn-success" id="sonarDelete">Delete</button></div>')
-});*/
+$('#addCheck').click(function() {
+    $('#group1').after('<div class="form-group">\
+                            <div class="col-xs-4">\
+                                <input class="form-control" id="user" type="number" min="1" placeholder="Number Of Checks"></input>\
+                            </div>\
+                            <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
+                            </div>');
+                            return false;
+});
 $('#sonarCalc').on('click','#sonarDelete',function() {
     $(this).parent().remove();
 });
