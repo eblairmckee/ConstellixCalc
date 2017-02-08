@@ -194,12 +194,24 @@ addCheck.onclick = function() {
 }*/
 
 $('#addCheck').click(function() {
-    $('#group1').after('<div class="form-group">\
-                            <div class="col-xs-4">\
-                                <input class="form-control" id="user" type="number" min="1" placeholder="Number Of Checks"></input>\
+    $('#group1').after('<div class="form-group container">\
+                            <div class="container">\
+                                <label for="sonarCheck" class="consrol-label">Checks</label>\
+                            <div class="row">\
+                                <div class="col-xs-1">\
+                                    <input class="form-control col-xs-1" id="user" type="number" min="1" placeholder="Number Of Checks"></input>\
+                                </div>\
                             </div>\
-                            <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
-                            </div>');
+                            </div>\
+                            <div class="form-check col-xs-8"><label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
+                                <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
+                                <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
+                                <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
+                                <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
+                                <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
+                            </div>\
+                                <button class="btn btn-danger glyphicon glyphicon-remove-sign col-xs-1" id="sonarDelete"></button>\
+                         </div>');
                             return false;
 });
 $('#sonarCalc').on('click','#sonarDelete',function() {
