@@ -6,3 +6,23 @@
     background-image: linear-gradient(to bottom,#43966f 0,#e8e8e8 200%);
     background-repeat: repeat-x;
 }
+.btn-success{
+    background-image: linear-gradient(to bottom,#44b982 0, #43966f 100%);
+    background-repeat: repeat-x;
+    border-color: #3e8f3e;
+}
+
+.panel-primary>.panel-heading {
+    background-image: linear-gradient(to bottom,#43966f 0,#e8e8e8 200%);
+    background-repeat: repeat-x;
+}
+
+.panel-primary {
+    border-color: #43966f;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: black;
+}
