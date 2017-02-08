@@ -194,15 +194,28 @@ addCheck.onclick = function() {
 }*/
 
 $('#addCheck').click(function() {
-    $('#group1').after('<div class="form-group">\
-                            <div class="jumbotron checkFields">\
-                            <div class="container">\
-                                <label for="sonarCheck" class="consrol-label">Checks</label>\
-                            <div class="row">\
+    $('#group1').after('<form class="form-horizontal">\
+                        <div class="jumbotron checkFields">\
+                            <div class="form-group">\
+                                <label for="name" class="col-sm-2 control-label">Number Of Checks</label>\
                                 <div class="col-xs-1">\
                                     <input class="form-control col-xs-1" id="user" type="number" min="1" placeholder="Number Of Checks"></input>\
                                 </div>\
                             </div>\
+                            <div class="form-group">\
+                                <label for="name" class="col-sm-2 control-label">Check Type</label>\
+                                <div class="col-sm-2">\
+                                    <div class="btn-group">\
+                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <span class="caret"></span></a>\
+                                            <ul class="dropdown-menu">\
+                                                <li><a href="#">Choice1</a></li>\
+                                                <li><a href="#">Choice2</a></li>\
+                                                <li><a href="#">Choice3</a></li>\
+                                                <li class="divider"></li>\
+                                                <li><a href="#">Choice..</a></li>\
+                                            </ul>\
+                                    </div>\
+                                </div>\
                             </div>\
                             <div class="container">\
                                 <div class="row">\
@@ -217,10 +230,16 @@ $('#addCheck').click(function() {
                                 </div>\
                             </div>\
                                 <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
-                                </div>\
-                         </div>');
+                        </div>\
+                         </form>');
                             return false;
 });
 $('#sonarCalc').on('click','#sonarDelete',function() {
     $(this).parent().remove();
+});
+
+$(".dropdown-menu li a").click(function(){
+  
+  $(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
+  
 });
