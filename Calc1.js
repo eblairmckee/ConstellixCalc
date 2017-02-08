@@ -194,7 +194,8 @@ addCheck.onclick = function() {
 }*/
 
 $('#addCheck').click(function() {
-    $('#group1').after('<div class="form-group jumbotron">\
+    $('#group1').after('<div class="form-group">\
+                            <div class="jumbotron checkFields">\
                             <div class="container">\
                                 <label for="sonarCheck" class="consrol-label">Checks</label>\
                             <div class="row">\
@@ -216,6 +217,7 @@ $('#addCheck').click(function() {
                                 </div>\
                             </div>\
                                 <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
+                                </div>\
                          </div>');
                             return false;
 });
