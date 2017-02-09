@@ -253,13 +253,14 @@ $('#addCheck').click(function() {
                             </div>\
                             <div class="container">\
                                 <div class="row">\
-                                    <div class="form-check col-xs-9">\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input">Check me out</label>\
+                                <label for="name" class="col-sm-3 control-label">Monitoring Locatins</label>\
+                                    <div class="form-check col-md-7">\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> North America East <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> North America West <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> North America Central <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> Europe <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> Asia Pasific <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> Oceania <br></label>\
                                     </div>\
                                 </div>\
                             </div>\
