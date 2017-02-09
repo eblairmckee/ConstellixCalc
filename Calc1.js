@@ -195,26 +195,60 @@ addCheck.onclick = function() {
 
 $('#addCheck').click(function() {
     $('#group1').after('<form class="form-horizontal">\
-                        <div class="jumbotron checkFields">\
+                        <div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
+                        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
                             <div class="form-group">\
-                                <label for="name" class="col-sm-2 control-label">Number Of Checks</label>\
+                                <label for="name" class="col-sm-3 control-label">Number Of Checks</label>\
                                 <div class="col-xs-1">\
-                                    <input class="form-control col-xs-1" id="user" type="number" min="1" placeholder="Number Of Checks"></input>\
+                                    <input class="form-control col-xs-1" id="user" type="number" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
-                                <label for="name" class="col-sm-2 control-label">Check Type</label>\
+                                <label for="name" class="col-sm-3 control-label">SMS Contacts</label>\
+                                <div class="col-xs-1">\
+                                    <input class="form-control col-xs-1" id="user" type="number" min="1"></input>\
+                                </div>\
+                            </div>\
+                            <div class="form-group">\
+                                <label for="name" class="col-sm-3 control-label">Push Notifications</label>\
+                                <div class="col-xs-1">\
+                                    <input class="form-control col-xs-1" id="user" type="number" min="1"></input>\
+                                </div>\
+                            </div>\
+                            <div class="form-group">\
+                                <label for="name" class="col-sm-3 control-label">Check Type</label>\
                                 <div class="col-sm-2">\
-                                    <div class="btn-group">\
-                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <span class="caret"></span></a>\
-                                            <ul class="dropdown-menu">\
-                                                <li><a href="#">Choice1</a></li>\
-                                                <li><a href="#">Choice2</a></li>\
-                                                <li><a href="#">Choice3</a></li>\
-                                                <li class="divider"></li>\
-                                                <li><a href="#">Choice..</a></li>\
-                                            </ul>\
-                                    </div>\
+                                        <select class="form-control" id="sel1">\
+                                            <option>HTTP</option>\
+                                            <option>HTTPS</option>\
+                                            <option>TCP</option>\
+                                            <option>DNS</option>\
+                                            <option>HTTP Waterfall</option>\
+                                            <option>HTTPS Waterfall</option>\
+                                        </select>\
+                                </div>\
+                            </div>\
+                            <div class="form-group">\
+                                <label for="name" class="col-sm-3 control-label">Check Interval</label>\
+                                <div class="col-sm-2">\
+                                        <select class="form-control" id="sel1">\
+                                            <option>30 sec</option>\
+                                            <option>60 sec</option>\
+                                            <option>5 min</option>\
+                                            <option>10 min</option>\
+                                            <option>30 min</option>\
+                                            <option>12 hrs</option>\
+                                            <option>24 hrs</option>\
+                                        </select>\
+                                </div>\
+                            </div>\
+                            <div class="form-group">\
+                                <label for="name" class="col-sm-3 control-label">Check Interval Policy</label>\
+                                <div class="col-sm-2">\
+                                        <select class="form-control" id="sel1">\
+                                            <option>Simultaneous</option>\
+                                            <option>Once Per Site</option>\
+                                        </select>\
                                 </div>\
                             </div>\
                             <div class="container">\
@@ -229,7 +263,6 @@ $('#addCheck').click(function() {
                                     </div>\
                                 </div>\
                             </div>\
-                                <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
                         </div>\
                          </form>');
                             return false;
@@ -238,8 +271,3 @@ $('#sonarCalc').on('click','#sonarDelete',function() {
     $(this).parent().remove();
 });
 
-$(".dropdown-menu li a").click(function(){
-  
-  $(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
-  
-});
