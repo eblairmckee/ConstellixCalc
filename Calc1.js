@@ -144,7 +144,6 @@ buttonTotal.onclick = function(){
     poolConfNumber(poolConfTotal.value);
     poolAppNumber(poolAppTotal.value);
     userNumber(userTotal.value);
-    console.log(monthlyTotal);
     document.getElementById("total").innerHTML = "Total:" + " " + "$" + monthlyTotal.toFixed(2);
     monthlyTotal = 0;
     return false;
@@ -153,14 +152,19 @@ buttonTotal.onclick = function(){
 // First Clear Button
 clearButton.onclick = function(){
   document.getElementById("domains").value="";
+  document.getElementById("records").value="";
+  document.getElementById("gtd").value="";
+  document.getElementById("geoProxConf").value="";
+  document.getElementById("geoProxApp").value="";
+  document.getElementById("geoFilterConf").value="";
+  document.getElementById("geoFilterApp").value="";
+  document.getElementById("aname").value="";
+  document.getElementById("poolConf").value="";
+  document.getElementById("poolApp").value="";
+  document.getElementById("users").value="";
   return false;
 };
 
-// Second Clear Button 
-/*buttonClear.onclick = function(){
-  document.getElementById("sonarNode").value="";
-  return false;
-};*/
 
 function toggleIcon(e) {
     $(e.target)
