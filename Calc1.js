@@ -197,6 +197,26 @@ addCheck.onclick = function() {
     return false;
 }*/
 
+// GLOBAL VARIABLES 
+var checkTotal = document.getElementById('checks')
+var checkTotal = document.getElementById('smsNotify')
+var checkTotal = document.getElementById('pushNotify')
+var checkTotal = document.getElementById('sel1')
+var checkTotal = document.getElementById('sel2')
+var checkTotal = document.getElementById('sel3')
+var checkTotal = document.getElementById('northAmE')
+var checkTotal = document.getElementById('northAmW')
+var checkTotal = document.getElementById('northAmC')
+var checkTotal = document.getElementById('europe')
+var checkTotal = document.getElementById('asiaPac')
+var checkTotal = document.getElementById('oceania')
+
+//FORM SUBMIT 
+
+
+
+//Adding A New Check
+
 $('#addCheck').click(function() {
     $('#group1').after('<form class="form-horizontal">\
                         <div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
@@ -204,19 +224,19 @@ $('#addCheck').click(function() {
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Number Of Checks</label>\
                                 <div class="col-xs-1">\
-                                    <input class="form-control col-xs-1" id="user" type="number" min="1"></input>\
+                                    <input class="form-control col-xs-1" id="checks" type="number" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">SMS Contacts</label>\
                                 <div class="col-xs-1">\
-                                    <input class="form-control col-xs-1" id="user" type="number" min="1"></input>\
+                                    <input class="form-control col-xs-1" id="smsNotify" type="number" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Push Notifications</label>\
                                 <div class="col-xs-1">\
-                                    <input class="form-control col-xs-1" id="user" type="number" min="1"></input>\
+                                    <input class="form-control col-xs-1" id="pushNotify" type="number" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
@@ -235,7 +255,7 @@ $('#addCheck').click(function() {
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Check Interval</label>\
                                 <div class="col-sm-2">\
-                                        <select class="form-control" id="sel1">\
+                                        <select class="form-control" id="sel2">\
                                             <option>30 sec</option>\
                                             <option>60 sec</option>\
                                             <option>5 min</option>\
@@ -249,7 +269,7 @@ $('#addCheck').click(function() {
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Check Interval Policy</label>\
                                 <div class="col-sm-2">\
-                                        <select class="form-control" id="sel1">\
+                                        <select class="form-control" id="sel3">\
                                             <option>Simultaneous</option>\
                                             <option>Once Per Site</option>\
                                         </select>\
@@ -259,18 +279,19 @@ $('#addCheck').click(function() {
                                 <div class="row">\
                                 <label for="name" class="col-sm-3 control-label">Monitoring Locatins</label>\
                                     <div class="form-check col-md-7">\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> North America East <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> North America West <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> North America Central <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> Europe <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> Asia Pasific <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input"> Oceania <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="northAmE"> North America East <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="northAmW"> North America West <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="NorthAmC"> North America Central <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="europe"> Europe <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="asiaPac"> Asia Pasific <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="oceania"> Oceania <br></label>\
                                     </div>\
                                 </div>\
                             </div>\
                         </div>\
                          </form>');
                             return false;
+//BUTTON ACTION jQuery
 });
 $('#sonarCalc').on('click','#sonarDelete',function() {
     $(this).parent().remove();
