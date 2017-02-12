@@ -291,9 +291,9 @@ $('#addCheck').click(function() {
                          </form>');
                          counter ++;
                             return false;
-                            
-//BUTTON ACTION jQuery
 });
+
+//BUTTON ACTION jQuery
 $('#sonarCalc').on('click','#sonarDelete',function() {
     $(this).parent().remove();
 });
