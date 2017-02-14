@@ -1,0 +1,72 @@
+<form class="form-horizontal">
+                        <div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">
+                        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3 control-label">Number Of Checks</label>
+                                <div class="col-xs-1">
+                                    <input class="form-control col-xs-1" id="checks'+counter+'" type="number" min="1"></input>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3 control-label">SMS Contacts</label>
+                                <div class="col-xs-1">
+                                    <input class="form-control col-xs-1" id="smsNotify'+counter+'" type="number" min="1"></input>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3 control-label">Push Notifications</label>
+                                <div class="col-xs-1">
+                                    <input class="form-control col-xs-1" id="pushNotify'+counter+'" type="number" min="1"></input>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3 control-label">Check Type</label>
+                                <div class="col-sm-2">
+                                        <select class="form-control" id="sel'+counter+'">
+                                            <option>HTTP</option>
+                                            <option>HTTPS</option>
+                                            <option>TCP</option>
+                                            <option>DNS</option>
+                                            <option>HTTP Waterfall</option>
+                                            <option>HTTPS Waterfall</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3 control-label">Check Interval</label>
+                                <div class="col-sm-2">
+                                        <select class="form-control" id="sel'+counter+'" >
+                                            <option>30 sec</option>
+                                            <option>60 sec</option>
+                                            <option>5 min</option>
+                                            <option>10 min</option>
+                                            <option>30 min</option>
+                                            <option>12 hrs</option>
+                                            <option>24 hrs</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3 control-label">Check Interval Policy</label>
+                                <div class="col-sm-2">
+                                        <select class="form-control" id="sel'+counter+'">
+                                            <option>Simultaneous</option>
+                                            <option>Once Per Site</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                <label for="name" class="col-sm-3 control-label">Monitoring Locatins</label>
+                                    <div class="form-check col-md-7">
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="northAmE'+counter+'"> North America East <br></label>
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="northAmW'+counter+'"> North America West <br></label>
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="NorthAmC'+counter+'"> North America Central <br></label>
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="europe'+counter+'"> Europe <br></label>
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="asiaPac'+counter+'"> Asia Pasific <br></label>
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="oceania'+counter+'"> Oceania <br></label>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                         </form>

@@ -177,49 +177,49 @@ $('.panel-group').on('shown.bs.collapse', toggleIcon);
 
 
 /*------------------------------------------Constellix Sonar------------------------------------------------------*/
-/*var counter = 0;
+var counter = 0;
 addCheck.onclick = function() {
-    var y = document.createElement('div');
-    var r = document.createElement('input')
-    var a = document.createElement('button')
-    y.setAttribute("class", "form-group");
-    r.setAttribute("class" , "form-control");
-    r.setAttribute("id" , "user" + ++counter);
-    r.setAttribute("type", "number");
-    r.setAttribute("min", "1");
-    r.setAttribute("placeholser","Number of checks");
-    a.setAttribute("id", "sonarDelete");
-    a.setAttribute("class", "btn btn-danger glyphicon glyphicon-remove-sign");
-    y.appendChild(r);
-    y.appendChild(a);
-    document.getElementById("sonarCalc").appendChild(y);
+    var formTag = document.createElement('form');
+    var divA = document.createElement('div');
+    var deleteButton = document.createElement('button');
+    var divChecksA = document.createElement('div');
+    var labelChecks = document.createElement('label');
+    var labelChecksText = document.createTextNode("Number Of Checks");
+    var divChecksB = document.createElement('div');
+    var inputChecks = document.createElement('input');
+    formTag.setAttribute("class", "form-horizontal");
+    divA.setAttribute("class" , "jumbotron");
+    divA.setAttribute("style" , "padding-top:10px;padding-left:10px;");
+    deleteButton.setAttribute("id", "sonarDelete");
+    deleteButton.setAttribute("class", "btn btn-danger glyphicon glyphicon-remove-sign");
+    divChecksA.setAttribute("class" , "form-group");
+    labelChecks.setAttribute("for" , "name");
+    labelChecks.setAttribute("class" , "col-sm-3 control-label");
+    divChecksB.setAttribute("class" , "col-xs-1");
+    inputChecks.setAttribute("class" , "form-control col-xs-1");
+    inputChecks.setAttribute("id" , "checks" + ++counter);
+    inputChecks.setAttribute("type" , "number");
+    inputChecks.setAttribute("min" , "1");
+    formTag.appendChild(divA);
+    divA.appendChild(deleteButton);
+    divA.appendChild(divChecksA);
+    divChecksA.appendChild(labelChecks);
+    labelChecks.appendChild(labelChecksText);
+    divChecksA.appendChild(divChecksB);
+    divChecksB.appendChild(inputChecks);
+    document.getElementById("sonarCalc").appendChild(formTag);
     return false;
-}*/
+}
 
-// GLOBAL VARIABLES 
-var checkTotal = document.getElementById('checks')
-var checkTotal = document.getElementById('smsNotify')
-var checkTotal = document.getElementById('pushNotify')
-var checkTotal = document.getElementById('sel1')
-var checkTotal = document.getElementById('sel2')
-var checkTotal = document.getElementById('sel3')
-var checkTotal = document.getElementById('northAmE')
-var checkTotal = document.getElementById('northAmW')
-var checkTotal = document.getElementById('northAmC')
-var checkTotal = document.getElementById('europe')
-var checkTotal = document.getElementById('asiaPac')
-var checkTotal = document.getElementById('oceania')
-
-//FORM SUBMIT 
-
-
+// counter for ID
+// divA.setAttribute("style" , "user" + ++counter);
 
 //Adding A New Check
-var counter = 0;
+/*var counter = 0;
 $('#addCheck').click(function() {
     $('#group1').after('<form class="form-horizontal">\
                         <div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
-                        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete'+counter+'"></button>\
+                        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Number Of Checks</label>\
                                 <div class="col-xs-1">\
@@ -290,8 +290,11 @@ $('#addCheck').click(function() {
                         </div>\
                          </form>');
                          counter ++;
-                            return false;
-});
+                         return false;
+                        
+                        
+});*/
+
 
 //BUTTON ACTION jQuery
 $('#sonarCalc').on('click','#sonarDelete',function() {
