@@ -177,7 +177,8 @@ $('.panel-group').on('shown.bs.collapse', toggleIcon);
 
 
 /*------------------------------------------Constellix Sonar------------------------------------------------------*/
-/*var counter = 0;
+var counter = 0;
+var checkInput = null;
 addCheck.onclick = function() {
     var formTag = document.createElement('form');
     var divA = document.createElement('div');
@@ -208,9 +209,17 @@ addCheck.onclick = function() {
     divChecksA.appendChild(divChecksB);
     divChecksB.appendChild(inputChecks);
     document.getElementById("sonarCalc").appendChild(formTag);
+    checkInput = inputChecks;
     return false;
-}*/
+};
 
+sonarTotal.onclick = function() {
+    for (var i = 1; i <= 100; i++) {
+    var checkNew = document.getElementById('checks'+ i).value;
+    alert(checkNew);
+    };
+    return false;
+};
 
 
 
@@ -218,7 +227,7 @@ addCheck.onclick = function() {
 // divA.setAttribute("style" , "user" + ++counter);
 
 //Adding A New Check
-var counter = 0;
+/*var counter = 0;
 $('#addCheck').click(function() {
     $('#group1').after('<form class="form-horizontal">\
                         <div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
@@ -292,18 +301,18 @@ $('#addCheck').click(function() {
                             </div>\
                         </div>\
                          </form>');
-                         counter ++;
-                         return false;
-                        
-                        
-});
+                         counter ++;    
+                         return false;          
+});*/
 
 
-sonarTotal.onclick = function(form) {
+
+
+/*sonarTotal.onclick = function(form) {
     for (var i = 1; i <= 3; i++) {
         alert(form[checks+i].value);  // Here's where my problem is..
     }
-}
+}*/
 
 //BUTTON ACTION jQuery
 $('#sonarCalc').on('click','#sonarDelete',function() {
