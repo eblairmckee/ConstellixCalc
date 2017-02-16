@@ -177,7 +177,7 @@ $('.panel-group').on('shown.bs.collapse', toggleIcon);
 
 
 /*------------------------------------------Constellix Sonar------------------------------------------------------*/
-var counter = 0;
+/*var counter = 0;
 var checkInput = null;
 addCheck.onclick = function() {
     var formTag = document.createElement('form');
@@ -211,14 +211,28 @@ addCheck.onclick = function() {
     document.getElementById("sonarCalc").appendChild(formTag);
     checkInput = inputChecks;
     return false;
-};
+};*/
 
 sonarTotal.onclick = function() {
-    for (var i = 1; i <= 100; i++) {
-    var checkNew = document.getElementById('checks'+ i).value;
-    alert(checkNew);
-    };
+    for (var i = 0; i <= 100; i++) {
+    var checkTotal = document.getElementById('checks'+ i).value;
+    var smsTotal = document.getElementById('smsNotify' + i).value;
+    var pushTotal = document.getElementById('pushNotify' + i).value;
+    var typeTotal = document.getElementById('checkType' + i).value;
+    var intervalTotla = document.getElementById('interval' + i).value;
+    var policyTotal = document.getElementById('intPolicy' + i).value;
+    var monTotal = document.getElementById('northAmE' + i).checked;
+    var monTotal = document.getElementById('northAmW' + i).checked;
+    var monTotal = document.getElementById('NorthAmC' + i).checked;
+    var monTotal = document.getElementById('europe' + i).checked;
+    var monTotal = document.getElementById('asiaPac' + i).checked;
+    var monTotal = document.getElementById('oceania' + i).checked;
+    
+    
+
     return false;
+};
+return false;
 };
 
 
@@ -227,7 +241,7 @@ sonarTotal.onclick = function() {
 // divA.setAttribute("style" , "user" + ++counter);
 
 //Adding A New Check
-/*var counter = 0;
+var counter = 0;
 $('#addCheck').click(function() {
     $('#group1').after('<form class="form-horizontal">\
                         <div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
@@ -253,7 +267,7 @@ $('#addCheck').click(function() {
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Check Type</label>\
                                 <div class="col-sm-2">\
-                                        <select class="form-control" id="sel'+counter+'">\
+                                        <select class="form-control" id="checkType'+counter+'">\
                                             <option>HTTP</option>\
                                             <option>HTTPS</option>\
                                             <option>TCP</option>\
@@ -266,7 +280,7 @@ $('#addCheck').click(function() {
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Check Interval</label>\
                                 <div class="col-sm-2">\
-                                        <select class="form-control" id="sel'+counter+'" >\
+                                        <select class="form-control" id="interval'+counter+'" >\
                                             <option>30 sec</option>\
                                             <option>60 sec</option>\
                                             <option>5 min</option>\
@@ -280,7 +294,7 @@ $('#addCheck').click(function() {
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Check Interval Policy</label>\
                                 <div class="col-sm-2">\
-                                        <select class="form-control" id="sel'+counter+'">\
+                                        <select class="form-control" id="intPolicy'+counter+'">\
                                             <option>Simultaneous</option>\
                                             <option>Once Per Site</option>\
                                         </select>\
@@ -289,13 +303,13 @@ $('#addCheck').click(function() {
                             <div class="container">\
                                 <div class="row">\
                                 <label for="name" class="col-sm-3 control-label">Monitoring Locatins</label>\
-                                    <div class="form-check col-md-7">\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="northAmE'+counter+'"> North America East <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="northAmW'+counter+'"> North America West <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="NorthAmC'+counter+'"> North America Central <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="europe'+counter+'"> Europe <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="asiaPac'+counter+'"> Asia Pasific <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input id="oceania'+counter+'"> Oceania <br></label>\
+                                    <div class="form-check col-md-7" id="monLocations '+counter+'">\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="northAmE'+counter+'"> North America East <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="northAmW'+counter+'"> North America West <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="NorthAmC'+counter+'"> North America Central <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="europe'+counter+'"> Europe <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="asiaPac'+counter+'"> Asia Pasific <br></label>\
+                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="oceania'+counter+'"> Oceania <br></label>\
                                     </div>\
                                 </div>\
                             </div>\
@@ -303,7 +317,7 @@ $('#addCheck').click(function() {
                          </form>');
                          counter ++;    
                          return false;          
-});*/
+});
 
 
 
