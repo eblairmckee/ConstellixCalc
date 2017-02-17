@@ -256,6 +256,7 @@ sonarTotal.onclick = function() {
      console.log(typeTotal);
     i++;
 };
+    i = 0;
 return false;
 };
 
