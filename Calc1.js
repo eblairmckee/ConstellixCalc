@@ -212,15 +212,15 @@ addCheck.onclick = function() {
     checkInput = inputChecks;
     return false;
 };*/
-
+i = 0;
 sonarTotal.onclick = function() {
-    for (var i = 0; i <= 100; i++) {
-    var checkTotal = document.getElementById('checks'+ i).value;
-    var smsTotal = document.getElementById('smsNotify' + i).value * .01;
-    var pushTotal = document.getElementById('pushNotify' + i).value * .001;
+    while (i <= counter - 1) {
+    //var checkTotal = document.getElementById('checks'+ i).value;
+    //var smsTotal = document.getElementById('smsNotify' + i).value;
+    //var pushTotal = document.getElementById('pushNotify' + i).value;
     var typeTotal = document.getElementById('checkType' + i).value;
-    var intervalTotal = document.getElementById('interval' + i).value;
-    var policyTotal = document.getElementById('intPolicy' + i).value;
+    //var intervalTotal = document.getElementById('interval' + i).value;
+    //var policyTotal = document.getElementById('intPolicy' + i).value;
     //var monTotal1 = document.getElementById('northAmE' + i).checked;
     //var monTotal2 = document.getElementById('northAmW' + i).checked;
     //var monTotal3 = document.getElementById('NorthAmC' + i).checked;
@@ -229,21 +229,32 @@ sonarTotal.onclick = function() {
     //var monTotal6 = document.getElementById('oceania' + i).checked;
 
     if (typeTotal == "DNS" || typeTotal == "FTP" || typeTotal == "SSH" || typeTotal == "HTTP" || typeTotal == "SMTP" || typeTotal == "TCP") {
-    var monTotal1 = document.getElementById('northAmE' + i).checked ? .04:0;
-    var monTotal2 = document.getElementById('northAmW' + i).checked ? .04:0;
-    var monTotal3 = document.getElementById('NorthAmC' + i).checked ? .04:0;
-    var monTotal4 = document.getElementById('europe' + i).checked ? .04:0;
-    var monTotal5 = document.getElementById('asiaPac' + i).checked ? .08:0;
-    var monTotal6 = document.getElementById('oceania' + i).checked ? .12:0;
+        monTotal1 = document.getElementById('northAmE' + i).checked ? .04:0;
+        monTotal2 = document.getElementById('northAmW' + i).checked ? .04:0;
+        monTotal3 = document.getElementById('NorthAmC' + i).checked ? .04:0;
+        monTotal4 = document.getElementById('europe' + i).checked ? .04:0;
+        monTotal5 = document.getElementById('asiaPac' + i).checked ? .08:0;
+        monTotal6 = document.getElementById('oceania' + i).checked ? .12:0;
     };
     
-    if (intervalTotal == "30 sec") {
+    /*if (intervalTotal == "30 sec") {
         intervalTotal = 86400;
-    } if else (intervalTotal == "60 sec") {
-        
-    }
-
-    return false;
+    } else if (intervalTotal == "60 sec") {
+        intervalTotal = 43200;
+    } else if (intervalTotal == "5 min") {
+        intervalTotal = 8640;
+    } else if (intervalTotal == "10 min") {
+        intervalTotal = 4320;
+    } else if (intervalTotal == "30 min") {
+        intervalTotal = 1440;
+    } else if (intervalTotal == "12 hrs") {
+        intervalTotal = 60;
+    } else if (intervalTotal == "24 hrs") {
+        intervalTotal = 30;
+    };*/
+     
+     console.log(typeTotal);
+    i++;
 };
 return false;
 };
