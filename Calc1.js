@@ -214,7 +214,7 @@ addCheck.onclick = function() {
 };*/
 i = 0;
 sonarTotal.onclick = function() {
-    while (i <= counter - 1) {
+    while (i <= calcNum - 1) {
     //var checkTotal = document.getElementById('checks'+ i).value;
     //var smsTotal = document.getElementById('smsNotify' + i).value;
     //var pushTotal = document.getElementById('pushNotify' + i).value;
@@ -228,34 +228,36 @@ sonarTotal.onclick = function() {
     //var monTotal5 = document.getElementById('asiaPac' + i).checked;
     //var monTotal6 = document.getElementById('oceania' + i).checked;
 
-    if (typeTotal == "DNS" || typeTotal == "FTP" || typeTotal == "SSH" || typeTotal == "HTTP" || typeTotal == "SMTP" || typeTotal == "TCP") {
+    //Check Type Variables
+    if (typeTotal == null) {
+        monTotal1 = 0;
+        monTotal2 = 0;
+        monTotal3 = 0;
+        monTotal4 = 0;
+        monTotal5 = 0;
+        monTotal6 = 0;
+    } else if (typeTotal == "DNS" || typeTotal == "FTP" || typeTotal == "SSH" || typeTotal == "HTTP" || typeTotal == "SMTP" || typeTotal == "TCP") {
         monTotal1 = document.getElementById('northAmE' + i).checked ? .04:0;
         monTotal2 = document.getElementById('northAmW' + i).checked ? .04:0;
         monTotal3 = document.getElementById('NorthAmC' + i).checked ? .04:0;
         monTotal4 = document.getElementById('europe' + i).checked ? .04:0;
         monTotal5 = document.getElementById('asiaPac' + i).checked ? .08:0;
         monTotal6 = document.getElementById('oceania' + i).checked ? .12:0;
-    };
-
-    if (typeTotal == "HTTPS"){
+    } else if (typeTotal == "HTTPS"){
         monTotal1 = document.getElementById('northAmE' + i).checked ? .08:0;
         monTotal2 = document.getElementById('northAmW' + i).checked ? .08:0;
         monTotal3 = document.getElementById('NorthAmC' + i).checked ? .08:0;
         monTotal4 = document.getElementById('europe' + i).checked ? .08:0;
         monTotal5 = document.getElementById('asiaPac' + i).checked ? .16:0;
         monTotal6 = document.getElementById('oceania' + i).checked ? .24:0;
-    };
-
-    if (typeTotal == "HTTP Waterfall"){
+    } else if (typeTotal == "HTTP Waterfall"){
         monTotal1 = document.getElementById('northAmE' + i).checked ? 50:0;
         monTotal2 = document.getElementById('northAmW' + i).checked ? 50:0;
         monTotal3 = document.getElementById('NorthAmC' + i).checked ? 50:0;
         monTotal4 = document.getElementById('europe' + i).checked ? 50:0;
         monTotal5 = document.getElementById('asiaPac' + i).checked ? 100:0;
         monTotal6 = document.getElementById('oceania' + i).checked ? 150:0;
-    };
-
-    if (typeTotal == "HTTPS Waterfall"){
+    } else if (typeTotal == "HTTPS Waterfall"){
         monTotal1 = document.getElementById('northAmE' + i).checked ? 60:0;
         monTotal2 = document.getElementById('northAmW' + i).checked ? 60:0;
         monTotal3 = document.getElementById('NorthAmC' + i).checked ? 60:0;
@@ -264,16 +266,12 @@ sonarTotal.onclick = function() {
         monTotal6 = document.getElementById('oceania' + i).checked ? 160:0;
     };
 
-    if (typeTotal == "HTTPS"){
-        monTotal1 = document.getElementById('northAmE' + i).checked ? .08:0;
-        monTotal2 = document.getElementById('northAmW' + i).checked ? .08:0;
-        monTotal3 = document.getElementById('NorthAmC' + i).checked ? .08:0;
-        monTotal4 = document.getElementById('europe' + i).checked ? .08:0;
-        monTotal5 = document.getElementById('asiaPac' + i).checked ? .16:0;
-        monTotal6 = document.getElementById('oceania' + i).checked ? .24:0;
-    };
-    
-    if (intervalTotal == "30 sec") {
+
+//Check Interval Variables
+
+    if (intervalTotal == null) {
+        intervalTotal = 0;
+    } else if (intervalTotal == "30 sec") {
         intervalTotal = 86400;
     } else if (intervalTotal == "60 sec") {
         intervalTotal = 43200;
@@ -289,7 +287,12 @@ sonarTotal.onclick = function() {
         intervalTotal = 30;
     };
      
-     console.log(typeTotal);
+     console.log(monTotal1);
+     console.log(monTotal2);
+     console.log(monTotal3);
+     console.log(monTotal4);
+     console.log(monTotal5);
+     console.log(monTotal6);
      console.log(intervalTotal);
     i++;
 };
@@ -304,6 +307,7 @@ return false;
 
 //Adding A New Check
 var counter = 0;
+var calcNum = 0;
 $('#addCheck').click(function() {
     $('#group1').after('<form class="form-horizontal">\
                         <div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
@@ -377,7 +381,8 @@ $('#addCheck').click(function() {
                             </div>\
                         </div>\
                          </form>');
-                         counter ++;    
+                         counter ++;
+                         calcNum ++;  
                          return false;          
 });
 
@@ -393,5 +398,6 @@ $('#addCheck').click(function() {
 //BUTTON ACTION jQuery
 $('#sonarCalc').on('click','#sonarDelete',function() {
     $(this).parent().remove();
+    calcNum--;
 });
 
