@@ -219,7 +219,7 @@ sonarTotal.onclick = function() {
     //var smsTotal = document.getElementById('smsNotify' + i).value;
     //var pushTotal = document.getElementById('pushNotify' + i).value;
     var typeTotal = document.getElementById('checkType' + i).value;
-    //var intervalTotal = document.getElementById('interval' + i).value;
+    var intervalTotal = document.getElementById('interval' + i).value;
     //var policyTotal = document.getElementById('intPolicy' + i).value;
     //var monTotal1 = document.getElementById('northAmE' + i).checked;
     //var monTotal2 = document.getElementById('northAmW' + i).checked;
@@ -236,8 +236,44 @@ sonarTotal.onclick = function() {
         monTotal5 = document.getElementById('asiaPac' + i).checked ? .08:0;
         monTotal6 = document.getElementById('oceania' + i).checked ? .12:0;
     };
+
+    if (typeTotal == "HTTPS"){
+        monTotal1 = document.getElementById('northAmE' + i).checked ? .08:0;
+        monTotal2 = document.getElementById('northAmW' + i).checked ? .08:0;
+        monTotal3 = document.getElementById('NorthAmC' + i).checked ? .08:0;
+        monTotal4 = document.getElementById('europe' + i).checked ? .08:0;
+        monTotal5 = document.getElementById('asiaPac' + i).checked ? .16:0;
+        monTotal6 = document.getElementById('oceania' + i).checked ? .24:0;
+    };
+
+    if (typeTotal == "HTTP Waterfall"){
+        monTotal1 = document.getElementById('northAmE' + i).checked ? 50:0;
+        monTotal2 = document.getElementById('northAmW' + i).checked ? 50:0;
+        monTotal3 = document.getElementById('NorthAmC' + i).checked ? 50:0;
+        monTotal4 = document.getElementById('europe' + i).checked ? 50:0;
+        monTotal5 = document.getElementById('asiaPac' + i).checked ? 100:0;
+        monTotal6 = document.getElementById('oceania' + i).checked ? 150:0;
+    };
+
+    if (typeTotal == "HTTPS Waterfall"){
+        monTotal1 = document.getElementById('northAmE' + i).checked ? 60:0;
+        monTotal2 = document.getElementById('northAmW' + i).checked ? 60:0;
+        monTotal3 = document.getElementById('NorthAmC' + i).checked ? 60:0;
+        monTotal4 = document.getElementById('europe' + i).checked ? 60:0;
+        monTotal5 = document.getElementById('asiaPac' + i).checked ? 160:0;
+        monTotal6 = document.getElementById('oceania' + i).checked ? 160:0;
+    };
+
+    if (typeTotal == "HTTPS"){
+        monTotal1 = document.getElementById('northAmE' + i).checked ? .08:0;
+        monTotal2 = document.getElementById('northAmW' + i).checked ? .08:0;
+        monTotal3 = document.getElementById('NorthAmC' + i).checked ? .08:0;
+        monTotal4 = document.getElementById('europe' + i).checked ? .08:0;
+        monTotal5 = document.getElementById('asiaPac' + i).checked ? .16:0;
+        monTotal6 = document.getElementById('oceania' + i).checked ? .24:0;
+    };
     
-    /*if (intervalTotal == "30 sec") {
+    if (intervalTotal == "30 sec") {
         intervalTotal = 86400;
     } else if (intervalTotal == "60 sec") {
         intervalTotal = 43200;
@@ -251,9 +287,10 @@ sonarTotal.onclick = function() {
         intervalTotal = 60;
     } else if (intervalTotal == "24 hrs") {
         intervalTotal = 30;
-    };*/
+    };
      
      console.log(typeTotal);
+     console.log(intervalTotal);
     i++;
 };
     i = 0;
