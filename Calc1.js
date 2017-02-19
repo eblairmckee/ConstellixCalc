@@ -214,12 +214,12 @@ addCheck.onclick = function() {
 };*/
 i = 0;
 sonarTotal.onclick = function() {
-    while (i <= calcNum - 1) {
+    while (i <= counter - 1) {
     //var checkTotal = document.getElementById('checks'+ i).value;
     //var smsTotal = document.getElementById('smsNotify' + i).value;
     //var pushTotal = document.getElementById('pushNotify' + i).value;
-    var typeTotal = document.getElementById('checkType' + i).value;
-    var intervalTotal = document.getElementById('interval' + i).value;
+    var typeTotal;
+    var intervalTotal;
     //var policyTotal = document.getElementById('intPolicy' + i).value;
     //var monTotal1 = document.getElementById('northAmE' + i).checked;
     //var monTotal2 = document.getElementById('northAmW' + i).checked;
@@ -227,6 +227,18 @@ sonarTotal.onclick = function() {
     //var monTotal4 = document.getElementById('europe' + i).checked;
     //var monTotal5 = document.getElementById('asiaPac' + i).checked;
     //var monTotal6 = document.getElementById('oceania' + i).checked;
+    typeElement = document.getElementById('checkType' + i);
+    if (typeElement != null) {
+        typeTotal = typeElement.value;
+    } else {
+        typeTotal = null;
+    };
+    intervalElement = document.getElementById('interval' + i);
+    if (intervalElement != null) {
+        intervalTotal = intervalElement.value;
+    } else {
+        intervalTotal = null;
+    };
 
     //Check Type Variables
     if (typeTotal == null) {
@@ -307,7 +319,6 @@ return false;
 
 //Adding A New Check
 var counter = 0;
-var calcNum = 0;
 $('#addCheck').click(function() {
     $('#group1').after('<form class="form-horizontal">\
                         <div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
@@ -381,8 +392,7 @@ $('#addCheck').click(function() {
                             </div>\
                         </div>\
                          </form>');
-                         counter ++;
-                         calcNum ++;  
+                         counter ++; 
                          return false;          
 });
 
@@ -398,6 +408,5 @@ $('#addCheck').click(function() {
 //BUTTON ACTION jQuery
 $('#sonarCalc').on('click','#sonarDelete',function() {
     $(this).parent().remove();
-    calcNum--;
 });
 
