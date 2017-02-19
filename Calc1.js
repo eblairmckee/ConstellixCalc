@@ -215,9 +215,9 @@ addCheck.onclick = function() {
 i = 0;
 sonarTotal.onclick = function() {
     while (i <= counter - 1) {
-    //var checkTotal = document.getElementById('checks'+ i).value;
-    //var smsTotal = document.getElementById('smsNotify' + i).value;
-    //var pushTotal = document.getElementById('pushNotify' + i).value;
+    var checkTotal;
+    var smsTotal;
+    var pushTotal;
     var typeTotal;
     var intervalTotal;
     //var policyTotal = document.getElementById('intPolicy' + i).value;
@@ -227,6 +227,24 @@ sonarTotal.onclick = function() {
     //var monTotal4 = document.getElementById('europe' + i).checked;
     //var monTotal5 = document.getElementById('asiaPac' + i).checked;
     //var monTotal6 = document.getElementById('oceania' + i).checked;
+    checkElement = document.getElementById('checks'+ i);
+    if (checkElement != null) {
+        checkTotal = checkElement.value;
+    } else {
+        checkTotal = null;
+    };
+    smsElement  = document.getElementById('smsNotify' + i);
+    if (smsElement != null) {
+        smsTotal = smsElement.value;
+    } else {
+        smsTotal = null;
+    };
+    pushElement = document.getElementById('pushNotify' + i);
+    if (pushElement != null) { 
+        pushTotal = pushElement.value;
+    } else {
+        pushTotal = null;
+    };
     typeElement = document.getElementById('checkType' + i);
     if (typeElement != null) {
         typeTotal = typeElement.value;
@@ -298,7 +316,9 @@ sonarTotal.onclick = function() {
     } else if (intervalTotal == "24 hrs") {
         intervalTotal = 30;
     };
-     
+     console.log(checkTotal);
+     console.log(smsTotal);
+     console.log(pushTotal);
      console.log(monTotal1);
      console.log(monTotal2);
      console.log(monTotal3);
