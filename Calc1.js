@@ -300,7 +300,7 @@ sonarTotal.onclick = function() {
         monTotal5 = document.getElementById('asiaPac' + i).checked ? 160:0;
         monTotal6 = document.getElementById('oceania' + i).checked ? 160:0;
     };
-
+    
 
 //Check Interval Variables
 
