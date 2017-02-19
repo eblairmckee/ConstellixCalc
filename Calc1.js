@@ -220,7 +220,7 @@ sonarTotal.onclick = function() {
     var pushTotal;
     var typeTotal;
     var intervalTotal;
-    //var policyTotal = document.getElementById('intPolicy' + i).value;
+    var policyTotal;
     //var monTotal1 = document.getElementById('northAmE' + i).checked;
     //var monTotal2 = document.getElementById('northAmW' + i).checked;
     //var monTotal3 = document.getElementById('NorthAmC' + i).checked;
@@ -257,7 +257,12 @@ sonarTotal.onclick = function() {
     } else {
         intervalTotal = null;
     };
-
+    policyElement = document.getElementById('intPolicy' + i);
+    if (policyElement != null) {
+        policyTotal = policyElement.value;
+    } else {
+        policyTotal = null;
+    };
     //Check Type Variables
     if (typeTotal == null) {
         monTotal1 = 0;
