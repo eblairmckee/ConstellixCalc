@@ -11,21 +11,24 @@ var poolConfTotal = document.getElementById('poolConf');
 var poolAppTotal = document.getElementById('poolApp');
 var userTotal = document.getElementById('users');
 var form = document.getElementById('calcform');
+var dnsTotal = 0;
+var monthlyDnsTotal = 0;
 var monthlyTotal = 0;
+
 
 // Domain Calculation
 function domainNumber(num) {
     if (num > 0 && num < 2){
-       monthlyTotal += 5; 
+       dnsTotal += 5; 
     } else if (num >= 2 && num < 26) {
        var oneDomain = num - 1;
        var total = oneDomain * .5 + 5;
-       monthlyTotal += total;
+       dnsTotal += total;
     } else if (num > 25){
         var oneDomain = num - 1;
         var twentyfiveDomain = oneDomain - 24;
         var total = twentyfiveDomain * .1 + 17;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else 
        alert("Please enter number of domains");
 };
@@ -35,101 +38,102 @@ function recordNumber(num) {
     if (num > 100) {
         var newNum = num - 100;
         total = Math.round(newNum/100) * .5;
-         monthlyTotal += total;
+         dnsTotal += total;
    
     } else
-        monthlyTotal += 0;  
+        dnsTotal += 0;  
 };
 
 //GTD Calculation
 function gtdNumber(num) {
     if (num == 1) {
-        monthlyTotal += 5; 
+        dnsTotal += 5; 
     } else if (num > 1 && num < 100) {
         var total = num - 1 + 5;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else
-        monthlyTotal += 0;
+        dnsTotal += 0;
 };
 
 //Geo Proximity Configured
 function geoProxConfNumber(num) {
     if (num > .99) {
         var total = num * .01;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else
-        monthlyTotal += 0;
+        dnsTotal += 0;
 };
 
 //Geo Proximity Applied
 function geoProxAppNumber(num) {
     if (num > .99) {
         var total = num * .05;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else
-        monthlyTotal += 0;
+        dnsTotal += 0;
 };
 
 //Geo Filter Configured
 function geoFilterConfNumber(num) {
     if (num > .99) {
         var total = num * .01;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else
-        monthlyTotal += 0;
+        dnsTotal += 0;
 };
 
 //Geo Filter Applied 
 function geoFilterAppNumber(num) {
     if (num > .99) {
         var total = num * .05;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else
-    monthlyTotal += 0;
+    dnsTotal += 0;
 };
 
 //ANAME 
 function anameNumber(num) {
     if (num > .99) {
         var total = num * .1;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else
-        monthlyTotal += 0;
+        dnsTotal += 0;
 };
 
 //Pool Configured 
 function poolConfNumber(num) {
     if (num > .99) {
         var total = num * .01;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else
-        monthlyTotal += 0;
+        dnsTotal += 0;
 };
 
 //Pool Applied 
 function poolAppNumber(num) {
     if (num > .99) {
         var total = num * .1;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else
-        monthlyTotal += 0;
+        dnsTotal += 0;
 };
 
 //Additiona User Accounts
 function userNumber(num) {
     if (num > 0 && num <= 10) {
         var total = num * 2;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else if (num > 10 && num <= 100) {
         var newNum = num - 10;
         var total = newNum * 1 + 20;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else if (num > 100) {
         var total = (num - 100) * .5 + 110;
-        monthlyTotal += total;
+        dnsTotal += total;
     } else
-        monthlyTotal += 0;
+        dnsTotal += 0;
 };
+
 
 // First Submit Button (DNS Calc)
 buttonTotal.onclick = function(){
@@ -144,8 +148,10 @@ buttonTotal.onclick = function(){
     poolConfNumber(poolConfTotal.value);
     poolAppNumber(poolAppTotal.value);
     userNumber(userTotal.value);
+    monthlyDnsTotal = dnsTotal;
+    monthlyTotal = monthlyDnsTotal + 10;
     document.getElementById("total").innerHTML = "Total:" + " " + "$" + monthlyTotal.toFixed(2);
-    monthlyTotal = 0;
+    dnsTotal = 0;
     return false;
 };
 
@@ -162,10 +168,12 @@ clearButton.onclick = function(){
   document.getElementById("poolConf").value="";
   document.getElementById("poolApp").value="";
   document.getElementById("users").value="";
+  monthlyTotal = monthlyTotal - monthlyDnsTotal;
+  document.getElementById("total").innerHTML = "Total:" + " " + "$" + monthlyTotal.toFixed(2);
   return false;
 };
 
-
+//Plus Minus Symbol
 function toggleIcon(e) {
     $(e.target)
         .prev('.panel-heading')
@@ -212,6 +220,8 @@ addCheck.onclick = function() {
     checkInput = inputChecks;
     return false;
 };*/
+
+//Submit Button -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 i = 0;
 sonarTotal.onclick = function() {
     while (i <= counter - 1) {
@@ -307,30 +317,21 @@ sonarTotal.onclick = function() {
     if (intervalTotal == null) {
         intervalTotal = 0;
     } else if (intervalTotal == "30 sec") {
-        intervalTotal = 86400;
+        intervalTotal = 86.4;
     } else if (intervalTotal == "60 sec") {
-        intervalTotal = 43200;
+        intervalTotal = 43.2;
     } else if (intervalTotal == "5 min") {
-        intervalTotal = 8640;
+        intervalTotal = 8.64;
     } else if (intervalTotal == "10 min") {
-        intervalTotal = 4320;
+        intervalTotal = 4.32;
     } else if (intervalTotal == "30 min") {
-        intervalTotal = 1440;
+        intervalTotal = 1.44;
     } else if (intervalTotal == "12 hrs") {
-        intervalTotal = 60;
+        intervalTotal = .06;
     } else if (intervalTotal == "24 hrs") {
-        intervalTotal = 30;
+        intervalTotal = .03;
     };
-     console.log(checkTotal);
-     console.log(smsTotal);
-     console.log(pushTotal);
-     console.log(monTotal1);
-     console.log(monTotal2);
-     console.log(monTotal3);
-     console.log(monTotal4);
-     console.log(monTotal5);
-     console.log(monTotal6);
-     console.log(intervalTotal);
+     
     i++;
 };
     i = 0;
