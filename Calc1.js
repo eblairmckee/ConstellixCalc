@@ -149,7 +149,7 @@ buttonTotal.onclick = function(){
     poolAppNumber(poolAppTotal.value);
     userNumber(userTotal.value);
     monthlyDnsTotal = dnsTotal;
-    monthlyTotal = monthlyDnsTotal + 10;
+    monthlyTotal = monthlyDnsTotal + 10; //  10 is a place holder for the Sonar Total
     document.getElementById("total").innerHTML = "Total:" + " " + "$" + monthlyTotal.toFixed(2);
     dnsTotal = 0;
     return false;
