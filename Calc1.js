@@ -16,29 +16,29 @@ var monthlyDnsTotal = 0;
 var monthlyTotal = 0;
 
 
-// Domain Calculation
+// Domain Calculation 
 function domainNumber(num) {
-    if (num > 0 && num < 2){
-       dnsTotal += 5; 
+  if (num > 0 && num < 2){
+      dnsTotal += 5; 
     } else if (num >= 2 && num < 26) {
-       var oneDomain = num - 1;
-       var total = oneDomain * .5 + 5;
-       dnsTotal += total;
+      var oneDomain = num - 1;
+      var total = oneDomain * .5 + 5;
+      dnsTotal += total;
     } else if (num > 25){
-        var oneDomain = num - 1;
-        var twentyfiveDomain = oneDomain - 24;
-        var total = twentyfiveDomain * .1 + 17;
-        dnsTotal += total;
+      var oneDomain = num - 1;
+      var twentyfiveDomain = oneDomain - 24;
+      var total = twentyfiveDomain * .1 + 17;
+      dnsTotal += total;
     } else 
        alert("Please enter number of domains");
 };
 
 // Record Calculation
 function recordNumber(num) {
-    if (num > 100) {
-        var newNum = num - 100;
-        total = Math.round(newNum/100) * .5;
-         dnsTotal += total;
+  if (num > 100) {
+      var newNum = num - 100;
+      total = Math.round(newNum/100) * .5;
+      dnsTotal += total;
    
     } else
         dnsTotal += 0;  
@@ -46,90 +46,90 @@ function recordNumber(num) {
 
 //GTD Calculation
 function gtdNumber(num) {
-    if (num == 1) {
-        dnsTotal += 5; 
+  if (num == 1) {
+      dnsTotal += 5; 
     } else if (num > 1 && num < 100) {
-        var total = num - 1 + 5;
-        dnsTotal += total;
+      var total = num - 1 + 5;
+      dnsTotal += total;
     } else
         dnsTotal += 0;
 };
 
 //Geo Proximity Configured
 function geoProxConfNumber(num) {
-    if (num > .99) {
-        var total = num * .01;
-        dnsTotal += total;
+  if (num > .99) {
+      var total = num * .01;
+      dnsTotal += total;
     } else
         dnsTotal += 0;
 };
 
 //Geo Proximity Applied
 function geoProxAppNumber(num) {
-    if (num > .99) {
-        var total = num * .05;
-        dnsTotal += total;
+  if (num > .99) {
+      var total = num * .05;
+      dnsTotal += total;
     } else
         dnsTotal += 0;
 };
 
 //Geo Filter Configured
 function geoFilterConfNumber(num) {
-    if (num > .99) {
-        var total = num * .01;
-        dnsTotal += total;
+  if (num > .99) {
+      var total = num * .01;
+      dnsTotal += total;
     } else
         dnsTotal += 0;
 };
 
 //Geo Filter Applied 
 function geoFilterAppNumber(num) {
-    if (num > .99) {
-        var total = num * .05;
-        dnsTotal += total;
+  if (num > .99) {
+      var total = num * .05;
+      dnsTotal += total;
     } else
     dnsTotal += 0;
 };
 
 //ANAME 
 function anameNumber(num) {
-    if (num > .99) {
-        var total = num * .1;
-        dnsTotal += total;
+  if (num > .99) {
+      var total = num * .1;
+      dnsTotal += total;
     } else
         dnsTotal += 0;
 };
 
 //Pool Configured 
 function poolConfNumber(num) {
-    if (num > .99) {
-        var total = num * .01;
-        dnsTotal += total;
+  if (num > .99) {
+      var total = num * .01;
+      dnsTotal += total;
     } else
         dnsTotal += 0;
 };
 
 //Pool Applied 
 function poolAppNumber(num) {
-    if (num > .99) {
-        var total = num * .1;
-        dnsTotal += total;
+  if (num > .99) {
+      var total = num * .1;
+      dnsTotal += total;
     } else
         dnsTotal += 0;
 };
 
 //Additiona User Accounts
 function userNumber(num) {
-    if (num > 0 && num <= 10) {
-        var total = num * 2;
-        dnsTotal += total;
+  if (num > 0 && num <= 10) {
+      var total = num * 2;
+      dnsTotal += total;
     } else if (num > 10 && num <= 100) {
-        var newNum = num - 10;
-        var total = newNum * 1 + 20;
-        dnsTotal += total;
+      var newNum = num - 10;
+      var total = newNum * 1 + 20;
+      dnsTotal += total;
     } else if (num > 100) {
-        var total = (num - 100) * .5 + 110;
-        dnsTotal += total;
+      var total = (num - 100) * .5 + 110;
+      dnsTotal += total;
     } else
         dnsTotal += 0;
 };
@@ -137,22 +137,22 @@ function userNumber(num) {
 
 // First Submit Button (DNS Calc)
 buttonTotal.onclick = function(){
-    domainNumber(domainTotal.value);
-    recordNumber(recordTotal.value);
-    gtdNumber(gtdTotal.value);
-    geoProxConfNumber(geoProxConfTotal.value);
-    geoProxAppNumber(geoProxAppTotal.value);
-    geoFilterConfNumber(geoFilterConfTotal.value);
-    geoFilterAppNumber(geoFilterAppTotal.value);
-    anameNumber(anameTotal.value);
-    poolConfNumber(poolConfTotal.value);
-    poolAppNumber(poolAppTotal.value);
-    userNumber(userTotal.value);
-    monthlyDnsTotal = dnsTotal;
-    monthlyTotal = monthlyDnsTotal + 10; //  10 is a place holder for the Sonar Total
-    document.getElementById("total").innerHTML = "Total:" + " " + "$" + monthlyTotal.toFixed(2);
-    dnsTotal = 0;
-    return false;
+  domainNumber(domainTotal.value);
+  recordNumber(recordTotal.value);
+  gtdNumber(gtdTotal.value);
+  geoProxConfNumber(geoProxConfTotal.value);
+  geoProxAppNumber(geoProxAppTotal.value);
+  geoFilterConfNumber(geoFilterConfTotal.value);
+  geoFilterAppNumber(geoFilterAppTotal.value);
+  anameNumber(anameTotal.value);
+  poolConfNumber(poolConfTotal.value);
+  poolAppNumber(poolAppTotal.value);
+  userNumber(userTotal.value);
+  monthlyDnsTotal = dnsTotal;
+  monthlyTotal = monthlyDnsTotal + 10; //  10 is a place holder for the Sonar Total
+  document.getElementById("total").innerHTML = "Total:" + " " + "$" + monthlyTotal.toFixed(2);
+  dnsTotal = 0;
+  return false;
 };
 
 // First Clear Button
@@ -175,7 +175,7 @@ clearButton.onclick = function(){
 
 //Plus Minus Symbol
 function toggleIcon(e) {
-    $(e.target)
+  $(e.target)
         .prev('.panel-heading')
         .find(".more-less")
         .toggleClass('glyphicon-plus glyphicon-minus');
@@ -224,118 +224,118 @@ addCheck.onclick = function() {
 //Submit Button -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 i = 0;
 sonarTotal.onclick = function() {
-    while (i <= counter - 1) {
-    var checkTotal;
-    var smsTotal;
-    var pushTotal;
-    var typeTotal;
-    var intervalTotal;
-    var policyTotal;
+  while (i <= counter - 1) {
+      var checkTotal;
+      var smsTotal;
+      var pushTotal;
+      var typeTotal;
+      var intervalTotal;
+      var policyTotal;
     //var monTotal1 = document.getElementById('northAmE' + i).checked;
     //var monTotal2 = document.getElementById('northAmW' + i).checked;
     //var monTotal3 = document.getElementById('NorthAmC' + i).checked;
     //var monTotal4 = document.getElementById('europe' + i).checked;
     //var monTotal5 = document.getElementById('asiaPac' + i).checked;
     //var monTotal6 = document.getElementById('oceania' + i).checked;
-    checkElement = document.getElementById('checks'+ i);
-    if (checkElement != null) {
-        checkTotal = checkElement.value;
+      checkElement = document.getElementById('checks'+ i);
+      if (checkElement != null) {
+      checkTotal = checkElement.value;
     } else {
-        checkTotal = null;
+      checkTotal = null;
     };
-    smsElement  = document.getElementById('smsNotify' + i);
-    if (smsElement != null) {
+      smsElement  = document.getElementById('smsNotify' + i);
+      if (smsElement != null) {
         smsTotal = smsElement.value;
-    } else {
+      } else {
         smsTotal = null;
-    };
-    pushElement = document.getElementById('pushNotify' + i);
-    if (pushElement != null) { 
-        pushTotal = pushElement.value;
+      };
+      pushElement = document.getElementById('pushNotify' + i);
+      if (pushElement != null) { 
+      pushTotal = pushElement.value;
     } else {
-        pushTotal = null;
+      pushTotal = null;
     };
-    typeElement = document.getElementById('checkType' + i);
-    if (typeElement != null) {
-        typeTotal = typeElement.value;
+      typeElement = document.getElementById('checkType' + i);
+      if (typeElement != null) {
+      typeTotal = typeElement.value;
     } else {
-        typeTotal = null;
+      typeTotal = null;
     };
-    intervalElement = document.getElementById('interval' + i);
-    if (intervalElement != null) {
-        intervalTotal = intervalElement.value;
+      intervalElement = document.getElementById('interval' + i);
+      if (intervalElement != null) {
+      intervalTotal = intervalElement.value;
     } else {
-        intervalTotal = null;
+      intervalTotal = null;
     };
-    policyElement = document.getElementById('intPolicy' + i);
-    if (policyElement != null) {
-        policyTotal = policyElement.value;
+      policyElement = document.getElementById('intPolicy' + i);
+      if (policyElement != null) {
+      policyTotal = policyElement.value;
     } else {
-        policyTotal = null;
+      policyTotal = null;
     };
     //Check Type Variables
-    if (typeTotal == null) {
-        monTotal1 = 0;
-        monTotal2 = 0;
-        monTotal3 = 0;
-        monTotal4 = 0;
-        monTotal5 = 0;
-        monTotal6 = 0;
+      if (typeTotal == null) {
+      monTotal1 = 0;
+      monTotal2 = 0;
+      monTotal3 = 0;
+      monTotal4 = 0;
+      monTotal5 = 0;
+      monTotal6 = 0;
     } else if (typeTotal == "DNS" || typeTotal == "FTP" || typeTotal == "SSH" || typeTotal == "HTTP" || typeTotal == "SMTP" || typeTotal == "TCP") {
-        monTotal1 = document.getElementById('northAmE' + i).checked ? .04:0;
-        monTotal2 = document.getElementById('northAmW' + i).checked ? .04:0;
-        monTotal3 = document.getElementById('NorthAmC' + i).checked ? .04:0;
-        monTotal4 = document.getElementById('europe' + i).checked ? .04:0;
-        monTotal5 = document.getElementById('asiaPac' + i).checked ? .08:0;
-        monTotal6 = document.getElementById('oceania' + i).checked ? .12:0;
+      monTotal1 = document.getElementById('northAmE' + i).checked ? .04:0;
+      monTotal2 = document.getElementById('northAmW' + i).checked ? .04:0;
+      monTotal3 = document.getElementById('NorthAmC' + i).checked ? .04:0;
+      monTotal4 = document.getElementById('europe' + i).checked ? .04:0;
+      monTotal5 = document.getElementById('asiaPac' + i).checked ? .08:0;
+      monTotal6 = document.getElementById('oceania' + i).checked ? .12:0;
     } else if (typeTotal == "HTTPS"){
-        monTotal1 = document.getElementById('northAmE' + i).checked ? .08:0;
-        monTotal2 = document.getElementById('northAmW' + i).checked ? .08:0;
-        monTotal3 = document.getElementById('NorthAmC' + i).checked ? .08:0;
-        monTotal4 = document.getElementById('europe' + i).checked ? .08:0;
-        monTotal5 = document.getElementById('asiaPac' + i).checked ? .16:0;
-        monTotal6 = document.getElementById('oceania' + i).checked ? .24:0;
+      monTotal1 = document.getElementById('northAmE' + i).checked ? .08:0;
+      monTotal2 = document.getElementById('northAmW' + i).checked ? .08:0;
+      monTotal3 = document.getElementById('NorthAmC' + i).checked ? .08:0;
+      monTotal4 = document.getElementById('europe' + i).checked ? .08:0;
+      monTotal5 = document.getElementById('asiaPac' + i).checked ? .16:0;
+      monTotal6 = document.getElementById('oceania' + i).checked ? .24:0;
     } else if (typeTotal == "HTTP Waterfall"){
-        monTotal1 = document.getElementById('northAmE' + i).checked ? 50:0;
-        monTotal2 = document.getElementById('northAmW' + i).checked ? 50:0;
-        monTotal3 = document.getElementById('NorthAmC' + i).checked ? 50:0;
-        monTotal4 = document.getElementById('europe' + i).checked ? 50:0;
-        monTotal5 = document.getElementById('asiaPac' + i).checked ? 100:0;
-        monTotal6 = document.getElementById('oceania' + i).checked ? 150:0;
+      monTotal1 = document.getElementById('northAmE' + i).checked ? 50:0;
+      monTotal2 = document.getElementById('northAmW' + i).checked ? 50:0;
+      monTotal3 = document.getElementById('NorthAmC' + i).checked ? 50:0;
+      monTotal4 = document.getElementById('europe' + i).checked ? 50:0;
+      monTotal5 = document.getElementById('asiaPac' + i).checked ? 100:0;
+      monTotal6 = document.getElementById('oceania' + i).checked ? 150:0;
     } else if (typeTotal == "HTTPS Waterfall"){
-        monTotal1 = document.getElementById('northAmE' + i).checked ? 60:0;
-        monTotal2 = document.getElementById('northAmW' + i).checked ? 60:0;
-        monTotal3 = document.getElementById('NorthAmC' + i).checked ? 60:0;
-        monTotal4 = document.getElementById('europe' + i).checked ? 60:0;
-        monTotal5 = document.getElementById('asiaPac' + i).checked ? 160:0;
-        monTotal6 = document.getElementById('oceania' + i).checked ? 160:0;
+      monTotal1 = document.getElementById('northAmE' + i).checked ? 60:0;
+      monTotal2 = document.getElementById('northAmW' + i).checked ? 60:0;
+      monTotal3 = document.getElementById('NorthAmC' + i).checked ? 60:0;
+      monTotal4 = document.getElementById('europe' + i).checked ? 60:0;
+      monTotal5 = document.getElementById('asiaPac' + i).checked ? 160:0;
+      monTotal6 = document.getElementById('oceania' + i).checked ? 160:0;
     };
     
 
 //Check Interval Variables
 
-    if (intervalTotal == null) {
-        intervalTotal = 0;
+      if (intervalTotal == null) {
+      intervalTotal = 0;
     } else if (intervalTotal == "30 sec") {
-        intervalTotal = 86.4;
+      intervalTotal = 86.4;
     } else if (intervalTotal == "60 sec") {
-        intervalTotal = 43.2;
+      intervalTotal = 43.2;
     } else if (intervalTotal == "5 min") {
-        intervalTotal = 8.64;
+      intervalTotal = 8.64;
     } else if (intervalTotal == "10 min") {
-        intervalTotal = 4.32;
+      intervalTotal = 4.32;
     } else if (intervalTotal == "30 min") {
-        intervalTotal = 1.44;
+      intervalTotal = 1.44;
     } else if (intervalTotal == "12 hrs") {
-        intervalTotal = .06;
+      intervalTotal = .06;
     } else if (intervalTotal == "24 hrs") {
-        intervalTotal = .03;
+      intervalTotal = .03;
     };
      
-    i++;
-};
-    i = 0;
-return false;
+      i++;
+    };
+  i = 0;
+  return false;
 };
 
 
@@ -346,7 +346,7 @@ return false;
 //Adding A New Check
 var counter = 0;
 $('#addCheck').click(function() {
-    $('#group1').after('<form class="form-horizontal">\
+  $('#group1').after('<form class="form-horizontal">\
                         <div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
                         <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
                             <div class="form-group">\
@@ -418,8 +418,8 @@ $('#addCheck').click(function() {
                             </div>\
                         </div>\
                          </form>');
-                         counter ++; 
-                         return false;          
+  counter ++; 
+  return false;          
 });
 
 
@@ -433,6 +433,6 @@ $('#addCheck').click(function() {
 
 //BUTTON ACTION jQuery
 $('#sonarCalc').on('click','#sonarDelete',function() {
-    $(this).parent().remove();
+  $(this).parent().remove();
 });
 
