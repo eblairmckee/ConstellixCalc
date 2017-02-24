@@ -265,7 +265,7 @@ sonarTotal.onclick = function() {
   //Check Interval
       intervalElement = document.getElementById('interval' + i);
       if (intervalElement != null) {
-        intervalTotal = intervalElement;
+        intervalTotal = intervalElement.value;
       } else {
         intervalTotal = null;
       };
@@ -279,12 +279,7 @@ sonarTotal.onclick = function() {
 
     //Check Type Variables
       if (typeTotal == null) {
-      mon1 = 0;
-      mon2 = 0;
-      mon3 = 0;
-      mon4 = 0;
-      mon5 = 0;
-      mon6 = 0;
+     typeTotal = 0;
     } else if (typeTotal == "DNS" || typeTotal == "FTP" || typeTotal == "SSH" || typeTotal == "HTTP" || typeTotal == "SMTP" || typeTotal == "TCP") {
       mon1 = document.getElementById('northAmE' + i).checked ? .04:0;
       mon2 = document.getElementById('northAmW' + i).checked ? .04:0;
@@ -292,7 +287,7 @@ sonarTotal.onclick = function() {
       mon4 = document.getElementById('europe' + i).checked ? .04:0;
       mon5 = document.getElementById('asiaPac' + i).checked ? .08:0;
       mon6 = document.getElementById('oceania' + i).checked ? .12:0;
-      typeTotal = mon1 + mon2 + mon3 + mon4 + mon5 + mon6;
+      typeTotal = eval("(mon1 + mon2 + mon3 + mon4) * intervalTotal");
     } else if (typeTotal == "HTTPS"){
       mon1 = document.getElementById('northAmE' + i).checked ? .08:0;
       mon2 = document.getElementById('northAmW' + i).checked ? .08:0;
@@ -344,9 +339,12 @@ sonarTotal.onclick = function() {
       if (policyTotal == "Simultaneous") {
         
       }
-     
+console.log(typeTotal);
+console.log(intervalTotal);
+//Adds +1 to i
       i++;
     };
+//Returns i to 0
   i = 0;
   return false;
 };
