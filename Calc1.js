@@ -19,8 +19,8 @@ var monthlyTotal = 0;
 // Domain Calculation 
 function domainNumber(num) {
   if (num > 0 && num < 2){
-      dnsTotal += 5; 
-    } else if (num >= 2 && num < 26) {
+    dnsTotal += 5; 
+  } else if (num >= 2 && num < 26) {
       var oneDomain = num - 1;
       var total = oneDomain * .5 + 5;
       dnsTotal += total;
@@ -36,19 +36,19 @@ function domainNumber(num) {
 // Record Calculation
 function recordNumber(num) {
   if (num > 100) {
-      var newNum = num - 100;
-      total = Math.round(newNum/100) * .5;
-      dnsTotal += total;
+    var newNum = num - 100;
+    total = Math.round(newNum/100) * .5;
+    dnsTotal += total;
    
-    } else
+  } else
         dnsTotal += 0;  
 };
 
 //GTD Calculation
 function gtdNumber(num) {
   if (num == 1) {
-      dnsTotal += 5; 
-    } else if (num > 1 && num < 100) {
+    dnsTotal += 5; 
+  } else if (num > 1 && num < 100) {
       var total = num - 1 + 5;
       dnsTotal += total;
     } else
@@ -58,72 +58,72 @@ function gtdNumber(num) {
 //Geo Proximity Configured
 function geoProxConfNumber(num) {
   if (num > .99) {
-      var total = num * .01;
-      dnsTotal += total;
-    } else
+    var total = num * .01;
+    dnsTotal += total;
+  } else
         dnsTotal += 0;
 };
 
 //Geo Proximity Applied
 function geoProxAppNumber(num) {
   if (num > .99) {
-      var total = num * .05;
-      dnsTotal += total;
-    } else
+    var total = num * .05;
+    dnsTotal += total;
+  } else
         dnsTotal += 0;
 };
 
 //Geo Filter Configured
 function geoFilterConfNumber(num) {
   if (num > .99) {
-      var total = num * .01;
-      dnsTotal += total;
-    } else
+    var total = num * .01;
+    dnsTotal += total;
+  } else
         dnsTotal += 0;
 };
 
 //Geo Filter Applied 
 function geoFilterAppNumber(num) {
   if (num > .99) {
-      var total = num * .05;
-      dnsTotal += total;
-    } else
+    var total = num * .05;
+    dnsTotal += total;
+  } else
     dnsTotal += 0;
 };
 
 //ANAME 
 function anameNumber(num) {
   if (num > .99) {
-      var total = num * .1;
-      dnsTotal += total;
-    } else
+    var total = num * .1;
+    dnsTotal += total;
+  } else
         dnsTotal += 0;
 };
 
 //Pool Configured 
 function poolConfNumber(num) {
   if (num > .99) {
-      var total = num * .01;
-      dnsTotal += total;
-    } else
+    var total = num * .01;
+    dnsTotal += total;
+  } else
         dnsTotal += 0;
 };
 
 //Pool Applied 
 function poolAppNumber(num) {
   if (num > .99) {
-      var total = num * .1;
-      dnsTotal += total;
-    } else
+    var total = num * .1;
+    dnsTotal += total;
+  } else
         dnsTotal += 0;
 };
 
 //Additiona User Accounts
 function userNumber(num) {
   if (num > 0 && num <= 10) {
-      var total = num * 2;
-      dnsTotal += total;
-    } else if (num > 10 && num <= 100) {
+    var total = num * 2;
+    dnsTotal += total;
+  } else if (num > 10 && num <= 100) {
       var newNum = num - 10;
       var total = newNum * 1 + 20;
       dnsTotal += total;
@@ -225,62 +225,62 @@ addCheck.onclick = function() {
 i = 0;
 sonarTotal.onclick = function() {
   while (i <= counter - 1) {
-      var checkTotal;
-      var smsTotal;
-      var pushTotal;
-      var typeTotal;
-      var intervalTotal;
-      var policyTotal;
+    var checkTotal;
+    var smsTotal;
+    var pushTotal;
+    var typeTotal;
+    var intervalTotal;
+    var policyTotal;
   
   //Number Of Checks
-      checkElement = document.getElementById('checks'+ i);
-      if (checkElement != null) {
-      checkTotal = checkElement.value;
-    } else {
-      checkTotal = null;
-    };
+    checkElement = document.getElementById('checks'+ i);
+    if (checkElement != null) {
+        checkTotal = checkElement.value;
+      } else {
+        checkTotal = null;
+      };
   //SMS Contacts
-      smsElement  = document.getElementById('smsNotify' + i);
-      if (smsElement != null) {
+    smsElement  = document.getElementById('smsNotify' + i);
+    if (smsElement != null) {
         smsValue = smsElement.value * 0.01;
         smsTotal = smsValue;
-    } else {
+      } else {
         smsTotal = null;
       };
   //Push Notifications
-      pushElement = document.getElementById('pushNotify' + i);
-      if (pushElement != null) { 
-          pushValue = pushElement.value * 0.001;
-          pushTotal = pushValue ;
-    } else {
-      pushTotal = null;
-    };
+    pushElement = document.getElementById('pushNotify' + i);
+    if (pushElement != null) { 
+        pushValue = pushElement.value * 0.001;
+        pushTotal = pushValue ;
+      } else {
+        pushTotal = null;
+      };
   //Check Type
-      typeElement = document.getElementById('checkType' + i);
-      if (typeElement != null) {
-      typeTotal = typeElement.value;
-    } else {
-      typeTotal = null;
-    };
+    typeElement = document.getElementById('checkType' + i);
+    if (typeElement != null) {
+        typeTotal = typeElement.value;
+      } else {
+        typeTotal = null;
+      };
   //Check Interval
-      intervalElement = document.getElementById('interval' + i);
-      if (intervalElement != null) {
+    intervalElement = document.getElementById('interval' + i);
+    if (intervalElement != null) {
         intervalTotal = intervalElement.value;
       } else {
         intervalTotal = null;
       };
   //Check Interval Policy
-      policyElement = document.getElementById('intPolicy' + i);
-      if (policyElement != null) {
-      policyTotal = policyElement.value;
-    } else {
-      policyTotal = null;
-    };
+    policyElement = document.getElementById('intPolicy' + i);
+    if (policyElement != null) {
+        policyTotal = policyElement.value;
+      } else {
+        policyTotal = null;
+      };
 
     //Check Type Variables
-      if (typeTotal == null) {
-     typeTotal = 0;
-    } else if (typeTotal == "DNS" || typeTotal == "FTP" || typeTotal == "SSH" || typeTotal == "HTTP" || typeTotal == "SMTP" || typeTotal == "TCP") {
+    if (typeTotal == null) {
+        typeTotal = 0;
+      } else if (typeTotal == "DNS" || typeTotal == "FTP" || typeTotal == "SSH" || typeTotal == "HTTP" || typeTotal == "SMTP" || typeTotal == "TCP") {
       mon1 = document.getElementById('northAmE' + i).checked ? .04:0;
       mon2 = document.getElementById('northAmW' + i).checked ? .04:0;
       mon3 = document.getElementById('NorthAmC' + i).checked ? .04:0;
@@ -317,9 +317,9 @@ sonarTotal.onclick = function() {
 
 //Check Interval Variables
 
-      if (intervalTotal == null) {
-      intervalTotal = 0;
-    } else if (intervalTotal == "30 sec") {
+    if (intervalTotal == null) {
+        intervalTotal = 0;
+      } else if (intervalTotal == "30 sec") {
       intervalTotal = 86.4;
     } else if (intervalTotal == "60 sec") {
       intervalTotal = 43.2;
@@ -336,14 +336,14 @@ sonarTotal.onclick = function() {
     };
 
 //Check Policy
-      if (policyTotal == "Simultaneous") {
+    if (policyTotal == "Simultaneous") {
         
       }
-console.log(typeTotal);
-console.log(intervalTotal);
+    console.log(typeTotal);
+    console.log(intervalTotal);
 //Adds +1 to i
-      i++;
-    };
+    i++;
+  };
 //Returns i to 0
   i = 0;
   return false;
