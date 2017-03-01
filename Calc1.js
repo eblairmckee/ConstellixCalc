@@ -269,12 +269,25 @@ sonarTotal.onclick = function() {
       } else {
         intervalTotal = null;
       };
-  //Check Interval Policy
+
+      //Check Interval Policy
     policyElement = document.getElementById('intPolicy' + i);
-    if (policyElement != null) {
-        policyTotal = policyElement.value;
-      } else {
-        policyTotal = null;
+      mon1 = document.getElementById('northAmE' + i).checked ? 1:0;
+      mon2 = document.getElementById('northAmW' + i).checked ? 1:0;
+      mon3 = document.getElementById('NorthAmC' + i).checked ? 1:0;
+      mon4 = document.getElementById('europe' + i).checked ? 1:0;
+      mon5 = document.getElementById('asiaPac' + i).checked ? 1:0;
+      mon6 = document.getElementById('oceania' + i).checked ? 1:0;
+        if (policyElement != null) {
+            let policySelection = policyElement.value;
+        } else {
+            policyTotal = null;
+
+        if (policySelection == "Simultaneous") {
+            policyTotal = 1;
+        } else if (policySelection == "Once Per Site") {
+            policyTotal = mon1 + mon2 + mon3 + mon4 + mon5 + mon6;
+      }
       };
 
       //Check Interval Variables
@@ -307,7 +320,7 @@ sonarTotal.onclick = function() {
       mon4 = document.getElementById('europe' + i).checked ? .04:0;
       mon5 = document.getElementById('asiaPac' + i).checked ? .08:0;
       mon6 = document.getElementById('oceania' + i).checked ? .12:0;
-      typeTotal = eval("((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)");
+      typeTotal = eval("(((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)) / policyTotal");
     } else if (typeTotal == "HTTPS"){
       mon1 = document.getElementById('northAmE' + i).checked ? .08:0;
       mon2 = document.getElementById('northAmW' + i).checked ? .08:0;
@@ -333,13 +346,13 @@ sonarTotal.onclick = function() {
       mon6 = document.getElementById('oceania' + i).checked ? 160:0;
       typeTotal = eval("((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)");
     };
-
-//Check Policy
-    if (policyTotal == "Simultaneous") {
-        
-      }
+    
     console.log(typeTotal.toFixed(2));
     console.log(intervalTotal);
+    console.log(pushTotal);
+    console.log(checkTotal);
+    console.log(smsTotal);
+    console.log(policyTotal);
 //Adds +1 to i
     i++;
   };
