@@ -21,15 +21,15 @@ function domainNumber(num) {
   if (num > 0 && num < 2){
     dnsTotal += 5; 
   } else if (num >= 2 && num < 26) {
-      var oneDomain = num - 1;
-      var total = oneDomain * .5 + 5;
-      dnsTotal += total;
-    } else if (num > 25){
-      var oneDomain = num - 1;
-      var twentyfiveDomain = oneDomain - 24;
-      var total = twentyfiveDomain * .1 + 17;
-      dnsTotal += total;
-    } else 
+    var oneDomain = num - 1;
+    var total = oneDomain * .5 + 5;
+    dnsTotal += total;
+  } else if (num > 25){
+    var oneDomain = num - 1;
+    var twentyfiveDomain = oneDomain - 24;
+    var total = twentyfiveDomain * .1 + 17;
+    dnsTotal += total;
+  } else 
        alert("Please enter number of domains");
 };
 
@@ -49,9 +49,9 @@ function gtdNumber(num) {
   if (num == 1) {
     dnsTotal += 5; 
   } else if (num > 1 && num < 100) {
-      var total = num - 1 + 5;
-      dnsTotal += total;
-    } else
+    var total = num - 1 + 5;
+    dnsTotal += total;
+  } else
         dnsTotal += 0;
 };
 
@@ -124,13 +124,13 @@ function userNumber(num) {
     var total = num * 2;
     dnsTotal += total;
   } else if (num > 10 && num <= 100) {
-      var newNum = num - 10;
-      var total = newNum * 1 + 20;
-      dnsTotal += total;
-    } else if (num > 100) {
-      var total = (num - 100) * .5 + 110;
-      dnsTotal += total;
-    } else
+    var newNum = num - 10;
+    var total = newNum * 1 + 20;
+    dnsTotal += total;
+  } else if (num > 100) {
+    var total = (num - 100) * .5 + 110;
+    dnsTotal += total;
+  } else
         dnsTotal += 0;
 };
 
@@ -235,70 +235,73 @@ sonarTotal.onclick = function() {
   //Number Of Checks
     checkElement = document.getElementById('checks'+ i);
     if (checkElement != null) {
-        checkTotal = checkElement.value;
-      } else {
-        checkTotal = null;
-      };
+      checkTotal = checkElement.value;
+    } else {
+      checkTotal = null;
+    };
   //SMS Contacts
     smsElement  = document.getElementById('smsNotify' + i);
     if (smsElement != null) {
-        smsValue = smsElement.value * 0.01;
-        smsTotal = smsValue;
-      } else {
-        smsTotal = null;
-      };
+      smsValue = smsElement.value * 0.01;
+      smsTotal = smsValue;
+    } else {
+      smsTotal = null;
+    };
   //Push Notifications
     pushElement = document.getElementById('pushNotify' + i);
     if (pushElement != null) { 
-        pushValue = pushElement.value * 0.001;
-        pushTotal = pushValue ;
-      } else {
-        pushTotal = null;
-      };
+      pushValue = pushElement.value * 0.001;
+      pushTotal = pushValue ;
+    } else {
+      pushTotal = null;
+    };
   //Check Type
     typeElement = document.getElementById('checkType' + i);
     if (typeElement != null) {
-        typeTotal = typeElement.value;
-      } else {
-        typeTotal = null;
-      };
+      typeTotal = typeElement.value;
+    } else {
+      typeTotal = null;
+    };
   //Check Interval
     intervalElement = document.getElementById('interval' + i);
     if (intervalElement != null) {
-        intervalTotal = intervalElement.value;
-      } else {
-        intervalTotal = null;
-      };
+      intervalTotal = intervalElement.value;
+    } else {
+      intervalTotal = null;
+    };
 
       //Check Interval Policy
     policyElement = document.getElementById('intPolicy' + i);
-      mon1 = document.getElementById('northAmE' + i).checked ? 1:0;
-      mon2 = document.getElementById('northAmW' + i).checked ? 1:0;
-      mon3 = document.getElementById('NorthAmC' + i).checked ? 1:0;
-      mon4 = document.getElementById('europe' + i).checked ? 1:0;
-      mon5 = document.getElementById('asiaPac' + i).checked ? 1:0;
-      mon6 = document.getElementById('oceania' + i).checked ? 1:0;
-        if (policyElement != null) {
-            let policySelection = policyElement.value;
-        } else {
-            policyTotal = null;
+    mon1 = document.getElementById('northAmE' + i).checked ? 1:0;
+    mon2 = document.getElementById('northAmW' + i).checked ? 1:0;
+    mon3 = document.getElementById('NorthAmC' + i).checked ? 1:0;
+    mon4 = document.getElementById('europe' + i).checked ? 1:0;
+    mon5 = document.getElementById('asiaPac' + i).checked ? 1:0;
+    mon6 = document.getElementById('oceania' + i).checked ? 1:0;
+    let policySelection;
+    if (policyElement != null) {
+      policySelection = policyElement.value;
+      console.log(policySelection);
+    } else {
+      policyTotal = null;
+    };
 
-        if (policySelection == "Simultaneous") {
-            policyTotal = 1;
-        } else if (policySelection == "Once Per Site") {
-            policyTotal = mon1 + mon2 + mon3 + mon4 + mon5 + mon6;
-      }
-      };
+    if (policySelection == "Simultaneous") {
+        policyTotal = 1;
+      } else if (policySelection == "Once Per Site") {
+          policyTotal = eval("mon1 + mon2 + mon3 + mon4 + mon5 + mon6");
+        }
+    
 
       //Check Interval Variables
 
     if (intervalTotal == null) {
-        intervalTotal = 0;
-      } else if (intervalTotal == "30 sec") {
+      intervalTotal = 0;
+    } else if (intervalTotal == "30 sec") {
       intervalTotal = 86.4;
     } else if (intervalTotal == "60 sec") {
-      intervalTotal = 43.2;
-    } else if (intervalTotal == "5 min") {
+        intervalTotal = 43.2;
+      } else if (intervalTotal == "5 min") {
       intervalTotal = 8.64;
     } else if (intervalTotal == "10 min") {
       intervalTotal = 4.32;
@@ -312,8 +315,8 @@ sonarTotal.onclick = function() {
 
     //Check Type Variables
     if (typeTotal == null) {
-        typeTotal = 0;
-      } else if (typeTotal == "DNS" || typeTotal == "FTP" || typeTotal == "SSH" || typeTotal == "HTTP" || typeTotal == "SMTP" || typeTotal == "TCP") {
+      typeTotal = 0;
+    } else if (typeTotal == "DNS" || typeTotal == "FTP" || typeTotal == "SSH" || typeTotal == "HTTP" || typeTotal == "SMTP" || typeTotal == "TCP") {
       mon1 = document.getElementById('northAmE' + i).checked ? .04:0;
       mon2 = document.getElementById('northAmW' + i).checked ? .04:0;
       mon3 = document.getElementById('NorthAmC' + i).checked ? .04:0;
@@ -322,14 +325,14 @@ sonarTotal.onclick = function() {
       mon6 = document.getElementById('oceania' + i).checked ? .12:0;
       typeTotal = eval("(((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)) / policyTotal");
     } else if (typeTotal == "HTTPS"){
-      mon1 = document.getElementById('northAmE' + i).checked ? .08:0;
-      mon2 = document.getElementById('northAmW' + i).checked ? .08:0;
-      mon3 = document.getElementById('NorthAmC' + i).checked ? .08:0;
-      mon4 = document.getElementById('europe' + i).checked ? .08:0;
-      mon5 = document.getElementById('asiaPac' + i).checked ? .16:0;
-      mon6 = document.getElementById('oceania' + i).checked ? .24:0;
-      typeTotal = eval("((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)");
-    } else if (typeTotal == "HTTP Waterfall"){
+        mon1 = document.getElementById('northAmE' + i).checked ? .08:0;
+        mon2 = document.getElementById('northAmW' + i).checked ? .08:0;
+        mon3 = document.getElementById('NorthAmC' + i).checked ? .08:0;
+        mon4 = document.getElementById('europe' + i).checked ? .08:0;
+        mon5 = document.getElementById('asiaPac' + i).checked ? .16:0;
+        mon6 = document.getElementById('oceania' + i).checked ? .24:0;
+        typeTotal = eval("((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)");
+      } else if (typeTotal == "HTTP Waterfall"){
       mon1 = document.getElementById('northAmE' + i).checked ? 50:0;
       mon2 = document.getElementById('northAmW' + i).checked ? 50:0;
       mon3 = document.getElementById('NorthAmC' + i).checked ? 50:0;
