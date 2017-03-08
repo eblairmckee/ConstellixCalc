@@ -426,20 +426,99 @@ $('#addCheck').click(function() {
                                         </select>\
                                 </div>\
                             </div>\
-                            <div class="container">\
-                                <div class="row">\
-                                <label for="name" class="col-sm-3 control-label">Monitoring Locatins</label>\
-                                    <div class="form-check col-md-7" id="monLocations '+counter+'">\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="northAmE'+counter+'"> North America East <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="northAmW'+counter+'"> North America West <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="NorthAmC'+counter+'"> North America Central <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="europe'+counter+'"> Europe <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="asiaPac'+counter+'"> Asia Pasific <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="oceania'+counter+'"> Oceania <br></label>\
-                                    </div>\
+                             <div class="row">\
+                              <label for="name" class="col-xs-3 control-label">Check Interval Policy</label>\
+                              <div class="col-sm-2">\
+                               <div class="button-group">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>Asia Pacific</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
+                               </div>\
+                               <div class="button-group">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>Oceania</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
                                 </div>\
+                               </div>\
+                                <div class="button-group">\
+                               <div class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>Oceania</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
+                                </div>\
+                               </div>\
+                                <div class="button-group">\
+                               <div class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>Oceania</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
+                                </div>\
+                               </div>\
+                                <div class="button-group">\
+                               <div class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>Oceania</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
+                                </div>\
+                               </div>\
+                                <div class="button-group">\
+                               <div class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>Oceania</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
+                                </div>\
+                               </div>\
+                              </div>\
+                             </div>\
                             </div>\
-                        </div>\
                          </form>');
   counter ++; 
   return false;          
