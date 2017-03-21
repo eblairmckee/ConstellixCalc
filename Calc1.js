@@ -217,6 +217,7 @@ let pushTotal;
 let typeTotal;
 let intervalTotal;
 let policyTotal;
+
 sonarTotal.onclick = function () {
   while (i <= counter - 1) {
     
