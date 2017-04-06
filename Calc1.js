@@ -420,10 +420,10 @@ $('#addCheck').click(() => {
                             </div>\
                              <div class="row">\
                               <label for="name" class="col-xs-3 control-label">Check Interval Policy</label>\
-                              <div class="col-sm-2">\
                                <div class="button-group">\
+                               <dif class="col-xs-2">\
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
-                                <span>Asia Pacific</span>\
+                                <span>Asia-Pac</span>\
                                  <span class="caret"></span></button>\
                                  <ul class="dropdown-menu">\
                                   <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
@@ -433,10 +433,27 @@ $('#addCheck').click(() => {
                                   <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
                                   <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
                                  </ul>\
+                                 </dif>\
                                </div>\
                                <div class="button-group">\
+                               <div class="col-xs-2">\
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
                                 <span>Oceania</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
+                                 </div>\
+                               </div>\
+                                <div class="button-group">\
+                               <div class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>Europe</span>\
                                  <span class="caret"></span></button>\
                                  <ul class="dropdown-menu">\
                                   <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
@@ -451,7 +468,7 @@ $('#addCheck').click(() => {
                                 <div class="button-group">\
                                <div class="col-xs-2">\
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
-                                <span>Oceania</span>\
+                                <span>US East</span>\
                                  <span class="caret"></span></button>\
                                  <ul class="dropdown-menu">\
                                   <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
@@ -466,7 +483,7 @@ $('#addCheck').click(() => {
                                 <div class="button-group">\
                                <div class="col-xs-2">\
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
-                                <span>Oceania</span>\
+                                <span>US West</span>\
                                  <span class="caret"></span></button>\
                                  <ul class="dropdown-menu">\
                                   <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
@@ -481,22 +498,7 @@ $('#addCheck').click(() => {
                                 <div class="button-group">\
                                <div class="col-xs-2">\
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
-                                <span>Oceania</span>\
-                                 <span class="caret"></span></button>\
-                                 <ul class="dropdown-menu">\
-                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
-                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
-                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
-                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
-                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
-                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
-                                 </ul>\
-                                </div>\
-                               </div>\
-                                <div class="button-group">\
-                               <div class="col-xs-2">\
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
-                                <span>Oceania</span>\
+                                <span>US Central</span>\
                                  <span class="caret"></span></button>\
                                  <ul class="dropdown-menu">\
                                   <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
