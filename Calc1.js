@@ -264,7 +264,7 @@ sonarTotal.onclick = function () {
     policyElement = document.getElementById(`intPolicy${i}`);
     mon1 = document.getElementById(`northAmE${ i}`).checked ? 1 : 0;
     mon2 = document.getElementById(`northAmW${ i}`).checked ? 1 : 0;
-    mon3 = document.getElementById(`NorthAmC${ i}`).checked ? 1 : 0;
+    mon3 = document.getElementById(`northAmC${ i}`).checked ? 1 : 0;
     mon4 = document.getElementById(`europe${ i}`).checked ? 1 : 0;
     mon5 = document.getElementById(`asiaPac${i}`).checked ? 1 : 0;
     mon6 = document.getElementById(`oceania${i}`).checked ? 1 : 0;
@@ -308,9 +308,9 @@ sonarTotal.onclick = function () {
       typeTotal = 0;
     } else if (typeTotal == 'DNS' || typeTotal == 'FTP' || typeTotal == 'SSH' || typeTotal == 'HTTP' || typeTotal == 'SMTP' || typeTotal == 'TCP') {
       mon1 = document.getElementById(`northAmE${i}`).checked ? 0.04 : 0;
-      mon2 = document.getElementById(`northAmW${ i}`).checked ? 0.04 : 0;
-      mon3 = document.getElementById(`NorthAmC${i}`).checked ? 0.04 : 0;
-      mon4 = document.getElementById(`europe${ i}`).checked ? 0.04 : 0;
+      mon2 = document.getElementById(`northAmW${i}`).checked ? 0.04 : 0;
+      mon3 = document.getElementById(`northAmC${i}`).checked ? 0.04 : 0;
+      mon4 = document.getElementById(`europe${i}`).checked ? 0.04 : 0;
       mon5 = document.getElementById(`asiaPac${i}`).checked ? 0.08 : 0;
       mon6 = document.getElementById(`oceania${i}`).checked ? 0.12 : 0;
       typeTotal = eval('(((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)) / policyTotal');
@@ -319,8 +319,8 @@ sonarTotal.onclick = function () {
       mon2 = document.getElementById(`northAmW${i}`).checked ? 0.08 : 0;
       mon3 = document.getElementById(`NorthAmC${i}`).checked ? 0.08 : 0;
       mon4 = document.getElementById(`europe${i}`).checked ? 0.08 : 0;
-      mon5 = document.getElementById(`asiaPac${ i}`).checked ? 0.16 : 0;
-      mon6 = document.getElementById(`oceania${ i}`).checked ? 0.24 : 0;
+      mon5 = document.getElementById(`asiaPac${i}`).checked ? 0.16 : 0;
+      mon6 = document.getElementById(`oceania${i}`).checked ? 0.24 : 0;
       typeTotal = eval('((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)');
     } else if (typeTotal == 'HTTP Waterfall') {
       mon1 = document.getElementById(`northAmE${i}`).checked ? 50 : 0;
@@ -328,7 +328,7 @@ sonarTotal.onclick = function () {
       mon3 = document.getElementById(`NorthAmC${i}`).checked ? 50 : 0;
       mon4 = document.getElementById(`europe${i}`).checked ? 50 : 0;
       mon5 = document.getElementById(`asiaPac${i}`).checked ? 100 : 0;
-      mon6 = document.getElementById(`oceania${ i}`).checked ? 150 : 0;
+      mon6 = document.getElementById(`oceania${i}`).checked ? 150 : 0;
       typeTotal = eval('((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)');
     } else if (typeTotal == 'HTTPS Waterfall') {
       mon1 = document.getElementById(`northAmE${i}`).checked ? 60 : 0;
@@ -426,12 +426,11 @@ $('#addCheck').click(() => {
                                 <span>Asia-Pac</span>\
                                  <span class="caret"></span></button>\
                                  <ul class="dropdown-menu">\
-                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
-                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
-                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
-                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
-                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
-                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                  <li><a href="#" class="small" data-value="option1" id="northAmE${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Banglore, India</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" id="northAmW${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Hong Kong</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" id="northAmC${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Singapore, Singapore</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" id="europe${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Tokyp Japan</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" id="asiaPac${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Chennai, India</a></li>\
                                  </ul>\
                                  </dif>\
                                </div>\
