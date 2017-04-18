@@ -262,16 +262,35 @@ sonarTotal.onclick = function () {
 
       // Check Interval Policy
     policyElement = document.getElementById(`intPolicy${i}`);
-    mon1 = document.getElementById(`northAmE${ i}`).checked ? 1 : 0;
+    mon1 = document.getElementById(`asia-pac1${ i}`).checked ? 1 : 0;
+    mon1 = document.getElementById(`asia-pac2${ i}`).checked ? 1 : 0;
+    mon1 = document.getElementById(`asia-pac3${ i}`).checked ? 1 : 0;
+    mon1 = document.getElementById(`asia-pac4${ i}`).checked ? 1 : 0;
+    mon1 = document.getElementById(`asia-pac5${ i}`).checked ? 1 : 0;
+    mon6 = document.getElementById(`oceania1${i}`).checked ? 1 : 0;
+    mon6 = document.getElementById(`oceania2${i}`).checked ? 1 : 0;
+    mon6 = document.getElementById(`oceania3${i}`).checked ? 1 : 0;
+    mon4 = document.getElementById(`europe1${ i}`).checked ? 1 : 0;
+    mon4 = document.getElementById(`europe2${ i}`).checked ? 1 : 0;
+    mon4 = document.getElementById(`europe3${ i}`).checked ? 1 : 0;
+    mon4 = document.getElementById(`europe4${ i}`).checked ? 1 : 0;
+    mon4 = document.getElementById(`europe5${ i}`).checked ? 1 : 0;
+    mon4 = document.getElementById(`europe6${ i}`).checked ? 1 : 0;
+    mon4 = document.getElementById(`europe7${ i}`).checked ? 1 : 0;
+    mon4 = document.getElementById(`europe8${ i}`).checked ? 1 : 0;
+    mon4 = document.getElementById(`europe9${ i}`).checked ? 1 : 0;
+    mon5 = document.getElementById(`northAmE1${i}`).checked ? 1 : 0;
+    mon5 = document.getElementById(`northAmE2${i}`).checked ? 1 : 0;
+    mon5 = document.getElementById(`northAmE3${i}`).checked ? 1 : 0;
+    mon5 = document.getElementById(`northAmE4${i}`).checked ? 1 : 0;
+    mon5 = document.getElementById(`northAmE5${i}`).checked ? 1 : 0;
+    mon5 = document.getElementById(`northAmE6${i}`).checked ? 1 : 0;
     mon2 = document.getElementById(`northAmW${ i}`).checked ? 1 : 0;
     mon3 = document.getElementById(`northAmC${ i}`).checked ? 1 : 0;
-    mon4 = document.getElementById(`europe${ i}`).checked ? 1 : 0;
-    mon5 = document.getElementById(`asiaPac${i}`).checked ? 1 : 0;
-    mon6 = document.getElementById(`oceania${i}`).checked ? 1 : 0;
+   
     let policySelection;
     if (policyElement != null) {
       policySelection = policyElement.value;
-      console.log(policySelection);
     } else {
       policyTotal = null;
     }
@@ -426,11 +445,11 @@ $('#addCheck').click(() => {
                                 <span>Asia-Pac</span>\
                                  <span class="caret"></span></button>\
                                  <ul class="dropdown-menu">\
-                                  <li><a href="#" class="small" data-value="option1" id="northAmE${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Banglore, India</a></li>\
-                                  <li><a href="#" class="small" data-value="option2" id="northAmW${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Hong Kong</a></li>\
-                                  <li><a href="#" class="small" data-value="option3" id="northAmC${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Singapore, Singapore</a></li>\
-                                  <li><a href="#" class="small" data-value="option4" id="europe${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Tokyp Japan</a></li>\
-                                  <li><a href="#" class="small" data-value="option5" id="asiaPac${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Chennai, India</a></li>\
+                                  <li><a href="#" class="small" data-value="option1" id="asia-pac1${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Banglore, India</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" id="asia-pac2${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Hong Kong</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" id="asia-pac3${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Singapore, Singapore</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" id="asia-pac4${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Tokyp Japan</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" id="asia-pac5${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Chennai, India</a></li>\
                                  </ul>\
                                  </dif>\
                                </div>\
@@ -440,12 +459,9 @@ $('#addCheck').click(() => {
                                 <span>Oceania</span>\
                                  <span class="caret"></span></button>\
                                  <ul class="dropdown-menu">\
-                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
-                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
-                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
-                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
-                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
-                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                  <li><a href="#" class="small" data-value="option1" id="oceania1${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Adelaide, Australia</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" id="oceania2${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Aydney, Australia</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" id="oceania3${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Auckland, New Zealand</a></li>\
                                  </ul>\
                                  </div>\
                                </div>\
@@ -455,12 +471,15 @@ $('#addCheck').click(() => {
                                 <span>Europe</span>\
                                  <span class="caret"></span></button>\
                                  <ul class="dropdown-menu">\
-                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
-                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
-                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
-                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
-                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
-                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                  <li><a href="#" class="small" data-value="option1" id="europe1${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Frankfurt,Germany</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" id="europe2${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Milan, Italy</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" id="europe3${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Paris, France</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" id="europe4${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Amsterdam, Netherlands-1</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" id="europe5${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Amsterdam, Netherlands-2</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" id="europe6${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;London, Great Britain-1</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" id="europe7${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;London, Great Britain-2</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" id="europe8${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Vienna, Austria</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" id="europe9${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Copenhagen, Denmark</a></li>\
                                  </ul>\
                                 </div>\
                                </div>\
