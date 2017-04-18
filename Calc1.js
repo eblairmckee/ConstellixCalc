@@ -1,183 +1,179 @@
 // Define Global Variables
-var domainTotal = document.getElementById('domains');
-var recordTotal = document.getElementById('records');
-var gtdTotal = document.getElementById('gtd');
-var geoProxConfTotal = document.getElementById('geoProxConf');
-var geoProxAppTotal = document.getElementById('geoProxApp');
-var geoFilterConfTotal = document.getElementById('geoFilterConf');
-var geoFilterAppTotal = document.getElementById('geoFilterApp');
-var anameTotal = document.getElementById('aname');
-var poolConfTotal = document.getElementById('poolConf');
-var poolAppTotal = document.getElementById('poolApp');
-var userTotal = document.getElementById('users');
-var form = document.getElementById('calcform');
-var monthlyTotal = 0;
+const domainTotal = document.getElementById('domains');
+const recordTotal = document.getElementById('records');
+const gtdTotal = document.getElementById('gtd');
+const geoProxConfTotal = document.getElementById('geoProxConf');
+const geoProxAppTotal = document.getElementById('geoProxApp');
+const geoFilterConfTotal = document.getElementById('geoFilterConf');
+const geoFilterAppTotal = document.getElementById('geoFilterApp');
+const anameTotal = document.getElementById('aname');
+const poolConfTotal = document.getElementById('poolConf');
+const poolAppTotal = document.getElementById('poolApp');
+const userTotal = document.getElementById('users');
+const form = document.getElementById('calcform');
+let dnsTotal = 0;
+let monthlyDnsTotal = 0;
+let monthlyTotal = 0;
+
 
 // Domain Calculation
 function domainNumber(num) {
-    if (num > 0 && num < 2){
-       monthlyTotal += 5; 
-    } else if (num >= 2 && num < 26) {
-       var oneDomain = num - 1;
-       var total = oneDomain * .5 + 5;
-       monthlyTotal += total;
-    } else if (num > 25){
-        var oneDomain = num - 1;
-        var twentyfiveDomain = oneDomain - 24;
-        var total = twentyfiveDomain * .1 + 17;
-        monthlyTotal += total;
-    } else 
-       alert("Please enter number of domains");
-};
+  if (num > 0 && num < 2) {
+    dnsTotal += 5;
+  } else if (num >= 2 && num < 26) {
+    const oneDomain = num - 1;
+    const total = oneDomain * 0.5 + 5;
+    dnsTotal += total;
+  } else if (num > 25) {
+    const oneDomain = num - 1;
+    const twentyfiveDomain = oneDomain - 24;
+    const total = twentyfiveDomain * 0.1 + 17;
+    dnsTotal += total;
+  } else       { alert('Please enter number of domains'); }
+}
 
 // Record Calculation
 function recordNumber(num) {
-    if (num > 100) {
-        var newNum = num - 100;
-        total = Math.round(newNum/100) * .5;
-         monthlyTotal += total;
-   
-    } else
-        monthlyTotal += 0;  
-};
+  if (num > 100) {
+    const newNum = num - 100;
+    total = Math.round(newNum / 100) * 0.5;
+    dnsTotal += total;
+  } else        { dnsTotal += 0; }
+}
 
-//GTD Calculation
+// GTD Calculation
 function gtdNumber(num) {
-    if (num == 1) {
-        monthlyTotal += 5; 
-    } else if (num > 1 && num < 100) {
-        var total = num - 1 + 5;
-        monthlyTotal += total;
-    } else
-        monthlyTotal += 0;
-};
+  if (num == 1) {
+    dnsTotal += 5;
+  } else if (num > 1 && num < 100) {
+    const total = num - 1 + 5;
+    dnsTotal += total;
+  } else        { dnsTotal += 0; }
+}
 
-//Geo Proximity Configured
+// Geo Proximity Configured
 function geoProxConfNumber(num) {
-    if (num > .99) {
-        var total = num * .01;
-        monthlyTotal += total;
-    } else
-        monthlyTotal += 0;
-};
+  if (num > 0.99) {
+    const total = num * 0.01;
+    dnsTotal += total;
+  } else        { dnsTotal += 0; }
+}
 
-//Geo Proximity Applied
+// Geo Proximity Applied
 function geoProxAppNumber(num) {
-    if (num > .99) {
-        var total = num * .05;
-        monthlyTotal += total;
-    } else
-        monthlyTotal += 0;
-};
+  if (num > 0.99) {
+    const total = num * 0.05;
+    dnsTotal += total;
+  } else        { dnsTotal += 0; }
+}
 
-//Geo Filter Configured
+// Geo Filter Configured
 function geoFilterConfNumber(num) {
-    if (num > .99) {
-        var total = num * .01;
-        monthlyTotal += total;
-    } else
-        monthlyTotal += 0;
-};
+  if (num > 0.99) {
+    const total = num * 0.01;
+    dnsTotal += total;
+  } else        { dnsTotal += 0; }
+}
 
-//Geo Filter Applied 
+// Geo Filter Applied
 function geoFilterAppNumber(num) {
-    if (num > .99) {
-        var total = num * .05;
-        monthlyTotal += total;
-    } else
-    monthlyTotal += 0;
-};
+  if (num > 0.99) {
+    const total = num * 0.05;
+    dnsTotal += total;
+  } else    { dnsTotal += 0; }
+}
 
-//ANAME 
+// ANAME
 function anameNumber(num) {
-    if (num > .99) {
-        var total = num * .1;
-        monthlyTotal += total;
-    } else
-        monthlyTotal += 0;
-};
+  if (num > 0.99) {
+    const total = num * 0.1;
+    dnsTotal += total;
+  } else        { dnsTotal += 0; }
+}
 
-//Pool Configured 
+// Pool Configured this
 function poolConfNumber(num) {
-    if (num > .99) {
-        var total = num * .01;
-        monthlyTotal += total;
-    } else
-        monthlyTotal += 0;
-};
+  if (num > 0.99) {
+    const total = num * 0.01;
+    dnsTotal += total;
+  } else        { dnsTotal += 0; }
+}
 
-//Pool Applied 
+// Pool Applied
 function poolAppNumber(num) {
-    if (num > .99) {
-        var total = num * .1;
-        monthlyTotal += total;
-    } else
-        monthlyTotal += 0;
-};
+  if (num > 0.99) {
+    const total = num * 0.1;
+    dnsTotal += total;
+  } else        { dnsTotal += 0; }
+}
 
-//Additiona User Accounts
+// Additiona User Accounts
 function userNumber(num) {
-    if (num > 0 && num <= 10) {
-        var total = num * 2;
-        monthlyTotal += total;
-    } else if (num > 10 && num <= 100) {
-        var newNum = num - 10;
-        var total = newNum * 1 + 20;
-        monthlyTotal += total;
-    } else if (num > 100) {
-        var total = (num - 100) * .5 + 110;
-        monthlyTotal += total;
-    } else
-        monthlyTotal += 0;
-};
+  if (num > 0 && num <= 10) {
+    const total = num * 2;
+    dnsTotal += total;
+  } else if (num > 10 && num <= 100) {
+    const newNum = num - 10;
+    const total = newNum * 1 + 20;
+    dnsTotal += total;
+  } else if (num > 100) {
+    const total = (num - 100) * 0.5 + 110;
+    dnsTotal += total;
+  } else        { dnsTotal += 0; }
+}
+
 
 // First Submit Button (DNS Calc)
-buttonTotal.onclick = function(){
-    domainNumber(domainTotal.value);
-    recordNumber(recordTotal.value);
-    gtdNumber(gtdTotal.value);
-    geoProxConfNumber(geoProxConfTotal.value);
-    geoProxAppNumber(geoProxAppTotal.value);
-    geoFilterConfNumber(geoFilterConfTotal.value);
-    geoFilterAppNumber(geoFilterAppTotal.value);
-    anameNumber(anameTotal.value);
-    poolConfNumber(poolConfTotal.value);
-    poolAppNumber(poolAppTotal.value);
-    userNumber(userTotal.value);
-    document.getElementById("total").innerHTML = "Total:" + " " + "$" + monthlyTotal.toFixed(2);
-    monthlyTotal = 0;
-    return false;
-};
-
-// First Clear Button
-clearButton.onclick = function(){
-  document.getElementById("domains").value="";
-  document.getElementById("records").value="";
-  document.getElementById("gtd").value="";
-  document.getElementById("geoProxConf").value="";
-  document.getElementById("geoProxApp").value="";
-  document.getElementById("geoFilterConf").value="";
-  document.getElementById("geoFilterApp").value="";
-  document.getElementById("aname").value="";
-  document.getElementById("poolConf").value="";
-  document.getElementById("poolApp").value="";
-  document.getElementById("users").value="";
+buttonTotal.onclick = function () {
+  domainNumber(domainTotal.value);
+  recordNumber(recordTotal.value);
+  gtdNumber(gtdTotal.value);
+  geoProxConfNumber(geoProxConfTotal.value);
+  geoProxAppNumber(geoProxAppTotal.value);
+  geoFilterConfNumber(geoFilterConfTotal.value);
+  geoFilterAppNumber(geoFilterAppTotal.value);
+  anameNumber(anameTotal.value);
+  poolConfNumber(poolConfTotal.value);
+  poolAppNumber(poolAppTotal.value);
+  userNumber(userTotal.value);
+  monthlyDnsTotal = dnsTotal;
+  monthlyTotal = monthlyDnsTotal + 10; //  10 is a place holder for the Sonar Total
+  document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${  monthlyTotal.toFixed(2)}`;
+  dnsTotal = 0;
   return false;
 };
 
+// First Clear Button
+clearButton.onclick = function () {
+  document.getElementById('domains').value = '';
+  document.getElementById('records').value = '';
+  document.getElementById('gtd').value = '';
+  document.getElementById('geoProxConf').value = '';
+  document.getElementById('geoProxApp').value = '';
+  document.getElementById('geoFilterConf').value = '';
+  document.getElementById('geoFilterApp').value = '';
+  document.getElementById('aname').value = '';
+  document.getElementById('poolConf').value = '';
+  document.getElementById('poolApp').value = '';
+  document.getElementById('users').value = '';
+  monthlyTotal -= monthlyDnsTotal;
+  document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${  monthlyTotal.toFixed(2)}`;
+  return false;
+};
 
+// Plus Minus Symbol
 function toggleIcon(e) {
-    $(e.target)
+  $(e.target)
         .prev('.panel-heading')
-        .find(".more-less")
+        .find('.more-less')
         .toggleClass('glyphicon-plus glyphicon-minus');
 }
 $('.panel-group').on('hidden.bs.collapse', toggleIcon);
 $('.panel-group').on('shown.bs.collapse', toggleIcon);
 
 
-/*------------------------------------------Constellix Sonar------------------------------------------------------*/
-/*var counter = 0;
+/* ------------------------------------------Constellix Sonar------------------------------------------------------*/
+/* var counter = 0;
 var checkInput = null;
 addCheck.onclick = function() {
     var formTag = document.createElement('form');
@@ -212,164 +208,184 @@ addCheck.onclick = function() {
     checkInput = inputChecks;
     return false;
 };*/
+
+// Submit Button -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 i = 0;
-sonarTotal.onclick = function() {
-    while (i <= counter - 1) {
-    var checkTotal;
-    var smsTotal;
-    var pushTotal;
-    var typeTotal;
-    var intervalTotal;
-    var policyTotal;
-    //var monTotal1 = document.getElementById('northAmE' + i).checked;
-    //var monTotal2 = document.getElementById('northAmW' + i).checked;
-    //var monTotal3 = document.getElementById('NorthAmC' + i).checked;
-    //var monTotal4 = document.getElementById('europe' + i).checked;
-    //var monTotal5 = document.getElementById('asiaPac' + i).checked;
-    //var monTotal6 = document.getElementById('oceania' + i).checked;
-    checkElement = document.getElementById('checks'+ i);
-    if (checkElement != null) {
-        checkTotal = checkElement.value;
-    } else {
-        checkTotal = null;
-    };
-    smsElement  = document.getElementById('smsNotify' + i);
-    if (smsElement != null) {
-        smsTotal = smsElement.value;
-    } else {
-        smsTotal = null;
-    };
-    pushElement = document.getElementById('pushNotify' + i);
-    if (pushElement != null) { 
-        pushTotal = pushElement.value;
-    } else {
-        pushTotal = null;
-    };
-    typeElement = document.getElementById('checkType' + i);
-    if (typeElement != null) {
-        typeTotal = typeElement.value;
-    } else {
-        typeTotal = null;
-    };
-    intervalElement = document.getElementById('interval' + i);
-    if (intervalElement != null) {
-        intervalTotal = intervalElement.value;
-    } else {
-        intervalTotal = null;
-    };
-    policyElement = document.getElementById('intPolicy' + i);
-    if (policyElement != null) {
-        policyTotal = policyElement.value;
-    } else {
-        policyTotal = null;
-    };
-    //Check Type Variables
-    if (typeTotal == null) {
-        monTotal1 = 0;
-        monTotal2 = 0;
-        monTotal3 = 0;
-        monTotal4 = 0;
-        monTotal5 = 0;
-        monTotal6 = 0;
-    } else if (typeTotal == "DNS" || typeTotal == "FTP" || typeTotal == "SSH" || typeTotal == "HTTP" || typeTotal == "SMTP" || typeTotal == "TCP") {
-        monTotal1 = document.getElementById('northAmE' + i).checked ? .04:0;
-        monTotal2 = document.getElementById('northAmW' + i).checked ? .04:0;
-        monTotal3 = document.getElementById('NorthAmC' + i).checked ? .04:0;
-        monTotal4 = document.getElementById('europe' + i).checked ? .04:0;
-        monTotal5 = document.getElementById('asiaPac' + i).checked ? .08:0;
-        monTotal6 = document.getElementById('oceania' + i).checked ? .12:0;
-    } else if (typeTotal == "HTTPS"){
-        monTotal1 = document.getElementById('northAmE' + i).checked ? .08:0;
-        monTotal2 = document.getElementById('northAmW' + i).checked ? .08:0;
-        monTotal3 = document.getElementById('NorthAmC' + i).checked ? .08:0;
-        monTotal4 = document.getElementById('europe' + i).checked ? .08:0;
-        monTotal5 = document.getElementById('asiaPac' + i).checked ? .16:0;
-        monTotal6 = document.getElementById('oceania' + i).checked ? .24:0;
-    } else if (typeTotal == "HTTP Waterfall"){
-        monTotal1 = document.getElementById('northAmE' + i).checked ? 50:0;
-        monTotal2 = document.getElementById('northAmW' + i).checked ? 50:0;
-        monTotal3 = document.getElementById('NorthAmC' + i).checked ? 50:0;
-        monTotal4 = document.getElementById('europe' + i).checked ? 50:0;
-        monTotal5 = document.getElementById('asiaPac' + i).checked ? 100:0;
-        monTotal6 = document.getElementById('oceania' + i).checked ? 150:0;
-    } else if (typeTotal == "HTTPS Waterfall"){
-        monTotal1 = document.getElementById('northAmE' + i).checked ? 60:0;
-        monTotal2 = document.getElementById('northAmW' + i).checked ? 60:0;
-        monTotal3 = document.getElementById('NorthAmC' + i).checked ? 60:0;
-        monTotal4 = document.getElementById('europe' + i).checked ? 60:0;
-        monTotal5 = document.getElementById('asiaPac' + i).checked ? 160:0;
-        monTotal6 = document.getElementById('oceania' + i).checked ? 160:0;
-    };
+let checkTotal;
+let smsTotal;
+let pushTotal;
+let typeTotal;
+let intervalTotal;
+let policyTotal;
+
+sonarTotal.onclick = function () {
+  while (i <= counter - 1) {
     
 
-//Check Interval Variables
+  // Number Of Checks
+    checkElement = document.getElementById(`checks${i}`);
+    if (checkElement != null) {
+      checkTotal = checkElement.value;
+    } else {
+      checkTotal = null;
+    }
+  // SMS Contacts
+    smsElement = document.getElementById(`smsNotify${i}`);
+    if (smsElement != null) {
+      smsValue = smsElement.value * 0.01;
+      smsTotal = smsValue;
+    } else {
+      smsTotal = null;
+    }
+  // Push Notifications
+    pushElement = document.getElementById(`pushNotify${i}`);
+    if (pushElement != null) {
+      pushValue = pushElement.value * 0.001;
+      pushTotal = pushValue;
+    } else {
+      pushTotal = null;
+    }
+  // Check Type
+    typeElement = document.getElementById(`checkType${i}`);
+    if (typeElement != null) {
+      typeTotal = typeElement.value;
+    } else {
+      typeTotal = null;
+    }
+  // Check Interval
+    intervalElement = document.getElementById(`interval${i}`);
+    if (intervalElement != null) {
+      intervalTotal = intervalElement.value;
+    } else {
+      intervalTotal = null;
+    }
+
+      // Check Interval Policy
+    policyElement = document.getElementById(`intPolicy${i}`);
+    mon1 = document.getElementById(`northAmE${ i}`).checked ? 1 : 0;
+    mon2 = document.getElementById(`northAmW${ i}`).checked ? 1 : 0;
+    mon3 = document.getElementById(`northAmC${ i}`).checked ? 1 : 0;
+    mon4 = document.getElementById(`europe${ i}`).checked ? 1 : 0;
+    mon5 = document.getElementById(`asiaPac${i}`).checked ? 1 : 0;
+    mon6 = document.getElementById(`oceania${i}`).checked ? 1 : 0;
+    let policySelection;
+    if (policyElement != null) {
+      policySelection = policyElement.value;
+      console.log(policySelection);
+    } else {
+      policyTotal = null;
+    }
+
+    if (policySelection == 'Simultaneous') {
+      policyTotal = 1;
+    } else if (policySelection == 'Once Per Site') {
+      policyTotal = eval('mon1 + mon2 + mon3 + mon4 + mon5 + mon6');
+    }
+
+
+      // Check Interval Variables
 
     if (intervalTotal == null) {
-        intervalTotal = 0;
-    } else if (intervalTotal == "30 sec") {
-        intervalTotal = 86400;
-    } else if (intervalTotal == "60 sec") {
-        intervalTotal = 43200;
-    } else if (intervalTotal == "5 min") {
-        intervalTotal = 8640;
-    } else if (intervalTotal == "10 min") {
-        intervalTotal = 4320;
-    } else if (intervalTotal == "30 min") {
-        intervalTotal = 1440;
-    } else if (intervalTotal == "12 hrs") {
-        intervalTotal = 60;
-    } else if (intervalTotal == "24 hrs") {
-        intervalTotal = 30;
-    };
-     console.log(checkTotal);
-     console.log(smsTotal);
-     console.log(pushTotal);
-     console.log(monTotal1);
-     console.log(monTotal2);
-     console.log(monTotal3);
-     console.log(monTotal4);
-     console.log(monTotal5);
-     console.log(monTotal6);
-     console.log(intervalTotal);
-    i++;
-};
-    i = 0;
-return false;
-};
+      intervalTotal = 0;
+    } else if (intervalTotal === '30 sec') {
+      intervalTotal = 86.4;
+    } else if (intervalTotal === '60 sec') {
+      intervalTotal = 43.2;
+    } else if (intervalTotal === '5 min') {
+      intervalTotal = 8.64;
+    } else if (intervalTotal === '10 min') {
+      intervalTotal = 4.32;
+    } else if (intervalTotal === '30 min') {
+      intervalTotal = 1.44;
+    } else if (intervalTotal === '12 hrs') {
+      intervalTotal = 0.06;
+    } else if (intervalTotal === '24 hrs') {
+      intervalTotal = 0.03;
+      }
 
+    // Check Type Variables
+    if (typeTotal == null) {
+      typeTotal = 0;
+    } else if (typeTotal == 'DNS' || typeTotal == 'FTP' || typeTotal == 'SSH' || typeTotal == 'HTTP' || typeTotal == 'SMTP' || typeTotal == 'TCP') {
+      mon1 = document.getElementById(`northAmE${i}`).checked ? 0.04 : 0;
+      mon2 = document.getElementById(`northAmW${i}`).checked ? 0.04 : 0;
+      mon3 = document.getElementById(`northAmC${i}`).checked ? 0.04 : 0;
+      mon4 = document.getElementById(`europe${i}`).checked ? 0.04 : 0;
+      mon5 = document.getElementById(`asiaPac${i}`).checked ? 0.08 : 0;
+      mon6 = document.getElementById(`oceania${i}`).checked ? 0.12 : 0;
+      typeTotal = eval('(((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)) / policyTotal');
+    } else if (typeTotal == 'HTTPS') {
+      mon1 = document.getElementById(`northAmE${i}`).checked ? 0.08 : 0;
+      mon2 = document.getElementById(`northAmW${i}`).checked ? 0.08 : 0;
+      mon3 = document.getElementById(`NorthAmC${i}`).checked ? 0.08 : 0;
+      mon4 = document.getElementById(`europe${i}`).checked ? 0.08 : 0;
+      mon5 = document.getElementById(`asiaPac${i}`).checked ? 0.16 : 0;
+      mon6 = document.getElementById(`oceania${i}`).checked ? 0.24 : 0;
+      typeTotal = eval('((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)');
+    } else if (typeTotal == 'HTTP Waterfall') {
+      mon1 = document.getElementById(`northAmE${i}`).checked ? 50 : 0;
+      mon2 = document.getElementById(`northAmW${i}`).checked ? 50 : 0;
+      mon3 = document.getElementById(`NorthAmC${i}`).checked ? 50 : 0;
+      mon4 = document.getElementById(`europe${i}`).checked ? 50 : 0;
+      mon5 = document.getElementById(`asiaPac${i}`).checked ? 100 : 0;
+      mon6 = document.getElementById(`oceania${i}`).checked ? 150 : 0;
+      typeTotal = eval('((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)');
+    } else if (typeTotal == 'HTTPS Waterfall') {
+      mon1 = document.getElementById(`northAmE${i}`).checked ? 60 : 0;
+      mon2 = document.getElementById(`northAmW${i}`).checked ? 60 : 0;
+      mon3 = document.getElementById(`NorthAmC${ i}`).checked ? 60 : 0;
+      mon4 = document.getElementById(`europe${i}`).checked ? 60 : 0;
+      mon5 = document.getElementById(`asiaPac${i}`).checked ? 160 : 0;
+      mon6 = document.getElementById(`oceania${i}`).checked ? 160 : 0;
+      typeTotal = eval('((mon1 + mon2 + mon3 + mon4) * intervalTotal) + (mon5 * intervalTotal) + (mon6 * intervalTotal)');
+    }
+
+    //console.log(typeTotal.toFixed(2));
+    //console.log(intervalTotal);
+    //console.log(pushTotal);
+    //console.log(checkTotal);
+    //console.log(smsTotal);
+    //console.log(policyTotal);
+// Adds +1 to i
+    i++;
+  }
+// Returns i to 0
+  i = 0;
+  return false;
+};
 
 
 // counter for ID
 // divA.setAttribute("style" , "user" + ++counter);
 
-//Adding A New Check
+// Adding A New Check
 var counter = 0;
-$('#addCheck').click(function() {
-    $('#group1').after('<form class="form-horizontal">\
+$('#addCheck').click(() => {
+  $('#group1').after(`<form class="form-horizontal">\
                         <div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
                         <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Number Of Checks</label>\
                                 <div class="col-xs-1">\
-                                    <input class="form-control col-xs-1" id="checks'+counter+'" type="number" min="1"></input>\
+                                    <input class="form-control col-xs-1" id="checks${counter}" type="number" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">SMS Contacts</label>\
                                 <div class="col-xs-1">\
-                                    <input class="form-control col-xs-1" id="smsNotify'+counter+'" type="number" min="1"></input>\
+                                    <input class="form-control col-xs-1" id="smsNotify${counter}" type="number" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Push Notifications</label>\
                                 <div class="col-xs-1">\
-                                    <input class="form-control col-xs-1" id="pushNotify'+counter+'" type="number" min="1"></input>\
+                                    <input class="form-control col-xs-1" id="pushNotify${counter}" type="number" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Check Type</label>\
                                 <div class="col-sm-2">\
-                                        <select class="form-control" id="checkType'+counter+'">\
+                                        <select class="form-control" id="checkType${counter}">\
                                             <option>HTTP</option>\
                                             <option>HTTPS</option>\
                                             <option>TCP</option>\
@@ -382,7 +398,7 @@ $('#addCheck').click(function() {
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Check Interval</label>\
                                 <div class="col-sm-2">\
-                                        <select class="form-control" id="interval'+counter+'" >\
+                                        <select class="form-control" id="interval${counter}" >\
                                             <option>30 sec</option>\
                                             <option>60 sec</option>\
                                             <option>5 min</option>\
@@ -396,42 +412,120 @@ $('#addCheck').click(function() {
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Check Interval Policy</label>\
                                 <div class="col-sm-2">\
-                                        <select class="form-control" id="intPolicy'+counter+'">\
+                                        <select class="form-control" id="intPolicy${counter}">\
                                             <option>Simultaneous</option>\
                                             <option>Once Per Site</option>\
                                         </select>\
                                 </div>\
                             </div>\
-                            <div class="container">\
-                                <div class="row">\
-                                <label for="name" class="col-sm-3 control-label">Monitoring Locatins</label>\
-                                    <div class="form-check col-md-7" id="monLocations '+counter+'">\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="northAmE'+counter+'"> North America East <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="northAmW'+counter+'"> North America West <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="NorthAmC'+counter+'"> North America Central <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="europe'+counter+'"> Europe <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="asiaPac'+counter+'"> Asia Pasific <br></label>\
-                                        <label class="form-check-label"><input type="checkbox" class="form-check-input" id="oceania'+counter+'"> Oceania <br></label>\
-                                    </div>\
+                             <div class="row">\
+                              <label for="name" class="col-xs-3 control-label">Check Interval Policy</label>\
+                               <div class="button-group">\
+                               <dif class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>Asia-Pac</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" id="northAmE${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Banglore, India</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" id="northAmW${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Hong Kong</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" id="northAmC${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Singapore, Singapore</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" id="europe${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Tokyp Japan</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" id="asiaPac${counter}" tabIndex="-1"><input type="checkbox"/>&nbsp;Chennai, India</a></li>\
+                                 </ul>\
+                                 </dif>\
+                               </div>\
+                               <div class="button-group">\
+                               <div class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>Oceania</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
+                                 </div>\
+                               </div>\
+                                <div class="button-group">\
+                               <div class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>Europe</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
                                 </div>\
+                               </div>\
+                                <div class="button-group">\
+                               <div class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>US East</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
+                                </div>\
+                               </div>\
+                                <div class="button-group">\
+                               <div class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>US West</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
+                                </div>\
+                               </div>\
+                                <div class="button-group">\
+                               <div class="col-xs-2">\
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+                                <span>US Central</span>\
+                                 <span class="caret"></span></button>\
+                                 <ul class="dropdown-menu">\
+                                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>\
+                                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>\
+                                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>\
+                                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>\
+                                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>\
+                                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>\
+                                 </ul>\
+                                </div>\
+                               </div>\
+                              </div>\
+                             </div>\
                             </div>\
-                        </div>\
-                         </form>');
-                         counter ++; 
-                         return false;          
+                         </form>`);
+  counter++;
+  return false;
 });
 
 
-
-
-/*sonarTotal.onclick = function(form) {
+/* sonarTotal.onclick = function(form) {
     for (var i = 1; i <= 3; i++) {
         alert(form[checks+i].value);  // Here's where my problem is..
     }
 }*/
 
-//BUTTON ACTION jQuery
-$('#sonarCalc').on('click','#sonarDelete',function() {
-    $(this).parent().remove();
+// BUTTON ACTION jQuery
+$('#sonarCalc').on('click', '#sonarDelete', function () {
+  $(this).parent().remove();
 });
 
