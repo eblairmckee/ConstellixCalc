@@ -91,7 +91,7 @@ function anameNumber(num) {
   } else        { dnsTotal += 0; }
 }
 
-// Pool Configured
+// Pool Configured this
 function poolConfNumber(num) {
   if (num > 0.99) {
     const total = num * 0.01;
