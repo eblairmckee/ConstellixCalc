@@ -54,3 +54,7 @@
 .col-xs-2 {
     width: 12%;
 }
+.price-total{
+    position: fixed;
+    width: 23%;
+}
