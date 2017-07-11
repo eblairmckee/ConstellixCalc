@@ -8,10 +8,18 @@ const anameTotal = document.getElementById('aname');
 const poolAppTotal = document.getElementById('poolApp');
 const userTotal = document.getElementById('users');
 const form = document.getElementById('calcform');
+const stnrdQryTotal = document.getElementById('standardQ');
+const geoFilQryTotal = document.getElementById('geofilterQ');
+const geoProxQryTotal = document.getElementById('geoproxQ');
+const anameQryTotal = document.getElementById('anameQ');
 let dnsTotal = 0;
 let monthlyDnsTotal = 0;
 let monthlyTotal = 0;
 
+// Default Price
+$( document ).ready(function() {
+  document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${  monthlyTotal.toFixed(2)}`;
+});
 
 // Domain Calculation
 function domainNumber(num) {
@@ -51,7 +59,7 @@ function gtdNumber(num) {
 // Geo Proximity Applied
 function geoProxAppNumber(num) {
   if (num > 0.99) {
-    const total = num * 0.05;
+    const total = num * 0.06;
     dnsTotal += total;
   } else        { dnsTotal += 0; }
 }
@@ -59,7 +67,7 @@ function geoProxAppNumber(num) {
 // Geo Filter Applied
 function geoFilterAppNumber(num) {
   if (num > 0.99) {
-    const total = num * 0.05;
+    const total = num * 0.06;
     dnsTotal += total;
   } else    { dnsTotal += 0; }
 }
@@ -69,15 +77,19 @@ function anameNumber(num) {
   if (num > 0.99) {
     const total = num * 0.1;
     dnsTotal += total;
-  } else        { dnsTotal += 0; }
+  } else { 
+    dnsTotal += 0; 
+  }
 }
 
 // Pool Applied
 function poolAppNumber(num) {
   if (num > 0.99) {
-    const total = num * 0.1;
+    const total = num * 0.11;
     dnsTotal += total;
-  } else        { dnsTotal += 0; }
+  } else {
+    dnsTotal += 0; 
+  }
 }
 
 // Additiona User Accounts
@@ -92,9 +104,54 @@ function userNumber(num) {
   } else if (num > 100) {
     const total = (num - 100) * 0.5 + 110;
     dnsTotal += total;
-  } else        { dnsTotal += 0; }
+  } else { 
+    dnsTotal += 0; 
+  }
 }
 
+// Standard Queries
+function standardQueries(num) {
+  if (num > 0 && num <= 1000000000){
+    dnsTotal += (num * .1975) * .000002;
+  } else if (num > 1000000000) {
+    dnsTotal += (num * .0000975) * .0000002;
+  } else {
+    dnsTotal += 0;
+  }
+}
+
+// Geo Filter Queries
+function geoFilterQueries(num) {
+  if (num > 0 && num <= 1000000000) {
+    dnsTotal += (num * .35) * .000002;
+  } else if (num > 1000000000) {
+    dnsTotal += (num * .000175) * .000002;
+  } else {
+    dnsTotal += 0;
+  }
+}
+
+// Geo Proximity Queries
+function geoProxQueries(num) {
+  if (num > 0 && num <= 1000000000) {
+    dnsTotal += (num * .3) * .000002;
+  } else if (num > 1000000000) {
+    dnsTotal += (num * .00015) * .000002;
+  } else {
+    dnsTotal += 0;
+  }
+}
+
+// ANAME Queries
+function anameQueries(num) {
+   if (num > 0 && num <= 1000000000){
+    dnsTotal += (num * .1975) * .000002;
+  } else if (num > 1000000000) {
+    dnsTotal += (num * .0000975) * .0000002;
+  } else {
+    dnsTotal += 0;
+  }
+}
 
 // First Submit Button (DNS Calc)
 buttonTotal.onclick = function () {
@@ -106,6 +163,10 @@ buttonTotal.onclick = function () {
   anameNumber(anameTotal.value);
   poolAppNumber(poolAppTotal.value);
   userNumber(userTotal.value);
+  standardQueries(stnrdQryTotal.value);
+  geoFilterQueries(geoFilQryTotal.value);
+  geoProxQueries(geoProxQryTotal.value);
+  anameQueries(anameQryTotal.value);
   monthlyDnsTotal = dnsTotal;
   monthlyTotal = monthlyDnsTotal + 10; //  10 is a place holder for the Sonar Total
   document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${  monthlyTotal.toFixed(2)}`;
@@ -118,17 +179,15 @@ clearButton.onclick = function () {
   document.getElementById('domains').value = '';
   document.getElementById('records').value = '';
   document.getElementById('gtd').value = '';
-  document.getElementById('geoProxConf').value = '';
   document.getElementById('geoProxApp').value = '';
-  document.getElementById('geoFilterConf').value = '';
   document.getElementById('geoFilterApp').value = '';
   document.getElementById('aname').value = '';
-  document.getElementById('poolConf').value = '';
   document.getElementById('poolApp').value = '';
   document.getElementById('users').value = '';
-  monthlyTotal -= monthlyDnsTotal;
+  document.getElementById('standardQ').value = '';
+  monthlyDnsTotal = 0;
+  monthlyTotal = monthlyDnsTotal + 10; //  10 is a place holder for the Sonar Total
   document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${  monthlyTotal.toFixed(2)}`;
-  dnsTotal = 0;
   return false;
 };
 
