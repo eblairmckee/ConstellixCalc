@@ -2,12 +2,9 @@
 const domainTotal = document.getElementById('domains');
 const recordTotal = document.getElementById('records');
 const gtdTotal = document.getElementById('gtd');
-const geoProxConfTotal = document.getElementById('geoProxConf');
 const geoProxAppTotal = document.getElementById('geoProxApp');
-const geoFilterConfTotal = document.getElementById('geoFilterConf');
 const geoFilterAppTotal = document.getElementById('geoFilterApp');
 const anameTotal = document.getElementById('aname');
-const poolConfTotal = document.getElementById('poolConf');
 const poolAppTotal = document.getElementById('poolApp');
 const userTotal = document.getElementById('users');
 const form = document.getElementById('calcform');
@@ -51,26 +48,10 @@ function gtdNumber(num) {
   } else        { dnsTotal += 0; }
 }
 
-// Geo Proximity Configured
-function geoProxConfNumber(num) {
-  if (num > 0.99) {
-    const total = num * 0.01;
-    dnsTotal += total;
-  } else        { dnsTotal += 0; }
-}
-
 // Geo Proximity Applied
 function geoProxAppNumber(num) {
   if (num > 0.99) {
     const total = num * 0.05;
-    dnsTotal += total;
-  } else        { dnsTotal += 0; }
-}
-
-// Geo Filter Configured
-function geoFilterConfNumber(num) {
-  if (num > 0.99) {
-    const total = num * 0.01;
     dnsTotal += total;
   } else        { dnsTotal += 0; }
 }
@@ -87,14 +68,6 @@ function geoFilterAppNumber(num) {
 function anameNumber(num) {
   if (num > 0.99) {
     const total = num * 0.1;
-    dnsTotal += total;
-  } else        { dnsTotal += 0; }
-}
-
-// Pool Configured this
-function poolConfNumber(num) {
-  if (num > 0.99) {
-    const total = num * 0.01;
     dnsTotal += total;
   } else        { dnsTotal += 0; }
 }
@@ -128,12 +101,9 @@ buttonTotal.onclick = function () {
   domainNumber(domainTotal.value);
   recordNumber(recordTotal.value);
   gtdNumber(gtdTotal.value);
-  geoProxConfNumber(geoProxConfTotal.value);
   geoProxAppNumber(geoProxAppTotal.value);
-  geoFilterConfNumber(geoFilterConfTotal.value);
   geoFilterAppNumber(geoFilterAppTotal.value);
   anameNumber(anameTotal.value);
-  poolConfNumber(poolConfTotal.value);
   poolAppNumber(poolAppTotal.value);
   userNumber(userTotal.value);
   monthlyDnsTotal = dnsTotal;
@@ -158,6 +128,7 @@ clearButton.onclick = function () {
   document.getElementById('users').value = '';
   monthlyTotal -= monthlyDnsTotal;
   document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${  monthlyTotal.toFixed(2)}`;
+  dnsTotal = 0;
   return false;
 };
 
