@@ -240,16 +240,7 @@ addCheck.onclick = function() {
 };*/
 
 // Submit Button -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-i = 0;
-let checkTotal;
-let smsTotal;
-let pushTotal;
-let typeTotal;
-let intervalTotal;
-let policyTotal;
 
-sonarTotal.onclick = function () {
-};
 // Adding A New Check
 var counter = 0;
 $('#addCheck').click(() => {
@@ -260,18 +251,6 @@ $('#addCheck').click(() => {
                                 <label for="name" class="col-md-3 control-label">Number Of Checks</label>\
                                 <div class="col-xs-1">\
                                     <input class="form-control col-md-1" id="checks${counter}" type="number" min="1"></input>\
-                                </div>\
-                            </div>\
-                            <div class="form-group">\
-                                <label for="name" class="col-md-3 control-label">SMS Contacts</label>\
-                                <div class="col-md-1">\
-                                    <input class="form-control col-md-1" id="smsNotify${counter}" type="number" min="1"></input>\
-                                </div>\
-                            </div>\
-                            <div class="form-group">\
-                                <label for="name" class="col-md-3 control-label">Push Notifications</label>\
-                                <div class="col-md-1">\
-                                    <input class="form-control col-md-1" id="pushNotify${counter}" type="number" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
@@ -317,12 +296,37 @@ $('#addCheck').click(() => {
                             </form>\
                             <form class="form-inline">\
                             <div class="form-group">\
-                              <div class="col-md-5">\
-                                <label for="name" class="control-label">North America</label>\
+                                <label for="name" class="control-label" style="margin-left:190px; margin-right:25px;">North America</label>\
+                                <div class="input-group">\
+                                    <input class="form-control" id="northAmerica${counter}" type="number" min="1" max="22"></input>\
+                                    <div class="input-group-addon">/22</div>\
+                                </div>\
                               </div>\
-                                <div class="input-group col-md-1">\
-                                    <input class="form-control" id="pushNotify${counter}" type="number" min="1" max="10"></input>\
-                                    <div class="input-group-addon">/30</div>\
+                            </form>\
+                            <form class="form-inline">\
+                            <div class="form-group">\
+                                <label for="name" class="control-label" style="margin-left:190px; margin-right:73px;">Europe</label>\
+                                <div class="input-group">\
+                                    <input class="form-control" id="europe${counter}" type="number" min="1" max="10"></input>\
+                                    <div class="input-group-addon">/9&nbsp;&nbsp;</div>\
+                                </div>\
+                              </div>\
+                            </form>\
+                            <form class="form-inline">\
+                            <div class="form-group">\
+                                <label for="name" class="control-label" style="margin-left:190px; margin-right:62px;">Asia-Pac</label>\
+                                <div class="input-group">\
+                                    <input class="form-control" id="asiaPac${counter}" type="number" min="1" max="10"></input>\
+                                    <div class="input-group-addon">/5&nbsp;&nbsp;</div>\
+                                </div>\
+                              </div>\
+                            </form>\
+                            <form class="form-inline">\
+                            <div class="form-group">\
+                                <label for="name" class="control-label" style="margin-left:190px; margin-right:66px;">Oceania</label>\
+                                <div class="input-group">\
+                                    <input class="form-control" id="oceania${counter}" type="number" min="1" max="10"></input>\
+                                    <div class="input-group-addon">/3&nbsp;&nbsp;</div>\
                                 </div>\
                               </div>\
                             </form>\
@@ -330,8 +334,53 @@ $('#addCheck').click(() => {
   counter++;
   return false;
 });
+let i = 0;
+/*let checkNum = 0;
+let checkType;
+let checkInterval;
+let checkIntPolicy;
+let northAmerica;
+let europe;
+let asiaPac;
+let oceania;*/
+const checkNumTotal = [];
+sonarTotal.onclick = function () {
+  for (i; i < counter; i++) {
+   
+    const checkNum = document.getElementById('checks' + i);
+    const checkType = document.getElementById('checkType' + i);
+    const checkInterval = document.getElementById('interval' + i);
+    const checkIntPolicy = document.getElementById('intPolicy' + i);
+    const northAmerica = document.getElementById('northAmerica' + i);
+    const europe = document.getElementById('europe' + i);
+    const asiaPac = document.getElementById('asiaPac' + i);
+    const oceania = document.getElementById('oceania' + i);
+    let checkTypeAm = 0;
+    let checkTypeAp = 0;
+    let checkTypeOc = 0;
 
+     if (checkNum.value == null){
+       checkNumTotal = 0;
+    } else {
+       checkNumTotal.push(Number(checkNum.value));
+    }
+    
 
+   /* if (checkType.value = HTTP) {
+      checkTypeAm = .00004;
+      checkTypeAp = .00006;
+      checkTypeOc = .00008;
+    } else if ( checkType.value = HTTPS ){
+
+    }*/
+  }
+  function total(a,b){
+    return a + b;
+  }
+  console.log(checkNumTotal.reduce(total));
+  return false;
+  
+};
 /* sonarTotal.onclick = function(form) {
     for (var i = 1; i <= 3; i++) {
         alert(form[checks+i].value);  // Here's where my problem is..
