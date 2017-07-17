@@ -343,7 +343,7 @@ let northAmerica;
 let europe;
 let asiaPac;
 let oceania;*/
-const checkNumTotal = [];
+let checkNumTotal = [];
 sonarTotal.onclick = function () {
   for (i; i < counter; i++) {
    
@@ -358,8 +358,8 @@ sonarTotal.onclick = function () {
     let checkTypeAm = 0;
     let checkTypeAp = 0;
     let checkTypeOc = 0;
-
-     if (checkNum.value == null){
+    
+    /*if (checkNum.value === null){
        checkNumTotal = 0;
     } else {
        checkNumTotal.push(Number(checkNum.value));
@@ -372,10 +372,10 @@ sonarTotal.onclick = function () {
       checkTypeOc = .00008;
     } else if ( checkType.value = HTTPS ){
 
-    }*/
+    }
   }
   function total(a,b){
-    return a + b;
+    return a + b;*/
   }
   console.log(checkNumTotal.reduce(total));
   return false;
@@ -385,10 +385,10 @@ sonarTotal.onclick = function () {
     for (var i = 1; i <= 3; i++) {
         alert(form[checks+i].value);  // Here's where my problem is..
     }
-}*/
+  }*/
 
 // BUTTON ACTION jQuery
 $('#sonarCalc').on('click', '#sonarDelete', function () {
-  $(this).parent().remove();
+  $(this).parent().remove()
 });
 
