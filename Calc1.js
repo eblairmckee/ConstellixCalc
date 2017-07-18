@@ -1,4 +1,7 @@
 // Define Global Variables
+let dnsTotal = 0;
+let monthlyDnsTotal = 0;
+let monthlyTotal = 0;
 const domainTotal = document.getElementById('domains');
 const recordTotal = document.getElementById('records');
 const gtdTotal = document.getElementById('gtd');
@@ -12,9 +15,7 @@ const stnrdQryTotal = document.getElementById('standardQ');
 const geoFilQryTotal = document.getElementById('geofilterQ');
 const geoProxQryTotal = document.getElementById('geoproxQ');
 const anameQryTotal = document.getElementById('anameQ');
-let dnsTotal = 0;
-let monthlyDnsTotal = 0;
-let monthlyTotal = 0;
+
 
 // Default Price
 $( document ).ready(function() {
@@ -250,26 +251,25 @@ $('#addCheck').click(() => {
                             <div class="form-group">\
                                 <label for="name" class="col-md-3 control-label">Number Of Checks</label>\
                                 <div class="col-xs-1">\
-                                    <input class="form-control col-md-1" id="checks${counter}" type="number" min="1"></input>\
+                                    <input class="form-control col-md-1 " id="checks${counter}" type="number" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-md-3 control-label">Check Type</label>\
                                 <div class="col-md-2">\
-                                        <select class="form-control" id="checkType${counter}">\
+                                        <select class="form-control sonar" id="checkType${counter}">\
                                             <option>HTTP</option>\
                                             <option>HTTPS</option>\
                                             <option>TCP</option>\
                                             <option>DNS</option>\
-                                            <option>HTTP Waterfall</option>\
-                                            <option>HTTPS Waterfall</option>\
+                                            <option>Waterfall</option>\
                                         </select>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-md-3 control-label">Check Interval</label>\
                                 <div class="col-md-2">\
-                                        <select class="form-control" id="interval${counter}" >\
+                                        <select class="form-control " id="interval${counter}" >\
                                             <option>30 sec</option>\
                                             <option>60 sec</option>\
                                             <option>5 min</option>\
@@ -335,18 +335,15 @@ $('#addCheck').click(() => {
   return false;
 });
 let i = 0;
-/*let checkNum = 0;
-let checkType;
-let checkInterval;
-let checkIntPolicy;
-let northAmerica;
-let europe;
-let asiaPac;
-let oceania;*/
-let checkNumTotal = [];
+
 sonarTotal.onclick = function () {
+  let checkNumTotal = 0;
+  
   for (i; i < counter; i++) {
-   
+    let checkTypeAm = 0;
+    let checkTypeAp = 0;
+    let checkTypeOc = 0;
+    let checkInt = 0;
     const checkNum = document.getElementById('checks' + i);
     const checkType = document.getElementById('checkType' + i);
     const checkInterval = document.getElementById('interval' + i);
@@ -355,29 +352,67 @@ sonarTotal.onclick = function () {
     const europe = document.getElementById('europe' + i);
     const asiaPac = document.getElementById('asiaPac' + i);
     const oceania = document.getElementById('oceania' + i);
-    let checkTypeAm = 0;
-    let checkTypeAp = 0;
-    let checkTypeOc = 0;
-    
-    /*if (checkNum.value === null){
-       checkNumTotal = 0;
+
+    // Number of checks
+    if (checkNum == null) {
+      checkNumTotal += 0;
+    } else if (checkNum.value === "") {
+      alert('Please enter "Number Of Checks"')
     } else {
-       checkNumTotal.push(Number(checkNum.value));
-    }
-    
+      checkNumTotal += Number(checkNum.value);
+    };
 
-   /* if (checkType.value = HTTP) {
-      checkTypeAm = .00004;
-      checkTypeAp = .00006;
-      checkTypeOc = .00008;
-    } else if ( checkType.value = HTTPS ){
-
+    // Check Type
+    if (checkType == null) {
+        checkTypeAm = 0;
+        checkTypeAp = 0;
+        checkTypeOc = 0;
+    } else if (checkType.value == "HTTP") {
+        checkTypeAm = .00004;
+        checkTypeAp = .00006;
+        checkTypeOc = .00008;
+    } else if (checkType.value == "HTTPS") {
+        checkTypeAm = .00006;
+        checkTypeAp = .00008;
+        checkTypeOc = .00010;
+    } else if (checkType.value == "DNS") {
+        checkTypeAm = .00002;
+        checkTypeAp = .00003;
+        checkTypeOc = .00003;
+    } else if (checkType.value == "TCP") {
+        checkTypeAm = .00002;
+        checkTypeAp = .00003;
+        checkTypeOc = .00003;
+    } else if (checkType.value == "Waterfall") {
+        checkTypeAm = .000020;
+        checkTypeAp = .00168;
+        checkTypeOc = .00192;
+    };
+   
+    // Check Interval
+    if (checkInterval.value == null) {
+      checkInt = 0;
+    } else if (checkInterval.value == "30 sec") {
+      checkInt = 2880;
+    } else if (checkInterval.value == "60 sec") {
+      checkInt = 1400;
+    } else if (checkInterval.value == "5 min") {
+      checkInt = 288;
+    } else if (checkInterval.value == "10 min") {
+      checkInt = 144;
+    } else if (checkInterval.value == "30 min") {
+      checkInt = 48;
+    } else if (checkInterval.value == "12 hrs") {
+      checkInt = 2;
+    } else if (checkInterval.value == "24 hrs") {
+      checkInt = 1;
     }
+
+
   }
-  function total(a,b){
-    return a + b;*/
-  }
-  console.log(checkNumTotal.reduce(total));
+  
+  i = 0;
+  console.log(checkNumTotal);
   return false;
   
 };
