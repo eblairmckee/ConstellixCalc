@@ -18,8 +18,8 @@ const anameQryTotal = document.getElementById('anameQ');
 
 
 // Default Price
-$( document ).ready(function() {
-  document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${  monthlyTotal.toFixed(2)}`;
+$(document).ready(() => {
+  document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${monthlyTotal.toFixed(2)}`;
 });
 
 // Domain Calculation
@@ -35,7 +35,7 @@ function domainNumber(num) {
     const twentyfiveDomain = oneDomain - 24;
     const total = twentyfiveDomain * 0.1 + 17;
     dnsTotal += total;
-  } else       { alert('Please enter number of domains'); }
+  } else { alert('Please enter number of domains'); }
 }
 
 // Record Calculation
@@ -44,7 +44,7 @@ function recordNumber(num) {
     const newNum = num - 100;
     total = Math.round(newNum / 100) * 0.5;
     dnsTotal += total;
-  } else        { dnsTotal += 0; }
+  } else { dnsTotal += 0; }
 }
 
 // GTD Calculation
@@ -54,7 +54,7 @@ function gtdNumber(num) {
   } else if (num > 1 && num < 100) {
     const total = num - 1 + 5;
     dnsTotal += total;
-  } else        { dnsTotal += 0; }
+  } else { dnsTotal += 0; }
 }
 
 // Geo Proximity Applied
@@ -62,7 +62,7 @@ function geoProxAppNumber(num) {
   if (num > 0.99) {
     const total = num * 0.06;
     dnsTotal += total;
-  } else        { dnsTotal += 0; }
+  } else { dnsTotal += 0; }
 }
 
 // Geo Filter Applied
@@ -70,7 +70,7 @@ function geoFilterAppNumber(num) {
   if (num > 0.99) {
     const total = num * 0.06;
     dnsTotal += total;
-  } else    { dnsTotal += 0; }
+  } else { dnsTotal += 0; }
 }
 
 // ANAME
@@ -78,8 +78,8 @@ function anameNumber(num) {
   if (num > 0.99) {
     const total = num * 0.1;
     dnsTotal += total;
-  } else { 
-    dnsTotal += 0; 
+  } else {
+    dnsTotal += 0;
   }
 }
 
@@ -89,7 +89,7 @@ function poolAppNumber(num) {
     const total = num * 0.11;
     dnsTotal += total;
   } else {
-    dnsTotal += 0; 
+    dnsTotal += 0;
   }
 }
 
@@ -105,17 +105,17 @@ function userNumber(num) {
   } else if (num > 100) {
     const total = (num - 100) * 0.5 + 110;
     dnsTotal += total;
-  } else { 
-    dnsTotal += 0; 
+  } else {
+    dnsTotal += 0;
   }
 }
 
 // Standard Queries
 function standardQueries(num) {
-  if (num > 0 && num <= 1000000000){
-    dnsTotal += (num * .1975) * .000002;
+  if (num > 0 && num <= 1000000000) {
+    dnsTotal += (num * 0.1975) * 0.000002;
   } else if (num > 1000000000) {
-    dnsTotal += (num * .0000975) * .0000002;
+    dnsTotal += (num * 0.0000975) * 0.0000002;
   } else {
     dnsTotal += 0;
   }
@@ -124,9 +124,9 @@ function standardQueries(num) {
 // Geo Filter Queries
 function geoFilterQueries(num) {
   if (num > 0 && num <= 1000000000) {
-    dnsTotal += (num * .35) * .000002;
+    dnsTotal += (num * 0.35) * 0.000002;
   } else if (num > 1000000000) {
-    dnsTotal += (num * .000175) * .000002;
+    dnsTotal += (num * 0.000175) * 0.000002;
   } else {
     dnsTotal += 0;
   }
@@ -135,9 +135,9 @@ function geoFilterQueries(num) {
 // Geo Proximity Queries
 function geoProxQueries(num) {
   if (num > 0 && num <= 1000000000) {
-    dnsTotal += (num * .3) * .000002;
+    dnsTotal += (num * 0.3) * 0.000002;
   } else if (num > 1000000000) {
-    dnsTotal += (num * .00015) * .000002;
+    dnsTotal += (num * 0.00015) * 0.000002;
   } else {
     dnsTotal += 0;
   }
@@ -145,13 +145,13 @@ function geoProxQueries(num) {
 
 // ANAME Queries
 function anameQueries(num) {
-  if (num > 0 && num <= 1000000000){
-    dnsTotal += (num * .1975) * .000002;
+  if (num > 0 && num <= 1000000000) {
+    dnsTotal += (num * 0.1975) * 0.000002;
   } else if (num > 1000000000) {
-     dnsTotal += (num * .0000975) * .0000002;
-   } else {
-     dnsTotal += 0;
-   }
+    dnsTotal += (num * 0.0000975) * 0.0000002;
+  } else {
+    dnsTotal += 0;
+  }
 }
 
 // First Submit Button (DNS Calc)
@@ -170,7 +170,7 @@ buttonTotal.onclick = function () {
   anameQueries(anameQryTotal.value);
   monthlyDnsTotal = dnsTotal;
   monthlyTotal = monthlyDnsTotal + 10; //  10 is a place holder for the Sonar Total
-  document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${  monthlyTotal.toFixed(2)}`;
+  document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${monthlyTotal.toFixed(2)}`;
   dnsTotal = 0;
   return false;
 };
@@ -188,7 +188,7 @@ clearButton.onclick = function () {
   document.getElementById('standardQ').value = '';
   monthlyDnsTotal = 0;
   monthlyTotal = monthlyDnsTotal + 10; //  10 is a place holder for the Sonar Total
-  document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${  monthlyTotal.toFixed(2)}`;
+  document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${monthlyTotal.toFixed(2)}`;
   return false;
 };
 
@@ -243,7 +243,7 @@ addCheck.onclick = function() {
 // Submit Button -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Adding A New Check
-var counter = 0;
+let counter = 0;
 $('#addCheck').click(() => {
   $('#group1').after(`<div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
                         <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
@@ -344,23 +344,23 @@ sonarTotal.onclick = function () {
     let checkTypeAp = 0;
     let checkTypeOc = 0;
     let checkInt = 0;
-    const checkNum = document.getElementById('checks' + i);
-    const checkType = document.getElementById('checkType' + i);
-    const checkInterval = document.getElementById('interval' + i);
-    const checkIntPolicy = document.getElementById('intPolicy' + i);
-    const northAmerica = document.getElementById('northAmerica' + i);
-    const europe = document.getElementById('europe' + i);
-    const asiaPac = document.getElementById('asiaPac' + i);
-    const oceania = document.getElementById('oceania' + i);
+    const checkNum = document.getElementById(`checks${  i}`);
+    const checkType = document.getElementById(`checkType${  i}`);
+    const checkInterval = document.getElementById(`interval${  i}`);
+    const checkIntPolicy = document.getElementById(`intPolicy${  i}`);
+    const northAmerica = document.getElementById(`northAmerica${  i}`);
+    const europe = document.getElementById(`europe${  i}`);
+    const asiaPac = document.getElementById(`asiaPac${  i}`);
+    const oceania = document.getElementById(`oceania${  i}`);
 
     // Number of checks
     if (checkNum == null) {
       checkNumTotal += 0;
-    } else if (checkNum.value === "") {
-      alert('Please enter "Number Of Checks"')
+    } else if (checkNum.value === '') {
+      alert('Please enter "Number Of Checks"');
     } else {
       checkNumTotal += Number(checkNum.value);
-    };
+    }
 
     // Check Type
     if (checkType == null) {
@@ -368,27 +368,27 @@ sonarTotal.onclick = function () {
       checkTypeAp = 0;
       checkTypeOc = 0;
     } else if (checkType.value == 'HTTP') {
-      checkTypeAm = .00004;
-      checkTypeAp = .00006;
-      checkTypeOc = .00008;
+      checkTypeAm = 0.00004;
+      checkTypeAp = 0.00006;
+      checkTypeOc = 0.00008;
     } else if (checkType.value == 'HTTPS') {
-      checkTypeAm = .00006;
-      checkTypeAp = .00008;
-      checkTypeOc = .00010;
+      checkTypeAm = 0.00006;
+      checkTypeAp = 0.00008;
+      checkTypeOc = 0.00010;
     } else if (checkType.value == 'DNS') {
-      checkTypeAm = .00002;
-      checkTypeAp = .00003;
-      checkTypeOc = .00003;
+      checkTypeAm = 0.00002;
+      checkTypeAp = 0.00003;
+      checkTypeOc = 0.00003;
     } else if (checkType.value == 'TCP') {
-      checkTypeAm = .00002;
-      checkTypeAp = .00003;
-      checkTypeOc = .00003;
+      checkTypeAm = 0.00002;
+      checkTypeAp = 0.00003;
+      checkTypeOc = 0.00003;
     } else if (checkType.value == 'Waterfall') {
-      checkTypeAm = .000020;
-      checkTypeAp = .00168;
-      checkTypeOc = .00192;
-    };
-   
+      checkTypeAm = 0.000020;
+      checkTypeAp = 0.00168;
+      checkTypeOc = 0.00192;
+    }
+
     // Check Interval
     if (checkInterval == null) {
       checkInt = 0;
@@ -413,17 +413,17 @@ sonarTotal.onclick = function () {
       checkTotal += 0;
     } else if (checkIntPolicy.value == 'Simultaneous') {
       checkTotal += (((checkTypeAm * Number(europe.value)) * checkInt) + ((checkTypeAm * Number(northAmerica.value)) * checkInt) + ((checkTypeAp * Number(asiaPac.value)) * checkInt) + ((checkTypeOc * Number(oceania.value)) * checkInt)) * checkNumTotal;
-    console.log(Number(northAmerica.value));
+      console.log(Number(northAmerica.value));
     } else if (checkIntPolicy.value == 'Once Per Site') {
-      const cheAm = northAmerica.value ? 1:0;
-      const cheEu = europe.value ? 1:0;
-      const cheAp = asiaPac.value ? 1:0;
-      const cheOc = oceania.value ? 1:0;
-      checkTotal = ((checkTypeAm * cheAm) * checkInt) + ((checkTypeAm * cheEu) * checkInt) +  ((checkTypeAp * cheAp) * checkInt) + ((checkTypeOc * cheOc) * checkInt);
+      const cheAm = northAmerica.value ? 1 : 0;
+      const cheEu = europe.value ? 1 : 0;
+      const cheAp = asiaPac.value ? 1 : 0;
+      const cheOc = oceania.value ? 1 : 0;
+      checkTotal = (((checkTypeAm * cheAm) * checkInt) + ((checkTypeAm * cheEu) * checkInt) + ((checkTypeAp * cheAp) * checkInt) + ((checkTypeOc * cheOc) * checkInt)) *;
     }
-     checkNumTotal = 0;
+    checkNumTotal = 0;
   }
-  
+
   i = 0;
   sonarVal = checkTotal;
 
@@ -435,7 +435,6 @@ sonarTotal.onclick = function () {
 
   checkTotal = 0;
   return false;
-  
 };
 /* sonarTotal.onclick = function(form) {
     for (var i = 1; i <= 3; i++) {
@@ -445,6 +444,6 @@ sonarTotal.onclick = function () {
 
 // BUTTON ACTION jQuery
 $('#sonarCalc').on('click', '#sonarDelete', function () {
-  $(this).parent().remove()
+  $(this).parent().remove();
 });
 
