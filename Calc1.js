@@ -145,13 +145,13 @@ function geoProxQueries(num) {
 
 // ANAME Queries
 function anameQueries(num) {
-   if (num > 0 && num <= 1000000000){
+  if (num > 0 && num <= 1000000000){
     dnsTotal += (num * .1975) * .000002;
   } else if (num > 1000000000) {
-    dnsTotal += (num * .0000975) * .0000002;
-  } else {
-    dnsTotal += 0;
-  }
+     dnsTotal += (num * .0000975) * .0000002;
+   } else {
+     dnsTotal += 0;
+   }
 }
 
 // First Submit Button (DNS Calc)
@@ -335,10 +335,10 @@ $('#addCheck').click(() => {
   return false;
 });
 let i = 0;
-
+sonarVal = 0;
 sonarTotal.onclick = function () {
+  let checkTotal = 0;
   let checkNumTotal = 0;
-  
   for (i; i < counter; i++) {
     let checkTypeAm = 0;
     let checkTypeAp = 0;
@@ -364,55 +364,76 @@ sonarTotal.onclick = function () {
 
     // Check Type
     if (checkType == null) {
-        checkTypeAm = 0;
-        checkTypeAp = 0;
-        checkTypeOc = 0;
-    } else if (checkType.value == "HTTP") {
-        checkTypeAm = .00004;
-        checkTypeAp = .00006;
-        checkTypeOc = .00008;
-    } else if (checkType.value == "HTTPS") {
-        checkTypeAm = .00006;
-        checkTypeAp = .00008;
-        checkTypeOc = .00010;
-    } else if (checkType.value == "DNS") {
-        checkTypeAm = .00002;
-        checkTypeAp = .00003;
-        checkTypeOc = .00003;
-    } else if (checkType.value == "TCP") {
-        checkTypeAm = .00002;
-        checkTypeAp = .00003;
-        checkTypeOc = .00003;
-    } else if (checkType.value == "Waterfall") {
-        checkTypeAm = .000020;
-        checkTypeAp = .00168;
-        checkTypeOc = .00192;
+      checkTypeAm = 0;
+      checkTypeAp = 0;
+      checkTypeOc = 0;
+    } else if (checkType.value == 'HTTP') {
+      checkTypeAm = .00004;
+      checkTypeAp = .00006;
+      checkTypeOc = .00008;
+    } else if (checkType.value == 'HTTPS') {
+      checkTypeAm = .00006;
+      checkTypeAp = .00008;
+      checkTypeOc = .00010;
+    } else if (checkType.value == 'DNS') {
+      checkTypeAm = .00002;
+      checkTypeAp = .00003;
+      checkTypeOc = .00003;
+    } else if (checkType.value == 'TCP') {
+      checkTypeAm = .00002;
+      checkTypeAp = .00003;
+      checkTypeOc = .00003;
+    } else if (checkType.value == 'Waterfall') {
+      checkTypeAm = .000020;
+      checkTypeAp = .00168;
+      checkTypeOc = .00192;
     };
    
     // Check Interval
-    if (checkInterval.value == null) {
+    if (checkInterval == null) {
       checkInt = 0;
-    } else if (checkInterval.value == "30 sec") {
-      checkInt = 2880;
-    } else if (checkInterval.value == "60 sec") {
-      checkInt = 1400;
-    } else if (checkInterval.value == "5 min") {
-      checkInt = 288;
-    } else if (checkInterval.value == "10 min") {
-      checkInt = 144;
-    } else if (checkInterval.value == "30 min") {
-      checkInt = 48;
-    } else if (checkInterval.value == "12 hrs") {
-      checkInt = 2;
-    } else if (checkInterval.value == "24 hrs") {
-      checkInt = 1;
+    } else if (checkInterval.value == '30 sec') {
+      checkInt = 86400;
+    } else if (checkInterval.value == '60 sec') {
+      checkInt = 42000;
+    } else if (checkInterval.value == '5 min') {
+      checkInt = 8640;
+    } else if (checkInterval.value == '10 min') {
+      checkInt = 4320;
+    } else if (checkInterval.value == '30 min') {
+      checkInt = 1440;
+    } else if (checkInterval.value == '12 hrs') {
+      checkInt = 60;
+    } else if (checkInterval.value == '24 hrs') {
+      checkInt = 30;
     }
 
-
+    // Check Policy
+    if (checkIntPolicy == null) {
+      checkTotal += 0;
+    } else if (checkIntPolicy.value == 'Simultaneous') {
+      checkTotal += (((checkTypeAm * Number(europe.value)) * checkInt) + ((checkTypeAm * Number(northAmerica.value)) * checkInt) + ((checkTypeAp * Number(asiaPac.value)) * checkInt) + ((checkTypeOc * Number(oceania.value)) * checkInt)) * checkNumTotal;
+    console.log(Number(northAmerica.value));
+    } else if (checkIntPolicy.value == 'Once Per Site') {
+      const cheAm = northAmerica.value ? 1:0;
+      const cheEu = europe.value ? 1:0;
+      const cheAp = asiaPac.value ? 1:0;
+      const cheOc = oceania.value ? 1:0;
+      checkTotal = ((checkTypeAm * cheAm) * checkInt) + ((checkTypeAm * cheEu) * checkInt) +  ((checkTypeAp * cheAp) * checkInt) + ((checkTypeOc * cheOc) * checkInt);
+    }
+     checkNumTotal = 0;
   }
   
   i = 0;
+  sonarVal = checkTotal;
+
+  // For Testing
+  console.log(checkTotal);
   console.log(checkNumTotal);
+  console.log(sonarVal);
+  // End of Testing
+
+  checkTotal = 0;
   return false;
   
 };
