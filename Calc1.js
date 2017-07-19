@@ -169,7 +169,7 @@ buttonTotal.onclick = function () {
   geoProxQueries(geoProxQryTotal.value);
   anameQueries(anameQryTotal.value);
   monthlyDnsTotal = dnsTotal;
-  monthlyTotal = monthlyDnsTotal + 10; //  10 is a place holder for the Sonar Total
+  monthlyTotal = monthlyDnsTotal + sonarVal; //  10 is a place holder for the Sonar Total
   document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${monthlyTotal.toFixed(2)}`;
   dnsTotal = 0;
   return false;
@@ -187,7 +187,7 @@ clearButton.onclick = function () {
   document.getElementById('users').value = '';
   document.getElementById('standardQ').value = '';
   monthlyDnsTotal = 0;
-  monthlyTotal = monthlyDnsTotal + 10; //  10 is a place holder for the Sonar Total
+  monthlyTotal = sonarVal - monthlyDnsTotal; //  10 is a place holder for the Sonar Total
   document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${monthlyTotal.toFixed(2)}`;
   return false;
 };
@@ -204,43 +204,6 @@ $('.panel-group').on('shown.bs.collapse', toggleIcon);
 
 
 /* ------------------------------------------Constellix Sonar------------------------------------------------------*/
-/* var counter = 0;
-var checkInput = null;
-addCheck.onclick = function() {
-    var formTag = document.createElement('form');
-    var divA = document.createElement('div');
-    var deleteButton = document.createElement('button');
-    var divChecksA = document.createElement('div');
-    var labelChecks = document.createElement('label');
-    var labelChecksText = document.createTextNode("Number Of Checks");
-    var divChecksB = document.createElement('div');
-    var inputChecks = document.createElement('input');
-    formTag.setAttribute("class", "form-horizontal");
-    divA.setAttribute("class" , "jumbotron");
-    divA.setAttribute("style" , "padding-top:10px;padding-left:10px;");
-    deleteButton.setAttribute("id", "sonarDelete");
-    deleteButton.setAttribute("class", "btn btn-danger glyphicon glyphicon-remove-sign");
-    divChecksA.setAttribute("class" , "form-group");
-    labelChecks.setAttribute("for" , "name");
-    labelChecks.setAttribute("class" , "col-sm-3 control-label");
-    divChecksB.setAttribute("class" , "col-xs-1");
-    inputChecks.setAttribute("class" , "form-control col-xs-1");
-    inputChecks.setAttribute("id" , "checks" + ++counter);
-    inputChecks.setAttribute("type" , "number");
-    inputChecks.setAttribute("min" , "1");
-    formTag.appendChild(divA);
-    divA.appendChild(deleteButton);
-    divA.appendChild(divChecksA);
-    divChecksA.appendChild(labelChecks);
-    labelChecks.appendChild(labelChecksText);
-    divChecksA.appendChild(divChecksB);
-    divChecksB.appendChild(inputChecks);
-    document.getElementById("sonarCalc").appendChild(formTag);
-    checkInput = inputChecks;
-    return false;
-};*/
-
-// Submit Button -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Adding A New Check
 let counter = 0;
@@ -335,7 +298,7 @@ $('#addCheck').click(() => {
   return false;
 });
 let i = 0;
-sonarVal = 0;
+let sonarVal = 0;
 sonarTotal.onclick = function () {
   let checkTotal = 0;
   let checkNumTotal = 0;
@@ -426,7 +389,8 @@ sonarTotal.onclick = function () {
 
   i = 0;
   sonarVal = checkTotal;
-
+  monthlyTotal = monthlyDnsTotal + sonarVal; //  10 is a place holder for the Sonar Total
+  document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${monthlyTotal.toFixed(2)}`;
   // For Testing
   console.log(checkTotal);
   console.log(checkNumTotal);
@@ -445,5 +409,6 @@ sonarTotal.onclick = function () {
 // BUTTON ACTION jQuery
 $('#sonarCalc').on('click', '#sonarDelete', function () {
   $(this).parent().remove();
+  sonarTotal.click(); 
 });
 
