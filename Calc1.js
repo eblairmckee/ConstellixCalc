@@ -419,7 +419,7 @@ sonarTotal.onclick = function () {
       const cheEu = europe.value ? 1 : 0;
       const cheAp = asiaPac.value ? 1 : 0;
       const cheOc = oceania.value ? 1 : 0;
-      checkTotal = (((checkTypeAm * cheAm) * checkInt) + ((checkTypeAm * cheEu) * checkInt) + ((checkTypeAp * cheAp) * checkInt) + ((checkTypeOc * cheOc) * checkInt)) *;
+      checkTotal = (((checkTypeAm * cheAm) * checkInt) + ((checkTypeAm * cheEu) * checkInt) + ((checkTypeAp * cheAp) * checkInt) + ((checkTypeOc * cheOc) * checkInt)) * checkNumTotal;
     }
     checkNumTotal = 0;
   }
