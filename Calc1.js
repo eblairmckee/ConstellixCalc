@@ -376,13 +376,16 @@ sonarTotal.onclick = function () {
       checkTotal += 0;
     } else if (checkIntPolicy.value == 'Simultaneous') {
       checkTotal += (((checkTypeAm * Number(europe.value)) * checkInt) + ((checkTypeAm * Number(northAmerica.value)) * checkInt) + ((checkTypeAp * Number(asiaPac.value)) * checkInt) + ((checkTypeOc * Number(oceania.value)) * checkInt)) * checkNumTotal;
-      console.log(Number(northAmerica.value));
     } else if (checkIntPolicy.value == 'Once Per Site') {
-      const cheAm = northAmerica.value ? 1 : 0;
+      const checkAll = (Number(europe.value) + Number(northAmerica.value) + Number(asiaPac.value) + Number(oceania.value)) / checkInt;
+      
+      // total / checkInt
+
+     /*const cheAm = northAmerica.value ? 1 : 0;
       const cheEu = europe.value ? 1 : 0;
       const cheAp = asiaPac.value ? 1 : 0;
       const cheOc = oceania.value ? 1 : 0;
-      checkTotal = (((checkTypeAm * cheAm) * checkInt) + ((checkTypeAm * cheEu) * checkInt) + ((checkTypeAp * cheAp) * checkInt) + ((checkTypeOc * cheOc) * checkInt)) * checkNumTotal;
+      checkTotal = (((checkTypeAm * cheAm) * checkInt) + ((checkTypeAm * cheEu) * checkInt) + ((checkTypeAp * cheAp) * checkInt) + ((checkTypeOc * cheOc) * checkInt)) * checkNumTotal;*/
     }
     checkNumTotal = 0;
   }
