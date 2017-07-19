@@ -112,10 +112,10 @@ function userNumber(num) {
 
 // Standard Queries
 function standardQueries(num) {
-  if (num > 0 && num <= 1000000000) {
-    dnsTotal += (num * 0.1975) * 0.000002;
-  } else if (num > 1000000000) {
-    dnsTotal += (num * 0.0000975) * 0.0000002;
+  if (num > 0 && num <= 1000) {
+    dnsTotal += (num * 0.395);
+  } else if (num > 1000) {
+    dnsTotal += ((num - 1000) * 0.195) + 395;
   } else {
     dnsTotal += 0;
   }
@@ -123,10 +123,10 @@ function standardQueries(num) {
 
 // Geo Filter Queries
 function geoFilterQueries(num) {
-  if (num > 0 && num <= 1000000000) {
-    dnsTotal += (num * 0.35) * 0.000002;
-  } else if (num > 1000000000) {
-    dnsTotal += (num * 0.000175) * 0.000002;
+  if (num > 0 && num <= 1000) {
+    dnsTotal += (num * 0.70);
+  } else if (num > 1000) {
+    dnsTotal += ((num - 1000) * 0.35) + 700;
   } else {
     dnsTotal += 0;
   }
@@ -134,10 +134,10 @@ function geoFilterQueries(num) {
 
 // Geo Proximity Queries
 function geoProxQueries(num) {
-  if (num > 0 && num <= 1000000000) {
-    dnsTotal += (num * 0.3) * 0.000002;
-  } else if (num > 1000000000) {
-    dnsTotal += (num * 0.00015) * 0.000002;
+  if (num > 0 && num <= 1000) {
+    dnsTotal += (num * 0.6);
+  } else if (num > 1000) {
+    dnsTotal += ((num - 1000) * .3) + 600;
   } else {
     dnsTotal += 0;
   }
@@ -145,9 +145,9 @@ function geoProxQueries(num) {
 
 // ANAME Queries
 function anameQueries(num) {
-  if (num > 0 && num <= 1000000000) {
+  if (num > 0 && num <= 1000) {
     dnsTotal += (num * 0.1975) * 0.000002;
-  } else if (num > 1000000000) {
+  } else if (num > 1000) {
     dnsTotal += (num * 0.0000975) * 0.0000002;
   } else {
     dnsTotal += 0;
