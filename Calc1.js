@@ -93,7 +93,7 @@ function poolAppNumber(num) {
   }
 }
 
-// Additiona User Accounts
+// Add User Accounts
 function userNumber(num) {
   if (num > 0 && num <= 10) {
     const total = num * 2;
@@ -209,16 +209,22 @@ $('.panel-group').on('shown.bs.collapse', toggleIcon);
 let counter = 0;
 $('#addCheck').click(() => {
   $('#group1').after(`<div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
-                        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
+                        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete" style="margin-left: 1120px;"></button>\
                         <form class="form-horizontal">\
                             <div class="form-group">\
                                 <label for="name" class="col-md-3 control-label">Number Of Checks</label>\
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">\
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
+                                </a>\
                                 <div class="col-xs-1">\
-                                    <input class="form-control col-md-1 " id="checks${counter}" type="number" min="1"></input>\
+                                    <input class="form-control col-md-1 " id="checks${counter}" type="number" value="1" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-md-3 control-label">Check Type</label>\
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">\
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
+                                </a>\
                                 <div class="col-md-2">\
                                         <select class="form-control sonar" id="checkType${counter}">\
                                             <option>HTTP</option>\
@@ -231,6 +237,9 @@ $('#addCheck').click(() => {
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-md-3 control-label">Check Interval</label>\
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">\
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
+                                </a>\
                                 <div class="col-md-2">\
                                         <select class="form-control " id="interval${counter}" >\
                                             <option>30 sec</option>\
@@ -245,6 +254,9 @@ $('#addCheck').click(() => {
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Check Interval Policy</label>\
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">\
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
+                                </a>\
                                 <div class="col-sm-2">\
                                         <select class="form-control" id="intPolicy${counter}">\
                                             <option>Simultaneous</option>\
@@ -255,6 +267,9 @@ $('#addCheck').click(() => {
                             
                             <div class="form-group">\
                                 <label for="name" class="control-label col-md-3">Number Of Checks Per Region:</label>\
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">\
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
+                                </a>\
                             </div>\
                             </form>\
                             <form class="form-inline">\
@@ -294,6 +309,7 @@ $('#addCheck').click(() => {
                               </div>\
                             </form>\
                            </div> `);
+  $('[data-toggle="popover"]').popover()
   counter++;
   return false;
 });
@@ -415,4 +431,5 @@ $('#sonarCalc').on('click', '#sonarDelete', function () {
   $(this).parent().remove();
   sonarTotal.click(); 
 });
+
 

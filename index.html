@@ -1,14 +1,11 @@
 ﻿<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <title>Website name</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<html>
-<head>
     <title>Page Title</title>
 </head>
 <body>
@@ -31,18 +28,27 @@
                             <div class="jumbotron">
                             <div class="form-group">
                                 <label for="domains" class="col-md-5 control-label">Domains</label>
+                                <a href="#" title="Number Of Domains" data-toggle="popover" data-trigger="hover" data-content="List the number of domains you wish to configure in Constellix DNS">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
                                     <input type="number" class="form-control" id="domains" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="records" class="col-md-5 control-label">Records</label>
+                                <a href="#" title="Number Of Records" data-toggle="popover" data-trigger="hover" data-content="List the approximate number of records in total that will be configured in your domains">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
                                     <input class="form-control" id="records" type="number" min="1" name="number" placeholder="Number of Records" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="gtd" class="col-md-5 control-label">GTD Enabled Domains</label>
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
                                     <input class="form-control" id="gtd" type="number" min="1" name="number" placeholder="Number of GTD Enabled Domains" aria-describedby="basic-addon1">
                                 </div>
@@ -50,56 +56,83 @@
                         
                             <div class="form-group">
                                 <label for="geoProxApp" class="col-md-5 control-label">Geo Proximity</label>
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
-                                    <input class="form-control" id="geoProxApp" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
+                                    <input class="form-control" id="geoProxApp" type="number" min="1" name="number" placeholder="Number of Geo Proximity Records" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="geoFilterApp" class="col-md-5 control-label">Geo Filters</label>
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
-                                    <input class="form-control" id="geoFilterApp" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
+                                    <input class="form-control" id="geoFilterApp" type="number" min="1" name="number" placeholder="Number of Applied Geo Filters" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="aname" class="col-md-5 control-label">ANAME Records</label>
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
-                                    <input class="form-control" id="aname" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
+                                    <input class="form-control" id="aname" type="number" min="1" name="number" placeholder="Number of ANAME Records" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="poolApp" class="col-md-5 control-label">Pool</label>
+                                <label for="poolApp" class="col-md-5 control-label">Record Pools</label>
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
-                                    <input class="form-control" id="poolApp" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
+                                    <input class="form-control" id="poolApp" type="number" min="1" name="number" placeholder="Number of Applied Pools" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="users" class="col-md-5 control-label">Additional Users</label>
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
                                     <input class="form-control" id="users" type="number" min="1" name="number" placeholder="Additional Users" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="standard-queries" class="col-md-5 control-label">Standard Queries(in Millions)</label>
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
-                                    <input class="form-control" id="standardQ" type="number" min="1" name="number" placeholder="Number of Queries in Millions" aria-describedby="basic-addon1">
+                                    <input class="form-control" id="standardQ" type="number" min="1" name="number" placeholder="Number of Queries" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="filter-queries" class="col-md-5 control-label">GeoFilter Queries</label>
+                                <label for="filter-queries" class="col-md-5 control-label">Geo Filter Queries (in Millions)</label>
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
-                                    <input class="form-control" id="geofilterQ" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
+                                    <input class="form-control" id="geofilterQ" type="number" min="1" name="number" placeholder="Number of GeoFilter Queries" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="prox-queries" class="col-md-5 control-label">GeoProximity Queries</label>
+                                <label for="prox-queries" class="col-md-5 control-label">Geo Proximity Queries (in Millions)</label>
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
-                                    <input class="form-control" id="geoproxQ" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
+                                    <input class="form-control" id="geoproxQ" type="number" min="1" name="number" placeholder="Number of Geo Proximity Queries" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="aname-queries" class="col-md-5 control-label">ANAME Queries</label>
+                                <label for="aname-queries" class="col-md-5 control-label">ANAME Queries (in Millions)</label>
+                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">
+                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                                </a>
                                 <div class="col-md-3">
-                                    <input class="form-control" id="anameQ" type="number" min="1" name="number" placeholder="Number of Domains" aria-describedby="basic-addon1">
+                                    <input class="form-control" id="anameQ" type="number" min="1" name="number" placeholder="Number of ANAME Queries" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             </div>
@@ -131,12 +164,13 @@
             <form class="form-horizontal">
             <div class="col-md-1"></div>
                 <div class="col-md-8">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">
                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                 <i class="more-less glyphicon glyphicon-plus"></i>
-                                Constellix DNS
+                                Constellix Sonar
                             </a>
                         </h4>
                     </div>
@@ -153,12 +187,15 @@
                     </div>
                 </div>
             </div>
+            </div>
         <div class="col-md-3">
             
         </div>
     </form>
+    <script src="https://use.fontawesome.com/934e7f404a.js"></script>    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-     <script type="text/javascript" src="Calc1.js"></script>
+    <script type="text/javascript" src="Calc1.js"></script>
+    <script type="text/javascript" src="Bootstrap.js"></script>
 </body>
 </html>
