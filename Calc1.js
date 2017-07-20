@@ -377,8 +377,9 @@ sonarTotal.onclick = function () {
     } else if (checkIntPolicy.value == 'Simultaneous') {
       checkTotal += (((checkTypeAm * Number(europe.value)) * checkInt) + ((checkTypeAm * Number(northAmerica.value)) * checkInt) + ((checkTypeAp * Number(asiaPac.value)) * checkInt) + ((checkTypeOc * Number(oceania.value)) * checkInt)) * checkNumTotal;
     } else if (checkIntPolicy.value == 'Once Per Site') {
-      const checkAll = (Number(europe.value) + Number(northAmerica.value) + Number(asiaPac.value) + Number(oceania.value)) / checkInt;
-      
+      const checkAll = checkInt /  (Number(europe.value) + Number(northAmerica.value) + Number(asiaPac.value) + Number(oceania.value));
+      checkTotal += ((Number(europe.value) * checkTypeAm) * checkAll) + ((Number(northAmerica.value) * checkTypeAm) * checkAll) + ((Number(asiaPac.value) * checkTypeAp) * checkAll) + ((Number(oceania.value) * checkTypeOc) * checkAll);
+      console.log(checkAll);
       // total / checkInt
 
      /*const cheAm = northAmerica.value ? 1 : 0;
