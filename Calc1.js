@@ -309,7 +309,7 @@ $('#addCheck').click(() => {
                               </div>\
                             </form>\
                            </div> `);
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle="popover"]').popover({html:true})
   counter++;
   return false;
 });
