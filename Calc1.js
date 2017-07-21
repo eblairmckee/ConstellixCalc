@@ -209,7 +209,7 @@ $('.panel-group').on('shown.bs.collapse', toggleIcon);
 let counter = 0;
 $('#addCheck').click(() => {
   $('#group1').after(`<div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
-                        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete" style="margin-left: 80em;"></button>\
+                        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
                         <form class="form-horizontal">\
                             <div class="form-group">\
                                 <label for="name" class="col-md-3 control-label">Number Of Checks</label>\
