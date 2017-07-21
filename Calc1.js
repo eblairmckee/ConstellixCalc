@@ -213,7 +213,7 @@ $('#addCheck').click(() => {
                         <form class="form-horizontal">\
                             <div class="form-group">\
                                 <label for="name" class="col-md-3 control-label">Number Of Checks</label>\
-                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">\
+                                <a href="#" title="Number of Checks" data-toggle="popover" data-trigger="hover" data-content="List the number of checks that will have identical settings">\
                                 <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
                                 </a>\
                                 <div class="col-xs-1">\
@@ -222,7 +222,7 @@ $('#addCheck').click(() => {
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-md-3 control-label">Check Type</label>\
-                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">\
+                                <a href="#" title="Check Type" data-toggle="popover" data-trigger="hover" data-content="Choose the protocol that you will be monitoring your sites over">\
                                 <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
                                 </a>\
                                 <div class="col-md-2">\
@@ -237,7 +237,7 @@ $('#addCheck').click(() => {
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-md-3 control-label">Check Interval</label>\
-                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">\
+                                <a href="#" title="Check Interval" data-toggle="popover" data-trigger="hover" data-content="Choose the interval in which each check is ran">\
                                 <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
                                 </a>\
                                 <div class="col-md-2">\
@@ -254,7 +254,7 @@ $('#addCheck').click(() => {
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-sm-3 control-label">Check Interval Policy</label>\
-                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">\
+                                <a href="#" title="Check Interval Pollicy" data-toggle="popover" data-trigger="hover" data-content='<strong>Simultaneous:</strong> Run a check from all selcted locations at the same time based off of the "Check Interval Policy" selcted. <br> <strong>Once Per Site:</strong> Run a check from one location at a time based off of the "Check Interval Policy" selected.'>\
                                 <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
                                 </a>\
                                 <div class="col-sm-2">\
@@ -267,7 +267,7 @@ $('#addCheck').click(() => {
                             
                             <div class="form-group">\
                                 <label for="name" class="control-label col-md-3">Number Of Checks Per Region:</label>\
-                                <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="hover" data-content="Click anywhere in the document to close this popover">\
+                                <a href="#" title="Number of Checks Per Region" data-toggle="popover" data-trigger="hover" data-content="List the number of nodes you would like to perform check on your site per region">\
                                 <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
                                 </a>\
                             </div>\
