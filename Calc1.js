@@ -411,11 +411,6 @@ sonarTotal.onclick = function () {
   sonarVal = checkTotal;
   monthlyTotal = monthlyDnsTotal + sonarVal; //  10 is a place holder for the Sonar Total
   document.getElementById('total').innerHTML = `${'Total:' + ' ' + '$'}${monthlyTotal.toFixed(2)}`;
-  // For Testing
-  console.log(checkTotal);
-  console.log(checkNumTotal);
-  console.log(sonarVal);
-  // End of Testing
 
   checkTotal = 0;
   return false;
