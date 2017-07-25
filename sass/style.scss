@@ -37,6 +37,13 @@ a:focus {
 .control-label {
     color:$dark-grey;
     font-weight: 500;
+    text-align: left !important;
+    padding-left: 50px;
+}
+@media (max-width:991px) {
+    .control-label {
+        padding-left: 0px;
+    }
 }
 .fa {
     color:$dark-grey;
@@ -107,15 +114,13 @@ a:focus {
 .total {   
     position: fixed;
     margin-top: 50px;
-}
-.total h4 {
-    margin-top: 15px;
-    font-size: 16px;
+    min-width: 300px;
 }
 .total h3 {
     margin-top: 10px;
     color: $medium-grey;
     font-weight: 700;
+    text-align: center;
 }
 
 @media (max-width: 991px) {
@@ -136,10 +141,13 @@ a:focus {
     display:inline;
 }
 .padding-right {
-    padding-right: 20px;
+    padding-right: 50px;
 }
 .margin-top {
     margin-top: 50px;
+}
+.margin-bottom {
+    margin-bottom: 50px;
 }
 
 
