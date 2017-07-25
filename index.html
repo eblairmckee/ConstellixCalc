@@ -32,7 +32,7 @@
                             </div>
                             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                                 <div id="calcFields" class="panel-body">
-                                    <div class="form-group margin-top">
+                                    <div class="form-group margin-top-50">
                                         <div class="col-lg-5 col-md-5">
                                             <label for="domains" class="control-label">Domains (required)</label>
                                         </div>
@@ -100,7 +100,7 @@
                                             <label for="poolApp" class="control-label">Record Pools</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <input class="form-control" id="poolApp" type="number" min="1" name="number" placeholder="Number of Applied Pools" aria-describedby="basic-addon1">
+                                            <input class="form-control" id="poolApp" type="number" min="1" name="number" placeholder="Number Records with Applied Pools" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -121,8 +121,8 @@
                                     <div class="form-group">
                                         <div class="col-lg-5 col-md-5">
                                             <label for="filter-queries" class="control-label">
-                                                    Geo Filter Queries
-                                                    <a href="#" data-placement="bottom" title="Geo Filter Queries" data-toggle="popover" data-trigger="hover" data-content='Estimate the number of queries that will be answered by a record with an IP Filter rule applied.'>
+                                                    IP Filter Queries
+                                                    <a href="#" data-placement="bottom" title="IP Filter Queries" data-toggle="popover" data-trigger="hover" data-content='Estimate the number of queries that will be answered by a record with an IP Filter rule applied.'>
                                                         <i class="fa fa-info-circle" aria-hidden="true"></i>
                                                     </a>
                                                 </label>
@@ -153,8 +153,8 @@
                                             <input class="form-control" id="anameQ" type="number" min="1" name="number" placeholder="Number of ANAME Queries in Millions" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
-                                    <div class="form-group margin-top margin-bottom">
-                                        <div class="float-right padding-right">
+                                    <div class="form-group margin-top-50 margin-bottom-50">
+                                        <div class="float-right padding-right-50">
                                             <button id="clearButton" class="btn btn-danger">Clear</button> &nbsp;
                                             <button id="buttonTotal" class="btn btn-success">Submit</button>
                                         </div>

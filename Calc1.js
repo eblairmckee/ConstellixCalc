@@ -208,24 +208,28 @@ $('.panel-group').on('shown.bs.collapse', toggleIcon);
 // Adding A New Check
 let counter = 0;
 $('#addCheck').click(() => {
-  $('#group1').after(`<div class="jumbotron checkFields" style="padding-top:10px;padding-left:10px;">\
-                        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="sonarDelete"></button>\
-                        <form class="form-horizontal">\
+  $('#group1').after(`<div class="jumbotron checkFields">\
+                        <button class="btn btn-delete fa fa-times float-right" id="sonarDelete"></button>\
+                        <form class="form-horizontal margin-top-50">\
                             <div class="form-group">\
-                                <label for="name" class="col-md-3 control-label">Number Of Checks</label>\
-                                <a href="#" title="Number of Checks" data-toggle="popover" data-trigger="hover" data-content="List the number of checks that will have identical settings">\
-                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
-                                </a>\
-                                <div class="col-xs-1">\
+                                <label for="name" class="col-md-6 control-label">
+                                    Number Of Checks
+                                    <a href="#" data-placement="bottom" title="Number of Checks" data-toggle="popover" data-trigger="hover" data-content="List the number of checks that will have identical settings">\
+                                        <i class="fa fa-info-circle" aria-hidden="true"></i>\
+                                    </a>\
+                                </label>\
+                                
+                                <div class="col-md-4">\
                                     <input class="form-control col-md-1 " id="checks${counter}" type="number" value="1" min="1"></input>\
                                 </div>\
                             </div>\
                             <div class="form-group">\
-                                <label for="name" class="col-md-3 control-label">Check Type</label>\
-                                <a href="#" title="Check Type" data-toggle="popover" data-trigger="hover" data-content="Choose the protocol that you will be monitoring your sites over">\
-                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
-                                </a>\
-                                <div class="col-md-2">\
+                                <label for="name" class="col-md-6 control-label">Check Type
+                                    <a href="https://constellix.com/sonar/sonarchecks/">\
+                                        <i class="fa fa-info-circle" aria-hidden="true"></i>\
+                                    </a>\
+                                </label>\
+                                <div class="col-md-4">\
                                         <select class="form-control sonar" id="checkType${counter}">\
                                             <option>HTTP</option>\
                                             <option>HTTPS</option>\
@@ -236,11 +240,8 @@ $('#addCheck').click(() => {
                                 </div>\
                             </div>\
                             <div class="form-group">\
-                                <label for="name" class="col-md-3 control-label">Check Interval</label>\
-                                <a href="#" title="Check Interval" data-toggle="popover" data-trigger="hover" data-content="Choose the interval in which each check is ran">\
-                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
-                                </a>\
-                                <div class="col-md-2">\
+                                <label for="name" class="col-md-6 control-label">Check Interval</label>\
+                                <div class="col-md-4">\
                                         <select class="form-control " id="interval${counter}" >\
                                             <option>30 sec</option>\
                                             <option>60 sec</option>\
@@ -253,11 +254,12 @@ $('#addCheck').click(() => {
                                 </div>\
                             </div>\
                             <div class="form-group">\
-                                <label for="name" class="col-sm-3 control-label">Check Interval Policy</label>\
-                                <a href="#" title="Check Interval Pollicy" data-toggle="popover" data-trigger="hover" data-content='<strong>Simultaneous:</strong> Run a check from all selcted locations at the same time based off of the "Check Interval Policy" selcted. <br> <strong>Once Per Site:</strong> Run a check from one location at a time based off of the "Check Interval Policy" selected.'>\
-                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
-                                </a>\
-                                <div class="col-sm-2">\
+                                <label for="name" class="col-md-6 control-label">Check Interval Policy
+                                    <a href="#" data-placement="bottom" title="Check Interval Policy" data-toggle="popover" data-trigger="hover" data-content='<strong>Simultaneous:</strong> Run a check from all selcted locations at the same time based off of the "Check Interval Policy" selcted. <br> <strong>Once Per Site:</strong> Run a check from one location at a time based off of the "Check Interval Policy" selected.'>\
+                                        <i class="fa fa-info-circle" aria-hidden="true"></i>\
+                                    </a>\
+                                </label>\
+                                <div class="col-md-4">\
                                         <select class="form-control" id="intPolicy${counter}">\
                                             <option>Simultaneous</option>\
                                             <option>Once Per Site</option>\
@@ -266,43 +268,40 @@ $('#addCheck').click(() => {
                             </div>\
                             
                             <div class="form-group">\
-                                <label for="name" class="control-label col-md-3">Number Of Checks Per Region:</label>\
-                                <a href="#" title="Number of Checks Per Region" data-toggle="popover" data-trigger="hover" data-content="List the number of nodes you would like to perform check on your site per region">\
-                                <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>\
-                                </a>\
+                                <label for="name" class="control-label col-xs-6">Number of Checks Per Region:</label>\
                             </div>\
                             </form>\
-                            <form class="form-inline">\
-                            <div class="form-group">\
-                                <label for="name" class="control-label" style="margin-left:190px; margin-right:25px;">North America</label>\
-                                <div class="input-group">\
+                            <form class="form-inline row margin-left-50 padding-top-10">\
+                            <div class="form-group col-md-8 col-md-offset-2">\
+                                <label for="name" class="control-label col-xs-6 col-md-8">North America</label>\
+                                <div class="input-group col-xs-6 col-md-4">\
                                     <input class="form-control" id="northAmerica${counter}" type="number" min="1" max="22"></input>\
                                     <div class="input-group-addon">/22</div>\
                                 </div>\
                               </div>\
                             </form>\
-                            <form class="form-inline">\
-                            <div class="form-group">\
-                                <label for="name" class="control-label" style="margin-left:190px; margin-right:73px;">Europe</label>\
-                                <div class="input-group">\
+                            <form class="form-inline row margin-left-50 padding-top-10">\
+                            <div class="form-group col-md-8 col-md-offset-2">\
+                                <label for="name" class="control-label col-xs-6 col-md-8">Europe</label>\
+                                <div class="input-group col-xs-6 col-md-4">\
                                     <input class="form-control" id="europe${counter}" type="number" min="1" max="10"></input>\
                                     <div class="input-group-addon">/9&nbsp;&nbsp;</div>\
                                 </div>\
                               </div>\
                             </form>\
-                            <form class="form-inline">\
-                            <div class="form-group">\
-                                <label for="name" class="control-label" style="margin-left:190px; margin-right:62px;">Asia-Pac</label>\
-                                <div class="input-group">\
+                            <form class="form-inline row margin-left-50 padding-top-10">\
+                            <div class="form-group col-md-8 col-md-offset-2">\
+                                <label for="name" class="control-label col-xs-6 col-md-8">Asia-Pac</label>\
+                                <div class="input-group col-xs-6 col-md-4">\
                                     <input class="form-control" id="asiaPac${counter}" type="number" min="1" max="10"></input>\
                                     <div class="input-group-addon">/5&nbsp;&nbsp;</div>\
                                 </div>\
                               </div>\
                             </form>\
-                            <form class="form-inline">\
-                            <div class="form-group">\
-                                <label for="name" class="control-label" style="margin-left:190px; margin-right:66px;">Oceania</label>\
-                                <div class="input-group">\
+                            <form class="form-inline row margin-left-50 padding-top-10">\
+                            <div class="form-group col-md-8 col-md-offset-2">\
+                                <label for="name" class="control-label col-xs-6 col-md-8">Oceania</label>\
+                                <div class="input-group col-xs-6 col-md-4">\
                                     <input class="form-control" id="oceania${counter}" type="number" min="1" max="10"></input>\
                                     <div class="input-group-addon">/3&nbsp;&nbsp;</div>\
                                 </div>\
