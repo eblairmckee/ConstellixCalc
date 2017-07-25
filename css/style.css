@@ -22,26 +22,16 @@ body {
   height: 100px;
 }
 
-/*==== START HERE ====*/
+/*== General Styles ==*/
 a:active,
 a:hover,
 a:focus {
   text-decoration: none;
 }
 
-.total {
-  position: fixed;
-}
-
-h4 {
-  font-size: 16px;
-}
-
-@media (max-width: 991px) {
-  .total {
-    position: sticky;
-    /* This fixes the breakage for mobile */
-  }
+.control-label {
+  color: #666;
+  font-weight: 500;
 }
 
 .fa {
@@ -53,6 +43,7 @@ h4 {
   border: #ddd;
   color: #666;
   font-size: 18px;
+  padding: 15px 15px;
 }
 
 .fa-minus, .fa-plus {
@@ -67,6 +58,85 @@ h4 {
   color: #999;
 }
 
+/*== Button Styles ==*/
+.btn-success {
+  color: #666;
+  background: none;
+  border: 2px solid #666;
+  padding: 10px 50px;
+  border-radius: 50px;
+  display: inline;
+  transition: ease 0.3s;
+}
+
+.btn-success:hover {
+  background: #666;
+  color: #fff;
+  border-color: #666;
+}
+
+.btn-danger {
+  color: #ccc;
+  background: none;
+  border: 2px solid #ccc;
+  padding: 10px 50px;
+  border-radius: 50px;
+  transition: ease 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #ccc;
+  color: #fff;
+  border-color: #ccc;
+}
+
+.btn-primary {
+  background: #ccc;
+  color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  padding: 10px 50px;
+  display: inline;
+  transition: ease 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #ccc;
+  border-color: #ccc;
+}
+
+/*== Total Section ==*/
+.total {
+  position: fixed;
+  margin-top: 50px;
+}
+
+.total h4 {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.total h3 {
+  margin-top: 10px;
+  color: #999;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .total {
+    position: sticky;
+    /* This fixes the breakage for mobile */
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .top-margin-small {
+    margin-top: 10px;
+  }
+}
+
 /*== One Off Styles ==*/
 .float-right {
   float: right;
@@ -76,6 +146,10 @@ h4 {
 
 .padding-right {
   padding-right: 20px;
+}
+
+.margin-top {
+  margin-top: 50px;
 }
 
 .dropdown-menu {
