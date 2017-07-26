@@ -225,8 +225,8 @@ $('#addCheck').click(() => {
                             </div>\
                             <div class="form-group">\
                                 <label for="name" class="col-md-6 control-label">Check Type
-                                    <a href="https://constellix.com/sonar/sonarchecks/">\
-                                        <i class="fa fa-info-circle" aria-hidden="true"></i>\
+                                    <a href="https://constellix.com/sonar/sonarchecks/" target="_blank">\
+                                        <i class="fa fa-external-link" aria-hidden="true"></i>\
                                     </a>\
                                 </label>\
                                 <div class="col-md-4">\
